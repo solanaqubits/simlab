@@ -120,8 +120,15 @@
       "source": "Verification/QuantumStandardQuantumLimit.lean",
       "parent": "SIMLAB-\u03b31",
       "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLExpectedAuthority",
+      "source": "Verification/NumericSQLExpectedAuthority.lean",
+      "parent": "SIMLAB-\u03b42",
+      "origin": "new conditional authority model; physical source conformance remains external",
+      "hierarchy_id": "SIMLAB-\u03b51"
     }
   ],
   "third_obligation": "OPEN",
-  "standalone_beta": null
+  "standalone_beta": "see tree-local docs/VALIDATION_SCOPE.json"
 }

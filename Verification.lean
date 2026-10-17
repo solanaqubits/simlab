@@ -18,3 +18,4 @@ import Verification.NumericSQLJSONParser
 import Verification.NumericSQLSessionBinding
 import Verification.NumericSQLStreamReader
 import Verification.QuantumStandardQuantumLimit
+import Verification.NumericSQLExpectedAuthority

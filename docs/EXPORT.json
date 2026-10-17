@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1307,
-      "sha256": "49093d7118760fd132d7ed4a623cb09130f24f84539e802520e2598bd924ff1a",
+      "bytes": 1685,
+      "sha256": "c3d323d8db340b912611c109957d45382f399c2820ccd38f654424b378e7ea1b",
       "shared_identical": true
     },
     {
@@ -111,8 +111,8 @@
     },
     {
       "path": "Verification.lean",
-      "bytes": 891,
-      "sha256": "13128d5dad9495fc41e207cb5fc26e1082b2d929e6c19e8a78f21e3123e74263",
+      "bytes": 939,
+      "sha256": "5b4b46273311b6bf92d4558fb5f23262a37f13597fd3270886b48c689637666f",
       "shared_identical": true
     },
     {
@@ -182,6 +182,12 @@
       "shared_identical": true
     },
     {
+      "path": "Verification/NumericSQLExpectedAuthority.lean",
+      "bytes": 3662,
+      "sha256": "27f13edf90af1624cdbbd2a2d84243486546dba985f80c6bb13c6a46d0e1b480",
+      "shared_identical": true
+    },
+    {
       "path": "Verification/NumericSQLExpectedInstance.lean",
       "bytes": 7260,
       "sha256": "281b9eda79be2ce634615fb298ade53f6301cfcaf0ce65db286b1d60b141fc48",
@@ -236,6 +242,24 @@
       "shared_identical": true
     },
     {
+      "path": "authority/CONTRACT.md",
+      "bytes": 4677,
+      "sha256": "1e70105889a12d1c2e9fa7f554e21a99f0cb8251a9928956241994d9f36c7148",
+      "shared_identical": true
+    },
+    {
+      "path": "authority/__init__.py",
+      "bytes": 88,
+      "sha256": "f05264d9969ba71143489963d571a3374a743bbd4db4f6cd327de6608c04701c",
+      "shared_identical": true
+    },
+    {
+      "path": "authority/gate.py",
+      "bytes": 5064,
+      "sha256": "1dc955c493a8d870e6dcdf83afbb3437f3297ec84ddf091a1afecce5b61613ae",
+      "shared_identical": true
+    },
+    {
       "path": "docs/BOUNDARIES.md",
       "bytes": 1156,
       "sha256": "a8eb5e6a17b49325e4af8c575a6d6ea6e76fde40c62af384041c1456dd1b876c",
@@ -243,14 +267,20 @@
     },
     {
       "path": "docs/CATALOG.json",
-      "bytes": 4297,
-      "sha256": "40ce4ab1fb5227a95592410bcda9b6702c16c2746f94c214571cdd3fd8c7a702",
+      "bytes": 4627,
+      "sha256": "d1dabd07132c8574cf043377cf4cd2db4a0ca70bf1dd8eb8cc0da3f1563186f0",
       "shared_identical": true
     },
     {
       "path": "docs/HIERARCHY.md",
-      "bytes": 1000,
-      "sha256": "c7ed1f22cc0ff880ca4d2d5082756c5780f797505133788621a1a532591c8e11",
+      "bytes": 1526,
+      "sha256": "1de3515718e6377138cea35ebce51fb72f76087f8aa552164275653d580d80c2",
+      "shared_identical": true
+    },
+    {
+      "path": "docs/OBLIGATIONS.json",
+      "bytes": 1682,
+      "sha256": "ce38e3840c1ddfa0738db46e9b7fe0ee2ade08a1ef3fc28dec42ab073a7f8abc",
       "shared_identical": true
     },
     {
@@ -281,6 +311,12 @@
       "path": "scripts/build-native.sh",
       "bytes": 424,
       "sha256": "f715911cd824ce6b681c1151fb5bf7421acbf7cbd6a6c673ded22d9cc97dec5e",
+      "shared_identical": true
+    },
+    {
+      "path": "scripts/check_catalog.py",
+      "bytes": 821,
+      "sha256": "2bd87b81618ad4a1c24c213e6485a0b88c15b3cd8746c864cfdb19609244ece3",
       "shared_identical": true
     },
     {
@@ -329,6 +365,12 @@
       "path": "tests/lean/numeric_rounding_regression.lean",
       "bytes": 4057,
       "sha256": "66cef026af5f274415f37bd24cc653db9cf8f42eb3b4a45e2b1013554730f851",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_authority_regression.lean",
+      "bytes": 1106,
+      "sha256": "556ad6b372e4389d215898c4c3e6fbdba44177a6e6da7133decdd3a137f9a121",
       "shared_identical": true
     },
     {
@@ -401,6 +443,18 @@
       "path": "tests/lean/numeric_sql_transport_regression.lean",
       "bytes": 2166,
       "sha256": "88d78922753ac20d90f422376fcbd33d6e10e59d00ea77a5df1971bf0b1e31df",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_authority.py",
+      "bytes": 5745,
+      "sha256": "6ff0bdc5e51e6d07a111b8aeccdd0ed147e2af693c25f56f2db4a82a21949127",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_authority.py",
+      "bytes": 390,
+      "sha256": "ef934b7981728fb64540a6640992bedc207b6f396cc71723b672c0849fd413a4",
       "shared_identical": true
     },
     {
@@ -487,7 +541,9 @@
   "differences": [
     "docs/EXPORT.json is public export metadata",
     "private migration and historical storage manifests are excluded",
-    "private exploratory Python studies are not yet reviewed for public export"
+    "private exploratory Python studies are not yet reviewed for public export",
+    "docs/VALIDATION_SCOPE.json and docs/VALIDATION.md are public-specific evidence",
+    "private handoff/ and migration/ omitted"
   ],
   "scope": "formal and native SQL core; selected synthetic regressions only"
 }

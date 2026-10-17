@@ -1,0 +1,111 @@
+{
+  "schema": "simlab-public-validation-1.0.0",
+  "baseline": "SIMLAB-public-\u03b21",
+  "change_batch": "SIMLAB-\u03b42",
+  "third_obligation": "OPEN",
+  "modules": 21,
+  "declarations": 2357,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "violations": [],
+  "source_sha256": {
+    "Verification.NumericBinaryGrid": "e99fc432306360240ae307e2d8a3828ccacc400daad458fbd3181966e54ed5b4",
+    "Verification.NumericCertificateDigestBridge": "7370e1299360e9217c95ef1a0e05020c76347c5bbeb8d705760db3dbdfb6cf3f",
+    "Verification.NumericSQLIntervalBounds": "89f4d8f1ef0533636c6683f45f208b81d507acb516d3733429ac294132661fe7",
+    "Verification.NumericRealRounding": "13e59b66be0e03567abf2301c6a911e05b25e87348c6183e79040bb0a8f45e2b",
+    "Verification.NumericRoundingCertificates": "5af92a35e634988e13c860e3c106ea47ccb776653f09d0e1aa599e5692f71292",
+    "Verification.NumericSQLASTTransport": "eaf74cb80358333455f1ad13d988d2f611e9a395472804336a5f73fea5d23ab0",
+    "Verification.NumericSQLInstanceDecoder": "27655505cd1af5093509023bfd5f22040c9c972f5206bff088743346840da8e5",
+    "Verification.NumericSQLDecimalDecoder": "d2822742c59579bf07ab19b5c266ba9cb7a6a6911589ccc77411c03082a05751",
+    "Verification.NumericSQLExpectedInstance": "281b9eda79be2ce634615fb298ade53f6301cfcaf0ce65db286b1d60b141fc48",
+    "Verification.NumericSQLGapBounds": "6b04b810667cc631f1774b8df002005e1731426722203a9a5c1c188f77861f3d",
+    "Verification.QuantumStandardQuantumLimit": "408f63ff00145bc26d53a998b38c623f85feb98e2584afcc940d28ac8a688aac",
+    "Verification.NumericSQLBinaryDecoder": "2acba04da320d9f047f18b0e27c565132fc252fe8accc354b34d8632933a264b",
+    "Verification.NumericSQLByteTransport": "3242860b163a612574c527b1d43dfa9c86ed3f9731b340b18c30ff22c8b6176a",
+    "Verification.NumericSQLCertificateDecoder": "5114d8d2eef1b10347252bfc4776063e003935ec85257f8ad8d85034a1fac5b5",
+    "Verification.NumericSQLJSONParser": "8da2b47c6f2e7e403c438bd44267ce3e62daa61a968a99f77f8f827ef411a2c9",
+    "Verification.NumericSQLJSONGrammar": "991c54729e4ff568d4d9d1b18e4e571fa32d4692b796857e00e7a6808beac7d2",
+    "Verification.NumericSQLControlDecoder": "01560e90f35c51983a8f7287cd46a4760cea660d9ed1b249367595bec173dfb8",
+    "Verification.NumericSQLDecisionEnvelope": "cc0cd6c1b7806a80c255a8945d74e2318f8b05cf0a714121902f0ac072141d96",
+    "Verification.NumericSQLExpectedAuthority": "27f13edf90af1624cdbbd2a2d84243486546dba985f80c6bb13c6a46d0e1b480",
+    "Verification.NumericSQLSessionBinding": "b62cc9ab2284b71c87dbbaa8982198a546e37591336bbc83a5ca5ceeb865bf72",
+    "Verification.NumericSQLStreamReader": "11b5482b64f0934111d1ff945cbac538c6e5939a6894509cb86c138eae3eb6a5"
+  },
+  "dependencies": {
+    "packages": [
+      {
+        "package": "mathlib",
+        "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "tracked_clean": true
+      },
+      {
+        "package": "plausible",
+        "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+        "tracked_clean": true
+      },
+      {
+        "package": "LeanSearchClient",
+        "revision": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+        "tracked_clean": true
+      },
+      {
+        "package": "importGraph",
+        "revision": "16f02aa7642864af59f1ff0e384a015994db9118",
+        "tracked_clean": true
+      },
+      {
+        "package": "proofwidgets",
+        "revision": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+        "tracked_clean": true
+      },
+      {
+        "package": "aesop",
+        "revision": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+        "tracked_clean": true
+      },
+      {
+        "package": "Qq",
+        "revision": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+        "tracked_clean": true
+      },
+      {
+        "package": "batteries",
+        "revision": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+        "tracked_clean": true
+      },
+      {
+        "package": "Cli",
+        "revision": "6130a47896ce867c6a4a55373441e59e565bad0f",
+        "tracked_clean": true
+      }
+    ],
+    "versions": {
+      "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+      "lake": "Lake version 5.0.0-src+819816b (Lean version 4.33.1)",
+      "python3": "Python 3.12.3",
+      "cc": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+    },
+    "lock_sha256": "768c8c8ba0c5c82aad8da6afb8ac096107e336288975da6585d6facbacb8eb4d",
+    "same_installed_toolchain_for_both_trees": true
+  },
+  "public_tests": {
+    "count": 40,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0
+  },
+  "scope": "all exported formal modules and native/supervisor regressions; private historical research corpus is not part of this public export",
+  "reuse": {
+    "axiom_audit": "same 21 formal inputs, import names, locked dependencies, Lean toolchain and audit template; accepted selected evidence, not the whole private gate",
+    "new_public_checks": [
+      "strict build",
+      "40 tests",
+      "source identity and allowlist",
+      "catalog/import closure"
+    ]
+  },
+  "deployment": "No authorized two-principal production deployment claimed. Same-UID launch rejects."
+}

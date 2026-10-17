@@ -1,0 +1,51 @@
+{
+  "schema": "simlab-obligations-1.0.0",
+  "third_obligation": "OPEN",
+  "items": [
+    {
+      "id": "sql-affine-rounding",
+      "state": "PROVED_MODEL",
+      "scope": "actual imported Lean theorem hypotheses; not rationalized search termination"
+    },
+    {
+      "id": "typed-decoder-instance-binding",
+      "state": "PROVED_MODEL",
+      "scope": "registered concrete Lean decoder/control/session definitions"
+    },
+    {
+      "id": "finite-stream-machine",
+      "state": "PROVED_MODEL",
+      "scope": "byte preservation, fragmentation and EOF over observed events"
+    },
+    {
+      "id": "expected-instance-authority-model",
+      "state": "PROVED_MODEL",
+      "scope": "complete externally supplied policy/grant/job and observed principal; conditional real rounding"
+    },
+    {
+      "id": "actual-supervisor-entitlement",
+      "state": "OPEN",
+      "next": "select real issuer/executor UIDs and policy owner; prove or test actual authority-source correspondence"
+    },
+    {
+      "id": "authority-python-refinement",
+      "state": "OPEN",
+      "scope": "Python gate, control-byte grant policy, SO_PEERCRED/fstat/memfd integration"
+    },
+    {
+      "id": "os-runtime-io",
+      "state": "OPEN",
+      "scope": "delivery, EOF accuracy, blocking, startup effects, compiler/runtime/hardware"
+    },
+    {
+      "id": "serialization-sha-source-authenticity",
+      "state": "OPEN",
+      "scope": "external bindings and concrete hashing are not proved end to end"
+    },
+    {
+      "id": "private-artifact-remote-backup",
+      "state": "OPEN_OPERATIONAL",
+      "scope": "local private archive preserved; no remote artifact storage configured"
+    }
+  ]
+}
