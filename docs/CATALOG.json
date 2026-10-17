@@ -1,0 +1,127 @@
+{
+  "schema": "simlab-catalog-1.0.0",
+  "modules": [
+    {
+      "id": "NumericBinaryGrid",
+      "source": "Verification/NumericBinaryGrid.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericCertificateDigestBridge",
+      "source": "Verification/NumericCertificateDigestBridge.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericRealRounding",
+      "source": "Verification/NumericRealRounding.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericRoundingCertificates",
+      "source": "Verification/NumericRoundingCertificates.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLASTTransport",
+      "source": "Verification/NumericSQLASTTransport.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLBinaryDecoder",
+      "source": "Verification/NumericSQLBinaryDecoder.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLByteTransport",
+      "source": "Verification/NumericSQLByteTransport.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLCertificateDecoder",
+      "source": "Verification/NumericSQLCertificateDecoder.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLControlDecoder",
+      "source": "Verification/NumericSQLControlDecoder.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLDecimalDecoder",
+      "source": "Verification/NumericSQLDecimalDecoder.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLDecisionEnvelope",
+      "source": "Verification/NumericSQLDecisionEnvelope.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLExpectedInstance",
+      "source": "Verification/NumericSQLExpectedInstance.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLGapBounds",
+      "source": "Verification/NumericSQLGapBounds.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLInstanceDecoder",
+      "source": "Verification/NumericSQLInstanceDecoder.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLIntervalBounds",
+      "source": "Verification/NumericSQLIntervalBounds.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLJSONGrammar",
+      "source": "Verification/NumericSQLJSONGrammar.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLJSONParser",
+      "source": "Verification/NumericSQLJSONParser.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLSessionBinding",
+      "source": "Verification/NumericSQLSessionBinding.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "NumericSQLStreamReader",
+      "source": "Verification/NumericSQLStreamReader.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    },
+    {
+      "id": "QuantumStandardQuantumLimit",
+      "source": "Verification/QuantumStandardQuantumLimit.lean",
+      "parent": "SIMLAB-\u03b31",
+      "origin": "imported; no new mathematical module count"
+    }
+  ],
+  "third_obligation": "OPEN",
+  "standalone_beta": null
+}

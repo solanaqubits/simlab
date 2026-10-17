@@ -1,0 +1,92 @@
+name = "simlab"
+version = "0.1.0"
+description = "SimLab exact SQL certificates, decoders and bounded stream model"
+keywords = ["lean4", "sql-gap", "numerical-verification"]
+license = "Apache-2.0"
+licenseFiles = ["LICENSE"]
+homepage = "https://github.com/solanaqubits/simlab"
+defaultTargets = ["Verification"]
+
+[leanOptions]
+warningAsError = true
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+[[lean_lib]]
+name = "Verification"
+
+[[lean_exe]]
+name = "sql_instance_decoder"
+root = "SQLInstanceDecoderMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_ast_transport_probe"
+root = "SQLASTTransportProbe"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_instance_byte_decoder"
+root = "SQLByteDecoderMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_byte_transport_probe"
+root = "SQLByteTransportProbe"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_lib]]
+name = "SQLDecoderRuntime"
+
+[[lean_lib]]
+name = "SQLByteIO"
+
+[[lean_exe]]
+name = "sql_instance_json_decoder"
+root = "SQLJSONDecoderMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_json_parser_probe"
+root = "SQLJSONParserProbe"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_certificate_decoder"
+root = "SQLCertificateDecoderMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_decision_envelope"
+root = "SQLDecisionEnvelopeMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_control_decoder"
+root = "SQLControlDecoderMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_session_binding"
+root = "SQLSessionBindingMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_stream_reader"
+root = "SQLStreamReaderMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_exe]]
+name = "sql_stream_probe"
+root = "SQLStreamProbeMain"
+moreLinkArgs = ["-Wl,--wrap=lean_initialize", ".lake/decoder_stack_init.o"]
+
+[[lean_lib]]
+name = "SQLStreamIO"

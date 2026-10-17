@@ -1,0 +1,493 @@
+{
+  "schema": "simlab-public-allowlist-1.0.0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 176,
+      "sha256": "89992712687f7e64019157356c98b724e644679c5164b6e62cb1c88df92df147",
+      "shared_identical": true
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "shared_identical": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 1307,
+      "sha256": "49093d7118760fd132d7ed4a623cb09130f24f84539e802520e2598bd924ff1a",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLASTTransportProbe.lean",
+      "bytes": 1018,
+      "sha256": "cf7cfaa747a3b25b39aab4bd9b629cd915379d1b22954b25d2ade5ff6483f927",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLByteDecoderMain.lean",
+      "bytes": 1787,
+      "sha256": "138a847bdb4ece070801ee4e012a2d4cefd7f02568b17b9c4b18aa6428775cd1",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLByteIO.lean",
+      "bytes": 1167,
+      "sha256": "e54aba1fc73351346e546301d304cbf62aab580f3ec67b3d08ce1e43b4f96d60",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLByteTransportProbe.lean",
+      "bytes": 1054,
+      "sha256": "09473aaa8e5fb6b2f7358e12991a45d0c168a0daac55c56db900ca1284d841d1",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLCertificateDecoderMain.lean",
+      "bytes": 2563,
+      "sha256": "887d38914c8180d2d2a178874000a2287fa3eb5d254ad09059d36a575d2780fa",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLControlDecoderMain.lean",
+      "bytes": 1993,
+      "sha256": "7e7103991b70996fc6f3cedb94794a76fc4c7ebc29cb0a2fdf8e471b3f5f7989",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLDecisionEnvelopeMain.lean",
+      "bytes": 2347,
+      "sha256": "bb1367a73f4ccf72acbf8126b12f6dbe458011d204fb4ea29e628179d07c9a1e",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLDecoderRuntime.lean",
+      "bytes": 4144,
+      "sha256": "bd7106da81a5851a3393c5dd1b4d5d2293fa1d7cd50587dc2658ab3ffe603d2c",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLInstanceDecoderMain.lean",
+      "bytes": 705,
+      "sha256": "4a16dc6b0fee1382bef9bab79c12db6369381a4a51374321f66f715446b75ca3",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLJSONDecoderMain.lean",
+      "bytes": 1774,
+      "sha256": "762f4070da5ed710bba700869b535a3a9a8972e8ee0041f1bc4fb39eed90baf2",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLJSONParserProbe.lean",
+      "bytes": 1026,
+      "sha256": "dad98c21d8e9d71f6db618a50e4bfc77fde41e75902377069d53576ce9452ef8",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLSessionBindingMain.lean",
+      "bytes": 4075,
+      "sha256": "78e906683d98d91b704a5612832e9cc9f0ff285e516d75ccb0c580c2c71fe686",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLStreamIO.lean",
+      "bytes": 1791,
+      "sha256": "0e3652c81083f160fc77ab73be5e0ebb420c5a2bfb7ead372bb625fe4f17f413",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLStreamProbeMain.lean",
+      "bytes": 1780,
+      "sha256": "67ee49f689d654b856e38f14fdd0227d5857a5b28db2627c58fc7b1ebbbf1e72",
+      "shared_identical": true
+    },
+    {
+      "path": "SQLStreamReaderMain.lean",
+      "bytes": 3409,
+      "sha256": "8f005ff78ac51b899c3b5f10f950b323d6305f97a1f7ca1dd2ba5f11049e1bc0",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification.lean",
+      "bytes": 891,
+      "sha256": "13128d5dad9495fc41e207cb5fc26e1082b2d929e6c19e8a78f21e3123e74263",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericBinaryGrid.lean",
+      "bytes": 5815,
+      "sha256": "e99fc432306360240ae307e2d8a3828ccacc400daad458fbd3181966e54ed5b4",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericCertificateDigestBridge.lean",
+      "bytes": 9917,
+      "sha256": "7370e1299360e9217c95ef1a0e05020c76347c5bbeb8d705760db3dbdfb6cf3f",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericRealRounding.lean",
+      "bytes": 5785,
+      "sha256": "13e59b66be0e03567abf2301c6a911e05b25e87348c6183e79040bb0a8f45e2b",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericRoundingCertificates.lean",
+      "bytes": 22617,
+      "sha256": "5af92a35e634988e13c860e3c106ea47ccb776653f09d0e1aa599e5692f71292",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLASTTransport.lean",
+      "bytes": 12450,
+      "sha256": "eaf74cb80358333455f1ad13d988d2f611e9a395472804336a5f73fea5d23ab0",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLBinaryDecoder.lean",
+      "bytes": 3721,
+      "sha256": "2acba04da320d9f047f18b0e27c565132fc252fe8accc354b34d8632933a264b",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLByteTransport.lean",
+      "bytes": 12318,
+      "sha256": "3242860b163a612574c527b1d43dfa9c86ed3f9731b340b18c30ff22c8b6176a",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLCertificateDecoder.lean",
+      "bytes": 11990,
+      "sha256": "5114d8d2eef1b10347252bfc4776063e003935ec85257f8ad8d85034a1fac5b5",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLControlDecoder.lean",
+      "bytes": 14126,
+      "sha256": "01560e90f35c51983a8f7287cd46a4760cea660d9ed1b249367595bec173dfb8",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLDecimalDecoder.lean",
+      "bytes": 6893,
+      "sha256": "d2822742c59579bf07ab19b5c266ba9cb7a6a6911589ccc77411c03082a05751",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLDecisionEnvelope.lean",
+      "bytes": 9083,
+      "sha256": "cc0cd6c1b7806a80c255a8945d74e2318f8b05cf0a714121902f0ac072141d96",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLExpectedInstance.lean",
+      "bytes": 7260,
+      "sha256": "281b9eda79be2ce634615fb298ade53f6301cfcaf0ce65db286b1d60b141fc48",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLGapBounds.lean",
+      "bytes": 6260,
+      "sha256": "6b04b810667cc631f1774b8df002005e1731426722203a9a5c1c188f77861f3d",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLInstanceDecoder.lean",
+      "bytes": 13195,
+      "sha256": "27655505cd1af5093509023bfd5f22040c9c972f5206bff088743346840da8e5",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLIntervalBounds.lean",
+      "bytes": 9247,
+      "sha256": "89f4d8f1ef0533636c6683f45f208b81d507acb516d3733429ac294132661fe7",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLJSONGrammar.lean",
+      "bytes": 7674,
+      "sha256": "991c54729e4ff568d4d9d1b18e4e571fa32d4692b796857e00e7a6808beac7d2",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLJSONParser.lean",
+      "bytes": 11005,
+      "sha256": "8da2b47c6f2e7e403c438bd44267ce3e62daa61a968a99f77f8f827ef411a2c9",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLSessionBinding.lean",
+      "bytes": 8224,
+      "sha256": "b62cc9ab2284b71c87dbbaa8982198a546e37591336bbc83a5ca5ceeb865bf72",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/NumericSQLStreamReader.lean",
+      "bytes": 14027,
+      "sha256": "11b5482b64f0934111d1ff945cbac538c6e5939a6894509cb86c138eae3eb6a5",
+      "shared_identical": true
+    },
+    {
+      "path": "Verification/QuantumStandardQuantumLimit.lean",
+      "bytes": 6913,
+      "sha256": "408f63ff00145bc26d53a998b38c623f85feb98e2584afcc940d28ac8a688aac",
+      "shared_identical": true
+    },
+    {
+      "path": "docs/BOUNDARIES.md",
+      "bytes": 1156,
+      "sha256": "a8eb5e6a17b49325e4af8c575a6d6ea6e76fde40c62af384041c1456dd1b876c",
+      "shared_identical": true
+    },
+    {
+      "path": "docs/CATALOG.json",
+      "bytes": 4297,
+      "sha256": "40ce4ab1fb5227a95592410bcda9b6702c16c2746f94c214571cdd3fd8c7a702",
+      "shared_identical": true
+    },
+    {
+      "path": "docs/HIERARCHY.md",
+      "bytes": 1000,
+      "sha256": "c7ed1f22cc0ff880ca4d2d5082756c5780f797505133788621a1a532591c8e11",
+      "shared_identical": true
+    },
+    {
+      "path": "lake-manifest.json",
+      "bytes": 3210,
+      "sha256": "768c8c8ba0c5c82aad8da6afb8ac096107e336288975da6585d6facbacb8eb4d",
+      "shared_identical": true
+    },
+    {
+      "path": "lakefile.toml",
+      "bytes": 2528,
+      "sha256": "645788c98e3377249eaec0393a300495701d199acd6d1c699bf4cf55b7c8bcf4",
+      "shared_identical": true
+    },
+    {
+      "path": "lean-toolchain",
+      "bytes": 25,
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "shared_identical": true
+    },
+    {
+      "path": "scripts/audit.py",
+      "bytes": 836,
+      "sha256": "c00a13c33d58c6ad6b0635c544fec6f8258ef6aa8886ddce04e27a755b88a448",
+      "shared_identical": true
+    },
+    {
+      "path": "scripts/build-native.sh",
+      "bytes": 424,
+      "sha256": "f715911cd824ce6b681c1151fb5bf7421acbf7cbd6a6c673ded22d9cc97dec5e",
+      "shared_identical": true
+    },
+    {
+      "path": "simulations/decoder_audit/runtime/stack_init.c",
+      "bytes": 497,
+      "sha256": "a4323a6d69333d13599f5a5236945ccde218adae83ee49b0602b39fdf10eb6b7",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/codec.py",
+      "bytes": 1432,
+      "sha256": "723491ec006d7f66caa3fe8fa5245016c8a2781aef7343c2d913dc52c7fa7b0d",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/fixtures/minimum-context.json",
+      "bytes": 238,
+      "sha256": "d70245c7677d286a8d6bb53b2b4e87751cbf56016a2cc45a3670f7732fa4c5a2",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/fixtures/minimum-request.json",
+      "bytes": 1287,
+      "sha256": "b56e796881272b3fecd98f3c1ab5fff6880800c715b90c0c2b4b036a84d48814",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/fixtures/other-context.json",
+      "bytes": 238,
+      "sha256": "8b30fbfe2d32afabea7e9d8bb158800867ba875111ae322f54fbd2dd58acd6ce",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/fixtures/other-request.json",
+      "bytes": 1287,
+      "sha256": "bd97a6d7f6c7b3b8453e922e50fe1a14d705e375f3cc001bb2ad82b96d8e0e34",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_digest_bridge_regression.lean",
+      "bytes": 4268,
+      "sha256": "e7715929ead37f4dd9689fb093baf6d4f8b02418cbdb7d089fe4ef6598366b1f",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_rounding_regression.lean",
+      "bytes": 4057,
+      "sha256": "66cef026af5f274415f37bd24cc653db9cf8f42eb3b4a45e2b1013554730f851",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_byte_transport_regression.lean",
+      "bytes": 1716,
+      "sha256": "70eefe74fd6ae80fd63d439c8277c578db1131a0d3f19dc8f3966cd8e0f28bd4",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_certificate_decoder_regression.lean",
+      "bytes": 1177,
+      "sha256": "0209ed1c4cee0b4d6eaeb95626efe6038a5f1acd0644635a07a1509a25d763d4",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_control_decoder_regression.lean",
+      "bytes": 1544,
+      "sha256": "f73ec481a7c1dbfdbd555844eb5b11b890dae11a5f4330f990de98d664f471ca",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_decision_envelope_regression.lean",
+      "bytes": 1331,
+      "sha256": "abfc1810d67d602e5bb8e71527e7c6a2ad9850cb68c155a068615bd53dcd01e7",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_decoder_regression.lean",
+      "bytes": 1533,
+      "sha256": "ca4997201b0294c98af4cfad148146c1b165aafe4d080b01477969096e58ea11",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_expected_instance_regression.lean",
+      "bytes": 2393,
+      "sha256": "2f53c07bc8537937ce67aab9a77632ccae7cce42accaeb7705c49914b942b738",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_gap_regression.lean",
+      "bytes": 3483,
+      "sha256": "83146ac245ded4faa4359eeeaae0f8dfc8167549a447ec826ff7b120e6fab605",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_interval_regression.lean",
+      "bytes": 3017,
+      "sha256": "5f56772575f9d8a9649a7203bddb868f4698c39a7aca25563a1f61d4fe2d51e5",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_json_parser_regression.lean",
+      "bytes": 1338,
+      "sha256": "4ec9b94dd466890fbc759cd032d39cc3e65d9c66a15777f064e5af45c3f3f2b2",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_session_binding_regression.lean",
+      "bytes": 1462,
+      "sha256": "48ae2fd1cf1813f2900c96eabd566584e8a5b3195eb3dda0bbb5af9393f12337",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_stream_reader_regression.lean",
+      "bytes": 1412,
+      "sha256": "539c863d04db0bf6a93d62ccc13dce44988737d60f10011cf6a4ffa4d9d8a22a",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/lean/numeric_sql_transport_regression.lean",
+      "bytes": 2166,
+      "sha256": "88d78922753ac20d90f422376fcbd33d6e10e59d00ea77a5df1971bf0b1e31df",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_byte_transport.py",
+      "bytes": 581,
+      "sha256": "31fd3c2436615e06e770f4d808c748fa70dadcfd04d370079e27a9f79d17c7b9",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_certificate_decoder.py",
+      "bytes": 596,
+      "sha256": "00137ab660aaf2b288fd70fedb70549b4ebd9b5dcbab65474a83ebbbaa6c8080",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_decoder.py",
+      "bytes": 574,
+      "sha256": "d674f38164f2d0455579d849cc43852dcb537d8a9e548b186cbd95291089449a",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_digest_bridge.py",
+      "bytes": 1076,
+      "sha256": "089c75b58629965a92f82bcde742a8c8d4fbe2157950feb020d711f1162b3eb2",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_expected_instance.py",
+      "bytes": 606,
+      "sha256": "906e9fd02a04f8512eed84e7ec7a788edced8c8ca35b9ad577c9ca4303ce7c1e",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_json_parser.py",
+      "bytes": 572,
+      "sha256": "0670fe99c50bb5083eb853b42bedd4666edb520dbc54d0a0b1430f11b6aaf287",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_rounding.py",
+      "bytes": 1080,
+      "sha256": "6e3f7d6386a86b24b22eeb1276f11820ab71f409c52466743b960cea6c16d2a4",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_sql_gap.py",
+      "bytes": 1064,
+      "sha256": "b1714201992c514001327fc67e6aa14ee6a5caf79f4d58a2dc79879469449e5c",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_sql_intervals.py",
+      "bytes": 1079,
+      "sha256": "a4961eed58ceea3ee03d662b9b63bff192b6e96131d7a18d8fd7e9ec3293e06f",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_numeric_transport.py",
+      "bytes": 575,
+      "sha256": "45e331072fb26a62a5b7507c0c896107a4919b08d82b2f4bfa830b3393f0dcfe",
+      "shared_identical": true
+    },
+    {
+      "path": "tests/test_standalone.py",
+      "bytes": 1147,
+      "sha256": "9c46dfe0bc948f7d4b7d59fee623f38b6e6709cba473ecab3798c76faff35fb9",
+      "shared_identical": true
+    },
+    {
+      "path": "tools/audit_template.lean",
+      "bytes": 1114,
+      "sha256": "2524f562c077be9afad37c1977ccf51bd005d873708a9abe2f02f3b294e71489",
+      "shared_identical": true
+    }
+  ],
+  "excluded": [
+    "private evidence and logs",
+    "historical input corpus pending separate publication review",
+    "Russian cards",
+    "local paths",
+    "private Git history",
+    "unreviewed research fixtures"
+  ],
+  "differences": [
+    "docs/EXPORT.json is public export metadata",
+    "private migration and historical storage manifests are excluded",
+    "private exploratory Python studies are not yet reviewed for public export"
+  ],
+  "scope": "formal and native SQL core; selected synthetic regressions only"
+}

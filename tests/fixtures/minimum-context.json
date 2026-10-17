@@ -1,0 +1,1 @@
+{"schema":"sql-trusted-context-2.0.0","context_id":"operator-context-minimum-decimal","input":{"A":{"denominator":"1","numerator":"1"},"B":{"denominator":"1","numerator":"1"},"I":{"denominator":"1","numerator":"1"},"semantics":"decimal"}}

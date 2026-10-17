@@ -1,0 +1,55 @@
+/-
+Copyright (c) 2026 aicyberg. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: aicyberg
+-/
+import SQLByteIO
+import SQLDecoderRuntime
+import Verification.NumericSQLCertificateDecoder
+
+/-! Trusted context IO remains external. The untrusted body is parsed once; both
+source parameters and the mathematical certificate come from this very Tree. -/
+open Lean NumericSQLExpectedInstance SQLDecoderRuntime SQLByteIO
+open NumericSQLInstanceDecoder NumericSQLCertificateDecoder
+
+def certificateAnswer (expected : ExpectedInstance) (tree : Tree) : Json := Id.run do
+  let source := processTree expected tree
+  if source.getObjValAs? String "status" != .ok "decoded" then return source
+  match validateTree expected tree with
+  | .error reason =>
+    return refusal (if reason == "resource_limit" then "resource_limit" else
+      if reason == "indeterminate" then "indeterminate" else
+      if reason == "instance_mismatch" then "instance_mismatch" else "invalid_witness") reason
+  | .ok p =>
+    return obj [("status", toJson "accepted"), ("actual", instanceJson p.actual),
+      ("root_lower", ratJson p.root.lo), ("root_upper", ratJson p.root.hi),
+      ("result_bits", toJson (resultBits p.result)),
+      ("reason", toJson "checked_original_bytes_and_certificate"),
+      ("decoder", toJson "2.0.0")]
+
+private def answer (context body : ByteArray) : Json := Id.run do
+  let some contextText := String.fromUTF8? context | return refusal "invalid_context" "context_utf8"
+  let .ok contextJson := Json.parse contextText | return refusal "invalid_context" "context_json"
+  let .ok expected := readExpected contextJson | return refusal "invalid_context" "context_format"
+  match NumericSQLJSONParser.decode body with
+  | .error reason => return refusal (if reason == "resource_limit" then "resource_limit" else
+      "invalid_input") ("json_parser:" ++ reason)
+  | .ok tree => return certificateAnswer expected tree
+
+def main : IO Unit := do
+  let input ← IO.getStdin
+  let output ← IO.getStdout
+  repeat
+    let c ← readFrame input 16384
+    if let .error e := c then
+      if e != "eof" then output.putStrLn (refusal "invalid_context" "context_frame").compress
+      break
+    let b ← readFrame input 262144
+    if let .error e := b then
+      output.putStrLn (refusal
+        (if e == "resource_limit" then "resource_limit" else "invalid_input") "body_frame").compress
+      break
+    let .ok context := c | break
+    let .ok body := b | break
+    output.putStrLn (answer context body).compress
+    output.flush
