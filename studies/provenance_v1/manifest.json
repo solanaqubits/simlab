@@ -1,0 +1,19 @@
+{
+  "schema": "provenance-audit-package-v1",
+  "leanbook_commit": "2939f0c672e181be11c6ccbe8001f517452b0c8c",
+  "leanbook_url": "https://github.com/solanaqubits/leanbook/tree/2939f0c672e181be11c6ccbe8001f517452b0c8c",
+  "scope": "Provenance v1 selected source synchronization and audit preparation",
+  "source_manifest_path": "docs/provenance-source-manifest.json",
+  "source_manifest_sha256": "f8200c747dfe79160538febdc477fa5fb76c86b4c4087dcbf31875ad801c7ad7",
+  "public_validation_path": "docs/provenance-public-validation.json",
+  "public_validation_sha256": "778d84d6ab45b99479ddb3bc9b6392ef048b6796f29b0a7f8c16fd40439f37a7",
+  "setup_sha256": "cb5cc2cac856ab87fb1b55727c3ffffc0e146b33e95453999abb96e418b3ac3c",
+  "native_target_acceptance": "NOT_RUN",
+  "external_witness": "NOT_CONNECTED",
+  "independent_audit": "PENDING",
+  "authorization": "blocked",
+  "third_obligation": "OPEN",
+  "source_export_count": 76,
+  "public_scoped_tests": 84,
+  "public_full_beta": false
+}

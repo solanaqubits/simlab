@@ -47,3 +47,7 @@ distinguishes direct, partial and contextual coverage of its 14 claim boundaries
 ## Quantum and hardware contract registry
 
 [12 pinned Lean contracts and their model boundaries](studies/quantum_contracts/README.md). Metadata checks are separate from formal verification and physical validation.
+
+## Provenance v1 audit preparation
+
+[Selected Leanbook sources, test topology and independent-auditor handoff](studies/provenance_v1/README.md). Runtime target qualification and industrial Witness remain pending.

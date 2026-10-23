@@ -1,0 +1,18 @@
+name: Provenance audit package
+on:
+  push:
+    paths: ['studies/provenance_v1/**', '.github/workflows/provenance-package.yml']
+  pull_request:
+    paths: ['studies/provenance_v1/**', '.github/workflows/provenance-package.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  packaging:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - run: python3 studies/provenance_v1/check.py
+      - run: python3 -m unittest discover -s studies/provenance_v1 -p 'test_*.py' -v
+      - run: python3 scripts/check_catalog.py
