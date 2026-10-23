@@ -43,3 +43,7 @@ Its explicit export scope is recorded in [docs/PROMETHEUS_EXPORT.json](docs/PROM
 
 The [Prometheus coverage supplement](docs/prometheus-coverage/README.md)
 distinguishes direct, partial and contextual coverage of its 14 claim boundaries.
+
+## Quantum and hardware contract registry
+
+[12 pinned Lean contracts and their model boundaries](studies/quantum_contracts/README.md). Metadata checks are separate from formal verification and physical validation.

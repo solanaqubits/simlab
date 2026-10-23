@@ -1,0 +1,16 @@
+name: Quantum contract registry
+on:
+  push:
+    paths: ['studies/quantum_contracts/**', '.github/workflows/quantum-contracts.yml']
+  pull_request:
+    paths: ['studies/quantum_contracts/**', '.github/workflows/quantum-contracts.yml']
+permissions:
+  contents: read
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - run: python3 studies/quantum_contracts/check.py
+      - run: python3 -m unittest discover -s studies/quantum_contracts -v
+      - run: python3 scripts/check_catalog.py
