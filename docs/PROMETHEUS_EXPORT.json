@@ -1,0 +1,40 @@
+{
+  "schema": "simlab-prometheus-public-export-1.0.0",
+  "scope": "Selected compatibility metadata and checker; separate from the SQL core and historical EXPORT.json",
+  "source_acceptance_sha": "404530943d506230a851cc25a433a3ba74e3fa2f",
+  "files": [
+    {
+      "path": "studies/prometheus_compatibility/registry.json",
+      "sha256": "925ff1f88d65dcf063bdaffaca924a068ecd6acd8e5305e10bcaaa4e1d4a500d"
+    },
+    {
+      "path": "studies/prometheus_compatibility/check.py",
+      "sha256": "c82fb93e5f811cd3f46cc824c5e561d8db93fa6c87acdea5d75926f17c26caa0"
+    },
+    {
+      "path": "studies/prometheus_compatibility/test_check.py",
+      "sha256": "3aa9693873c706e243c6213c8ce1bfb19836c7b08bdb01708a6b2d5485879b8b"
+    },
+    {
+      "path": "studies/prometheus_compatibility/README.md",
+      "sha256": "d3f0b8336a06a4341fa6cedab99a2520dc54a6cbfd4c3ae500b20e33a4bc9f16"
+    },
+    {
+      "path": "studies/prometheus_compatibility/LIMITS.md",
+      "sha256": "3ca2d96302c7b3078d61084d2725ed67e849db7f07a140adeaf1d76a16285067"
+    },
+    {
+      "path": "studies/prometheus_compatibility/MANIFEST.json",
+      "sha256": "c9d6e1578024cceed8ee6c38c4ad558aa7784a218f72ff4df755a5201a502a07"
+    }
+  ],
+  "integration_files": [
+    "README.md",
+    "docs/PROMETHEUS_EXPORT.json",
+    ".github/workflows/prometheus-metadata.yml"
+  ],
+  "private_sources_exported": false,
+  "scientific_runs": 0,
+  "lean_builds": 0,
+  "third_obligation": "OPEN"
+}

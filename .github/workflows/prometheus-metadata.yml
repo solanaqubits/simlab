@@ -1,0 +1,24 @@
+name: Prometheus metadata
+on:
+  push:
+    paths:
+      - 'studies/prometheus_compatibility/**'
+      - 'docs/PROMETHEUS_EXPORT.json'
+      - '.github/workflows/prometheus-metadata.yml'
+  pull_request:
+    paths:
+      - 'studies/prometheus_compatibility/**'
+      - 'docs/PROMETHEUS_EXPORT.json'
+      - '.github/workflows/prometheus-metadata.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - run: python3 -B studies/prometheus_compatibility/check.py --json
+      - run: python3 -B -m unittest discover -s studies/prometheus_compatibility -p 'test_*.py' -v
+      - run: python3 -B scripts/check_catalog.py

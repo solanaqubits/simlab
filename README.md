@@ -31,3 +31,12 @@ The optional supervisor API in `authority/gate.py` adds explicit task/revision
 authorization, Linux peer-credential checks and a sealed context snapshot. Read
 `authority/CONTRACT.md` before use: no authority service is installed by this code,
 and same-UID issuer/executor deployment is deliberately refused.
+
+## Selected research metadata
+
+The [Prometheus compatibility snapshot](studies/prometheus_compatibility/README.md)
+publishes 14 non-composition claims and an offline metadata checker, with pinned
+links to public Leanbook sources. It is separate from the formal SQL core and
+does not establish physical feasibility, secret-key security or hardware authority.
+Its explicit export scope is recorded in [docs/PROMETHEUS_EXPORT.json](docs/PROMETHEUS_EXPORT.json);
+`docs/EXPORT.json` remains the historical SQL-core export record.

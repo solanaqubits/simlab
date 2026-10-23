@@ -1,0 +1,11 @@
+{
+  "schema": "prometheus-public-bundle-1.0.0",
+  "files": {
+    "registry.json": "925ff1f88d65dcf063bdaffaca924a068ecd6acd8e5305e10bcaaa4e1d4a500d",
+    "check.py": "c82fb93e5f811cd3f46cc824c5e561d8db93fa6c87acdea5d75926f17c26caa0",
+    "test_check.py": "3aa9693873c706e243c6213c8ce1bfb19836c7b08bdb01708a6b2d5485879b8b",
+    "README.md": "d3f0b8336a06a4341fa6cedab99a2520dc54a6cbfd4c3ae500b20e33a4bc9f16",
+    "LIMITS.md": "3ca2d96302c7b3078d61084d2725ed67e849db7f07a140adeaf1d76a16285067"
+  },
+  "scope": "Selected English metadata projection only; no private source archive or logs"
+}

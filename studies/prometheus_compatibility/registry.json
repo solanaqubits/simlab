@@ -1,0 +1,3499 @@
+{
+  "schema": "prometheus-public-compatibility-1.0.0",
+  "provenance": {
+    "source_acceptance_sha": "404530943d506230a851cc25a433a3ba74e3fa2f",
+    "source_registry_sha256": "4a3cf6e0678033dd7b74533a36d76861189bb83de8beb4845774655ee45f7c30",
+    "source_crosswalk_sha256": "5d04003c0d2691690769d63d90e2e62f2f3f5ee38d35ce17e23a7e102a4bed4f",
+    "public_leanbook_commit": "aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b",
+    "export_kind": "selected_metadata_projection_not_full_source_audit",
+    "source_validation": "Private source audit reported; public checker validates only this published projection"
+  },
+  "field_specs": [
+    {
+      "id": "evidence_kind",
+      "type": "string",
+      "unit": "category",
+      "scope": "evidence_kind"
+    },
+    {
+      "id": "chord_km",
+      "type": "number",
+      "unit": "km",
+      "scope": "chord_km"
+    },
+    {
+      "id": "propagation_ms",
+      "type": "number",
+      "unit": "ms",
+      "scope": "propagation_ms"
+    },
+    {
+      "id": "gate_full_ns",
+      "type": "number",
+      "unit": "ns",
+      "scope": "gate_full_ns"
+    },
+    {
+      "id": "channel_law",
+      "type": "string",
+      "unit": "category",
+      "scope": "channel_law"
+    },
+    {
+      "id": "flip_exact",
+      "type": "string",
+      "unit": "rational_probability",
+      "scope": "flip_exact"
+    },
+    {
+      "id": "payload_bits",
+      "type": "integer",
+      "unit": "bits",
+      "scope": "payload_bits"
+    },
+    {
+      "id": "codeword_slots",
+      "type": "integer",
+      "unit": "slots",
+      "scope": "codeword_slots"
+    },
+    {
+      "id": "repetition",
+      "type": "integer",
+      "unit": "count",
+      "scope": "repetition"
+    },
+    {
+      "id": "code_family",
+      "type": "string",
+      "unit": "category",
+      "scope": "code_family"
+    },
+    {
+      "id": "code_rate",
+      "type": "string",
+      "unit": "rational_bits_per_slot",
+      "scope": "code_rate"
+    },
+    {
+      "id": "arrival_period_ns",
+      "type": "integer",
+      "unit": "ns",
+      "scope": "arrival_period_ns"
+    },
+    {
+      "id": "queue_model",
+      "type": "string",
+      "unit": "category",
+      "scope": "queue_model"
+    },
+    {
+      "id": "decoder_variant",
+      "type": "string",
+      "unit": "category",
+      "scope": "decoder_variant"
+    },
+    {
+      "id": "capacity_semantics",
+      "type": "string",
+      "unit": "category",
+      "scope": "capacity_semantics"
+    },
+    {
+      "id": "queue_drops",
+      "type": "integer",
+      "unit": "packets",
+      "scope": "queue_drops"
+    },
+    {
+      "id": "wcet_certified",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "wcet_certified"
+    },
+    {
+      "id": "physical_channel_calibrated",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "physical_channel_calibrated"
+    },
+    {
+      "id": "per_certificate_for_selected_code",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "per_certificate_for_selected_code"
+    },
+    {
+      "id": "metric_kind",
+      "type": "string",
+      "unit": "category",
+      "scope": "metric_kind"
+    },
+    {
+      "id": "error_probability",
+      "type": "number",
+      "unit": "1",
+      "scope": "error_probability"
+    },
+    {
+      "id": "source_energy_kind",
+      "type": "string",
+      "unit": "category",
+      "scope": "source_energy_kind"
+    },
+    {
+      "id": "source_energy_J",
+      "type": "number",
+      "unit": "J",
+      "scope": "source_energy_J"
+    },
+    {
+      "id": "laser_target_J",
+      "type": "number",
+      "unit": "J",
+      "scope": "laser_target_J"
+    },
+    {
+      "id": "laser_duration_s",
+      "type": "number",
+      "unit": "s",
+      "scope": "laser_duration_s"
+    },
+    {
+      "id": "conditional_timing_sigma_ns",
+      "type": "number",
+      "unit": "ns",
+      "scope": "conditional_timing_sigma_ns"
+    },
+    {
+      "id": "t0_precision_calibrated",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "t0_precision_calibrated"
+    },
+    {
+      "id": "thermal_heat_W",
+      "type": "number",
+      "unit": "W",
+      "scope": "thermal_heat_W"
+    },
+    {
+      "id": "biological_viability_certified",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "biological_viability_certified"
+    },
+    {
+      "id": "optical_efficiency_semantics",
+      "type": "string",
+      "unit": "category",
+      "scope": "optical_efficiency_semantics"
+    },
+    {
+      "id": "candidate_bits",
+      "type": "integer",
+      "unit": "bits",
+      "scope": "candidate_bits"
+    },
+    {
+      "id": "postprocess_executed",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "postprocess_executed"
+    },
+    {
+      "id": "security_certified",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "security_certified"
+    },
+    {
+      "id": "authentication_executed",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "authentication_executed"
+    },
+    {
+      "id": "certified_SKR_bps",
+      "type": "number",
+      "unit": "bit/s",
+      "scope": "certified_SKR_bps"
+    },
+    {
+      "id": "postprocess_status",
+      "type": "string",
+      "unit": "category",
+      "scope": "postprocess_status"
+    },
+    {
+      "id": "beta_effect_model",
+      "type": "string",
+      "unit": "category",
+      "scope": "beta_effect_model"
+    },
+    {
+      "id": "qft_beta_derivation",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "qft_beta_derivation"
+    },
+    {
+      "id": "com_to_beta_DOS_calibrated",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "com_to_beta_DOS_calibrated"
+    },
+    {
+      "id": "four_sigma_guaranteed",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "four_sigma_guaranteed"
+    },
+    {
+      "id": "fisher_observed_decays_per_arm",
+      "type": "integer",
+      "unit": "observed_decays",
+      "scope": "fisher_observed_decays_per_arm"
+    },
+    {
+      "id": "conditional_delta_tau_s",
+      "type": "number",
+      "unit": "s",
+      "scope": "conditional_delta_tau_s"
+    },
+    {
+      "id": "calibrated_phase_to_time",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "calibrated_phase_to_time"
+    },
+    {
+      "id": "phase_profile_time_law",
+      "type": "string",
+      "unit": "category",
+      "scope": "phase_profile_time_law"
+    },
+    {
+      "id": "facility_net_energy_J",
+      "type": "number",
+      "unit": "J",
+      "scope": "facility_net_energy_J"
+    },
+    {
+      "id": "slot_ns",
+      "type": "number",
+      "unit": "ns",
+      "scope": "slot_ns"
+    },
+    {
+      "id": "deadtime_ns",
+      "type": "number",
+      "unit": "ns",
+      "scope": "deadtime_ns"
+    },
+    {
+      "id": "joint_deadtime_modelled",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "joint_deadtime_modelled"
+    },
+    {
+      "id": "correlated_background_model",
+      "type": "string",
+      "unit": "category",
+      "scope": "correlated_background_model"
+    },
+    {
+      "id": "measurement_scope",
+      "type": "string",
+      "unit": "category",
+      "scope": "measurement_scope"
+    },
+    {
+      "id": "timing_statistic",
+      "type": "string",
+      "unit": "category",
+      "scope": "timing_statistic"
+    },
+    {
+      "id": "timing_value_ms",
+      "type": "number",
+      "unit": "ms",
+      "scope": "timing_value_ms"
+    },
+    {
+      "id": "gross_electric_J",
+      "type": "number",
+      "unit": "J",
+      "scope": "gross_electric_J"
+    },
+    {
+      "id": "net_electric_J",
+      "type": "number",
+      "unit": "J",
+      "scope": "net_electric_J"
+    },
+    {
+      "id": "target_spacing_m",
+      "type": "number",
+      "unit": "m",
+      "scope": "target_spacing_m"
+    },
+    {
+      "id": "target_density_m3",
+      "type": "number",
+      "unit": "m^-3",
+      "scope": "target_density_m3"
+    },
+    {
+      "id": "alpha",
+      "type": "number",
+      "unit": "1",
+      "scope": "alpha"
+    },
+    {
+      "id": "alpha_sign_domain",
+      "type": "string",
+      "unit": "category",
+      "scope": "alpha_sign_domain"
+    },
+    {
+      "id": "specific_periodic_bound_applicable",
+      "type": "boolean",
+      "unit": "1",
+      "scope": "specific_periodic_bound_applicable"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "geometry244",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "chord_km": {
+          "type": "number",
+          "value": "12114.627033685425",
+          "unit": "km",
+          "scope": "chord_km",
+          "origin": "observed"
+        },
+        "propagation_ms": {
+          "type": "number",
+          "value": "40.41004605154352",
+          "unit": "ms",
+          "scope": "propagation_ms",
+          "origin": "observed"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "1000000.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "blind-rx245",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "chord_km": {
+          "type": "number",
+          "value": "10800.0",
+          "unit": "km",
+          "scope": "chord_km",
+          "origin": "observed"
+        },
+        "gate_full_ns": {
+          "type": "number",
+          "value": "1.0",
+          "unit": "ns",
+          "scope": "gate_full_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "event_trace_with_shared_deadtime",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "34/3336",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "metric_kind": {
+          "type": "string",
+          "value": "delivered_signal_bit_error",
+          "unit": "category",
+          "scope": "metric_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "error_probability": {
+          "type": "number",
+          "value": "0.010191846522781775",
+          "unit": "1",
+          "scope": "error_probability",
+          "origin": "observed"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "10.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "observed"
+        },
+        "deadtime_ns": {
+          "type": "number",
+          "value": "25.0",
+          "unit": "ns",
+          "scope": "deadtime_ns",
+          "origin": "observed"
+        },
+        "joint_deadtime_modelled": {
+          "type": "boolean",
+          "value": true,
+          "unit": "1",
+          "scope": "joint_deadtime_modelled",
+          "origin": "editorial_anchored_mapping"
+        },
+        "correlated_background_model": {
+          "type": "string",
+          "value": "explicit_common_mode_event_process",
+          "unit": "category",
+          "scope": "correlated_background_model",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "fec-iid249",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "34/3336",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "code_rate": {
+          "type": "string",
+          "value": "2/75",
+          "unit": "rational_bits_per_slot",
+          "scope": "code_rate",
+          "origin": "editorial_anchored_mapping"
+        },
+        "code_family": {
+          "type": "string",
+          "value": "RS240_36_CRC32_repeat5",
+          "unit": "category",
+          "scope": "code_family",
+          "origin": "editorial_anchored_mapping"
+        },
+        "per_certificate_for_selected_code": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "per_certificate_for_selected_code",
+          "origin": "editorial_anchored_mapping"
+        },
+        "repetition": {
+          "type": "integer",
+          "value": 5,
+          "unit": "count",
+          "scope": "repetition",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 9600,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "10.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "deadtime_ns": {
+          "type": "null",
+          "value": null,
+          "unit": "ns",
+          "scope": "deadtime_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "joint_deadtime_modelled": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "joint_deadtime_modelled",
+          "origin": "editorial_anchored_mapping"
+        },
+        "correlated_background_model": {
+          "type": "string",
+          "value": "not_jointly_modelled_control_FPR_record_only",
+          "unit": "category",
+          "scope": "correlated_background_model",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "fec-trace249",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "frozen_trace_blocks",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "34/3336",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "code_rate": {
+          "type": "string",
+          "value": "2/75",
+          "unit": "rational_bits_per_slot",
+          "scope": "code_rate",
+          "origin": "editorial_anchored_mapping"
+        },
+        "code_family": {
+          "type": "string",
+          "value": "RS240_36_CRC32_repeat5",
+          "unit": "category",
+          "scope": "code_family",
+          "origin": "editorial_anchored_mapping"
+        },
+        "per_certificate_for_selected_code": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "per_certificate_for_selected_code",
+          "origin": "editorial_anchored_mapping"
+        },
+        "repetition": {
+          "type": "integer",
+          "value": 5,
+          "unit": "count",
+          "scope": "repetition",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "editorial_anchored_mapping"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 9600,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "editorial_anchored_mapping"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "10.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "deadtime_ns": {
+          "type": "null",
+          "value": null,
+          "unit": "ns",
+          "scope": "deadtime_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "joint_deadtime_modelled": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "joint_deadtime_modelled",
+          "origin": "editorial_anchored_mapping"
+        },
+        "correlated_background_model": {
+          "type": "string",
+          "value": "not_jointly_modelled_control_FPR_record_only",
+          "unit": "category",
+          "scope": "correlated_background_model",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "optimized-5ms-iid",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "measured_service_array_queue_calculation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 5000000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "observed"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 0,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "single_server_saved_service_arrays",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "optimized_RS9600",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "total8_including_service",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "measurement_scope": {
+          "type": "string",
+          "value": "individual_optimized_decode_call",
+          "unit": "category",
+          "scope": "measurement_scope",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_statistic": {
+          "type": "string",
+          "value": "sample_median",
+          "unit": "category",
+          "scope": "timing_statistic",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_value_ms": {
+          "type": "number",
+          "value": "2.952636",
+          "unit": "ms",
+          "scope": "timing_value_ms",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "optimized-96us-iid",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "measured_service_array_queue_calculation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 96000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "observed"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 960,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "single_server_saved_service_arrays",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "optimized_RS9600",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "total8_including_service",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "measurement_scope": {
+          "type": "string",
+          "value": "individual_optimized_decode_call",
+          "unit": "category",
+          "scope": "measurement_scope",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_statistic": {
+          "type": "string",
+          "value": "sample_median",
+          "unit": "category",
+          "scope": "timing_statistic",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_value_ms": {
+          "type": "number",
+          "value": "2.952636",
+          "unit": "ms",
+          "scope": "timing_value_ms",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "optimized-5ms-trace",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "measured_service_array_queue_calculation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 5000000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "observed"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 0,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "single_server_saved_service_arrays",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "optimized_RS9600",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "total8_including_service",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "frozen_trace_blocks",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "measurement_scope": {
+          "type": "string",
+          "value": "individual_optimized_decode_call",
+          "unit": "category",
+          "scope": "measurement_scope",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_statistic": {
+          "type": "string",
+          "value": "sample_median",
+          "unit": "category",
+          "scope": "timing_statistic",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_value_ms": {
+          "type": "number",
+          "value": "2.2330379999999996",
+          "unit": "ms",
+          "scope": "timing_value_ms",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "optimized-96us-trace",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "measured_service_array_queue_calculation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 96000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "observed"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 951,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "single_server_saved_service_arrays",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "optimized_RS9600",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "total8_including_service",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "frozen_trace_blocks",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "measurement_scope": {
+          "type": "string",
+          "value": "individual_optimized_decode_call",
+          "unit": "category",
+          "scope": "measurement_scope",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_statistic": {
+          "type": "string",
+          "value": "sample_median",
+          "unit": "category",
+          "scope": "timing_statistic",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_value_ms": {
+          "type": "number",
+          "value": "2.2330379999999996",
+          "unit": "ms",
+          "scope": "timing_value_ms",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "pipeline-4ms-iid9600",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_measured_process_queue",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 10,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 9600,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "propagation_ms": {
+          "type": "number",
+          "value": "40.41004605154352",
+          "unit": "ms",
+          "scope": "propagation_ms",
+          "origin": "observed"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 4000000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "baseline_RS9600",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "four_cyclic_process_lanes_with_IPC",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "four_waiting_plus_one_reserved_per_lane",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "editorial_anchored_mapping"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "10.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "measurement_scope": {
+          "type": "string",
+          "value": "conditional_route_including_release_queue_IPC",
+          "unit": "category",
+          "scope": "measurement_scope",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_statistic": {
+          "type": "string",
+          "value": "sample_p95_of_correct_deliveries",
+          "unit": "category",
+          "scope": "timing_statistic",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_value_ms": {
+          "type": "number",
+          "value": "139.0632111515435",
+          "unit": "ms",
+          "scope": "timing_value_ms",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "pipeline-4ms-iid20000",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_measured_process_queue",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 0,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 20000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "propagation_ms": {
+          "type": "number",
+          "value": "40.41004605154352",
+          "unit": "ms",
+          "scope": "propagation_ms",
+          "origin": "observed"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 4000000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "blockscan_RS20000",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "four_cyclic_process_lanes_with_IPC",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "four_waiting_plus_one_reserved_per_lane",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "editorial_anchored_mapping"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "10.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "measurement_scope": {
+          "type": "string",
+          "value": "conditional_route_including_release_queue_IPC",
+          "unit": "category",
+          "scope": "measurement_scope",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_statistic": {
+          "type": "string",
+          "value": "sample_p95_of_correct_deliveries",
+          "unit": "category",
+          "scope": "timing_statistic",
+          "origin": "editorial_anchored_mapping"
+        },
+        "timing_value_ms": {
+          "type": "number",
+          "value": "45.85963980154352",
+          "unit": "ms",
+          "scope": "timing_value_ms",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "pipeline-200us-iid20000",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_measured_process_queue",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 87,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 20000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "propagation_ms": {
+          "type": "number",
+          "value": "40.41004605154352",
+          "unit": "ms",
+          "scope": "propagation_ms",
+          "origin": "observed"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 200000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "blockscan_RS20000",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "four_cyclic_process_lanes_with_IPC",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "four_waiting_plus_one_reserved_per_lane",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "editorial_anchored_mapping"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "10.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "pipeline-4ms-burst20000",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_measured_process_queue",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_drops": {
+          "type": "integer",
+          "value": 24,
+          "unit": "packets",
+          "scope": "queue_drops",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 20000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "propagation_ms": {
+          "type": "number",
+          "value": "40.41004605154352",
+          "unit": "ms",
+          "scope": "propagation_ms",
+          "origin": "observed"
+        },
+        "arrival_period_ns": {
+          "type": "integer",
+          "value": 4000000,
+          "unit": "ns",
+          "scope": "arrival_period_ns",
+          "origin": "editorial_anchored_mapping"
+        },
+        "decoder_variant": {
+          "type": "string",
+          "value": "blockscan_RS20000",
+          "unit": "category",
+          "scope": "decoder_variant",
+          "origin": "editorial_anchored_mapping"
+        },
+        "queue_model": {
+          "type": "string",
+          "value": "four_cyclic_process_lanes_with_IPC",
+          "unit": "category",
+          "scope": "queue_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "capacity_semantics": {
+          "type": "string",
+          "value": "four_waiting_plus_one_reserved_per_lane",
+          "unit": "category",
+          "scope": "capacity_semantics",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "cyclic_shift_1250_slot_bursts",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "editorial_anchored_mapping"
+        },
+        "slot_ns": {
+          "type": "number",
+          "value": "10.0",
+          "unit": "ns",
+          "scope": "slot_ns",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "blockscan-1000",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 1000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "repetition": {
+          "type": "integer",
+          "value": 1,
+          "unit": "count",
+          "scope": "repetition",
+          "origin": "observed"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "per_certificate_for_selected_code": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "per_certificate_for_selected_code",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "blockscan-5000",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 5000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "repetition": {
+          "type": "integer",
+          "value": 5,
+          "unit": "count",
+          "scope": "repetition",
+          "origin": "observed"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "per_certificate_for_selected_code": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "per_certificate_for_selected_code",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "blockscan-10000",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 10000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "repetition": {
+          "type": "integer",
+          "value": 5,
+          "unit": "count",
+          "scope": "repetition",
+          "origin": "observed"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "per_certificate_for_selected_code": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "per_certificate_for_selected_code",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "blockscan-20000",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 256,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "observed"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 20000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "observed"
+        },
+        "repetition": {
+          "type": "integer",
+          "value": 10,
+          "unit": "count",
+          "scope": "repetition",
+          "origin": "observed"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "flip_exact": {
+          "type": "string",
+          "value": "637/62500",
+          "unit": "rational_probability",
+          "scope": "flip_exact",
+          "origin": "editorial_anchored_mapping"
+        },
+        "per_certificate_for_selected_code": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "per_certificate_for_selected_code",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "injector249",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "laser_target_J": {
+          "type": "number",
+          "value": "1.6",
+          "unit": "J",
+          "scope": "laser_target_J",
+          "origin": "observed"
+        },
+        "laser_duration_s": {
+          "type": "number",
+          "value": "6E-14",
+          "unit": "s",
+          "scope": "laser_duration_s",
+          "origin": "observed"
+        },
+        "source_energy_J": {
+          "type": "number",
+          "value": "0.0000011775998259900003",
+          "unit": "J",
+          "scope": "source_energy_J",
+          "origin": "observed"
+        },
+        "source_energy_kind": {
+          "type": "string",
+          "value": "fast_neutron_kinetic_sum",
+          "unit": "category",
+          "scope": "source_energy_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "t0_precision_calibrated": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "t0_precision_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "optical_efficiency_semantics": {
+          "type": "string",
+          "value": "conditional_beta_event_detection_probability",
+          "unit": "category",
+          "scope": "optical_efficiency_semantics",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "thermal251",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "thermal_heat_W": {
+          "type": "number",
+          "value": "1500.0683333333334",
+          "unit": "W",
+          "scope": "thermal_heat_W",
+          "origin": "observed"
+        },
+        "gate_full_ns": {
+          "type": "number",
+          "value": "0.5",
+          "unit": "ns",
+          "scope": "gate_full_ns",
+          "origin": "observed"
+        },
+        "source_energy_kind": {
+          "type": "string",
+          "value": "pB11_laser_plus_fusion_minus_electric_heat",
+          "unit": "category",
+          "scope": "source_energy_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "biological_viability_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "biological_viability_certified",
+          "origin": "editorial_anchored_mapping"
+        },
+        "t0_precision_calibrated": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "t0_precision_calibrated",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "metrology254",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "source_energy_J": {
+          "type": "number",
+          "value": "0.0000011775998259899999",
+          "unit": "J",
+          "scope": "source_energy_J",
+          "origin": "observed"
+        },
+        "conditional_timing_sigma_ns": {
+          "type": "number",
+          "value": "0.1718759423982936",
+          "unit": "ns",
+          "scope": "conditional_timing_sigma_ns",
+          "origin": "observed"
+        },
+        "gate_full_ns": {
+          "type": "number",
+          "value": "0.5",
+          "unit": "ns",
+          "scope": "gate_full_ns",
+          "origin": "observed"
+        },
+        "source_energy_kind": {
+          "type": "string",
+          "value": "fast_neutron_kinetic_sum",
+          "unit": "category",
+          "scope": "source_energy_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "t0_precision_calibrated": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "t0_precision_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "calibrated_phase_to_time": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "calibrated_phase_to_time",
+          "origin": "editorial_anchored_mapping"
+        },
+        "phase_profile_time_law": {
+          "type": "string",
+          "value": "static_or_hypothetically_resampled_ensemble",
+          "unit": "category",
+          "scope": "phase_profile_time_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "optical_efficiency_semantics": {
+          "type": "string",
+          "value": "optical_energy_fraction",
+          "unit": "category",
+          "scope": "optical_efficiency_semantics",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "nqkd-projection",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_ideal_qubit_protocol",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "security_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "security_certified",
+          "origin": "observed"
+        },
+        "certified_SKR_bps": {
+          "type": "null",
+          "value": null,
+          "unit": "bit/s",
+          "scope": "certified_SKR_bps",
+          "origin": "observed"
+        },
+        "authentication_executed": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "authentication_executed",
+          "origin": "editorial_anchored_mapping"
+        },
+        "metric_kind": {
+          "type": "string",
+          "value": "sifted_quantum_bit_error",
+          "unit": "category",
+          "scope": "metric_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "candidate_bits": {
+          "type": "integer",
+          "value": 2855,
+          "unit": "bits",
+          "scope": "candidate_bits",
+          "origin": "observed"
+        },
+        "postprocess_executed": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "postprocess_executed",
+          "origin": "observed"
+        },
+        "error_probability": {
+          "type": "number",
+          "value": "0.0",
+          "unit": "1",
+          "scope": "error_probability",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "nqkd-candidate",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_ideal_qubit_protocol",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "security_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "security_certified",
+          "origin": "observed"
+        },
+        "certified_SKR_bps": {
+          "type": "null",
+          "value": null,
+          "unit": "bit/s",
+          "scope": "certified_SKR_bps",
+          "origin": "observed"
+        },
+        "authentication_executed": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "authentication_executed",
+          "origin": "editorial_anchored_mapping"
+        },
+        "metric_kind": {
+          "type": "string",
+          "value": "sifted_quantum_bit_error",
+          "unit": "category",
+          "scope": "metric_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "candidate_bits": {
+          "type": "integer",
+          "value": 3937,
+          "unit": "bits",
+          "scope": "candidate_bits",
+          "origin": "observed"
+        },
+        "postprocess_executed": {
+          "type": "boolean",
+          "value": true,
+          "unit": "1",
+          "scope": "postprocess_executed",
+          "origin": "observed"
+        },
+        "postprocess_status": {
+          "type": "string",
+          "value": "candidate_strings_only",
+          "unit": "category",
+          "scope": "postprocess_status",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "nqkd-abort",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_ideal_qubit_protocol",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "security_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "security_certified",
+          "origin": "observed"
+        },
+        "certified_SKR_bps": {
+          "type": "null",
+          "value": null,
+          "unit": "bit/s",
+          "scope": "certified_SKR_bps",
+          "origin": "observed"
+        },
+        "authentication_executed": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "authentication_executed",
+          "origin": "editorial_anchored_mapping"
+        },
+        "metric_kind": {
+          "type": "string",
+          "value": "sifted_quantum_bit_error",
+          "unit": "category",
+          "scope": "metric_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "candidate_bits": {
+          "type": "integer",
+          "value": 0,
+          "unit": "bits",
+          "scope": "candidate_bits",
+          "origin": "observed"
+        },
+        "postprocess_executed": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "postprocess_executed",
+          "origin": "observed"
+        },
+        "postprocess_status": {
+          "type": "string",
+          "value": "abort_verification",
+          "unit": "category",
+          "scope": "postprocess_status",
+          "origin": "observed"
+        }
+      }
+    },
+    {
+      "id": "takl257",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "fisher_observed_decays_per_arm": {
+          "type": "integer",
+          "value": 13194482375,
+          "unit": "observed_decays",
+          "scope": "fisher_observed_decays_per_arm",
+          "origin": "observed"
+        },
+        "conditional_delta_tau_s": {
+          "type": "number",
+          "value": "0.04323096958989936",
+          "unit": "s",
+          "scope": "conditional_delta_tau_s",
+          "origin": "observed"
+        },
+        "facility_net_energy_J": {
+          "type": "null",
+          "value": null,
+          "unit": "J",
+          "scope": "facility_net_energy_J",
+          "origin": "observed"
+        },
+        "qft_beta_derivation": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "qft_beta_derivation",
+          "origin": "editorial_anchored_mapping"
+        },
+        "com_to_beta_DOS_calibrated": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "com_to_beta_DOS_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "four_sigma_guaranteed": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "four_sigma_guaranteed",
+          "origin": "editorial_anchored_mapping"
+        },
+        "beta_effect_model": {
+          "type": "string",
+          "value": "assumed_periodic_beta_DOS",
+          "unit": "category",
+          "scope": "beta_effect_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "alpha": {
+          "type": "number",
+          "value": "0.01",
+          "unit": "1",
+          "scope": "alpha",
+          "origin": "observed"
+        },
+        "alpha_sign_domain": {
+          "type": "string",
+          "value": "positive",
+          "unit": "category",
+          "scope": "alpha_sign_domain",
+          "origin": "editorial_anchored_mapping"
+        },
+        "specific_periodic_bound_applicable": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "specific_periodic_bound_applicable",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusPiModelContract",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusNoiseAudit",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusUCNAudit",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PB11EnergyBalance",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusChannelAndInjectorAudit",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusDecoderQueue",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusFiniteBlockAudit",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "repetition": {
+          "type": "integer",
+          "value": 100,
+          "unit": "count",
+          "scope": "repetition",
+          "origin": "editorial_anchored_mapping"
+        },
+        "payload_bits": {
+          "type": "integer",
+          "value": 200,
+          "unit": "bits",
+          "scope": "payload_bits",
+          "origin": "editorial_anchored_mapping"
+        },
+        "codeword_slots": {
+          "type": "integer",
+          "value": 20000,
+          "unit": "slots",
+          "scope": "codeword_slots",
+          "origin": "editorial_anchored_mapping"
+        },
+        "code_family": {
+          "type": "string",
+          "value": "binary_repetition100",
+          "unit": "category",
+          "scope": "code_family",
+          "origin": "editorial_anchored_mapping"
+        },
+        "code_rate": {
+          "type": "string",
+          "value": "1/100",
+          "unit": "rational_bits_per_slot",
+          "scope": "code_rate",
+          "origin": "editorial_anchored_mapping"
+        },
+        "channel_law": {
+          "type": "string",
+          "value": "IID_Bernoulli",
+          "unit": "category",
+          "scope": "channel_law",
+          "origin": "editorial_anchored_mapping"
+        },
+        "per_certificate_for_selected_code": {
+          "type": "boolean",
+          "value": true,
+          "unit": "1",
+          "scope": "per_certificate_for_selected_code",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusPipelinedQueue",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "wcet_certified": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "wcet_certified",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusMetrologyJitter",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "t0_precision_calibrated": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "t0_precision_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "calibrated_phase_to_time": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "calibrated_phase_to_time",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusNQKDAudit",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "security_certified": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "security_certified",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "formal-PrometheusTAKLAudit",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "conditional_Lean_statement",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "beta_effect_model": {
+          "type": "string",
+          "value": "assumed_periodic_beta_DOS",
+          "unit": "category",
+          "scope": "beta_effect_model",
+          "origin": "editorial_anchored_mapping"
+        },
+        "qft_beta_derivation": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "qft_beta_derivation",
+          "origin": "editorial_anchored_mapping"
+        },
+        "four_sigma_guaranteed": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "four_sigma_guaranteed",
+          "origin": "editorial_anchored_mapping"
+        },
+        "com_to_beta_DOS_calibrated": {
+          "type": "null",
+          "value": null,
+          "unit": "1",
+          "scope": "com_to_beta_DOS_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "alpha_sign_domain": {
+          "type": "string",
+          "value": "nonpositive",
+          "unit": "category",
+          "scope": "alpha_sign_domain",
+          "origin": "editorial_anchored_mapping"
+        },
+        "specific_periodic_bound_applicable": {
+          "type": "boolean",
+          "value": true,
+          "unit": "1",
+          "scope": "specific_periodic_bound_applicable",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "frozen-grant",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "historical_editorial_artifact",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "frozen-composition-v1",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "historical_editorial_artifact",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "ucn-baseline246",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "source_energy_J": {
+          "type": "number",
+          "value": "0.0",
+          "unit": "J",
+          "scope": "source_energy_J",
+          "origin": "observed"
+        },
+        "target_spacing_m": {
+          "type": "number",
+          "value": "1E-15",
+          "unit": "m",
+          "scope": "target_spacing_m",
+          "origin": "observed"
+        },
+        "target_density_m3": {
+          "type": "number",
+          "value": "9.999999999999998E+44",
+          "unit": "m^-3",
+          "scope": "target_density_m3",
+          "origin": "observed"
+        },
+        "source_energy_kind": {
+          "type": "string",
+          "value": "proposed_polyneutron_channel_only",
+          "unit": "category",
+          "scope": "source_energy_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    },
+    {
+      "id": "pb11-baseline247",
+      "fields": {
+        "evidence_kind": {
+          "type": "string",
+          "value": "finite_conditional_simulation",
+          "unit": "category",
+          "scope": "evidence_kind",
+          "origin": "editorial_anchored_mapping"
+        },
+        "physical_channel_calibrated": {
+          "type": "boolean",
+          "value": false,
+          "unit": "1",
+          "scope": "physical_channel_calibrated",
+          "origin": "editorial_anchored_mapping"
+        },
+        "laser_target_J": {
+          "type": "number",
+          "value": "1.5",
+          "unit": "J",
+          "scope": "laser_target_J",
+          "origin": "observed"
+        },
+        "gross_electric_J": {
+          "type": "number",
+          "value": "0.000125",
+          "unit": "J",
+          "scope": "gross_electric_J",
+          "origin": "observed"
+        },
+        "net_electric_J": {
+          "type": "number",
+          "value": "-1.499875",
+          "unit": "J",
+          "scope": "net_electric_J",
+          "origin": "observed"
+        },
+        "source_energy_J": {
+          "type": "number",
+          "value": "0.00019333333333333333",
+          "unit": "J",
+          "scope": "source_energy_J",
+          "origin": "observed"
+        },
+        "source_energy_kind": {
+          "type": "string",
+          "value": "conditional_pB11_nuclear_release",
+          "unit": "category",
+          "scope": "source_energy_kind",
+          "origin": "editorial_anchored_mapping"
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "id": "geometry-long-short",
+      "scenarios": [
+        "geometry244",
+        "blind-rx245"
+      ],
+      "fields": [
+        "chord_km"
+      ],
+      "requirements": [
+        {
+          "scenario": "blind-rx245",
+          "field": "physical_channel_calibrated",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "repetition100-to-rs256",
+      "scenarios": [
+        "formal-PrometheusFiniteBlockAudit",
+        "fec-iid249"
+      ],
+      "fields": [
+        "payload_bits",
+        "codeword_slots",
+        "repetition",
+        "code_family",
+        "code_rate"
+      ],
+      "requirements": [
+        {
+          "scenario": "fec-iid249",
+          "field": "per_certificate_for_selected_code",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "sparse-to-wire-throughput",
+      "scenarios": [
+        "optimized-5ms-iid",
+        "optimized-96us-iid"
+      ],
+      "fields": [
+        "arrival_period_ns",
+        "queue_drops",
+        "queue_model"
+      ],
+      "requirements": [
+        {
+          "scenario": "optimized-96us-iid",
+          "field": "wcet_certified",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "nqkd-candidate-to-certified-skr",
+      "scenarios": [
+        "nqkd-candidate",
+        "nqkd-projection",
+        "nqkd-abort"
+      ],
+      "fields": [
+        "security_certified",
+        "postprocess_executed",
+        "candidate_bits"
+      ],
+      "requirements": [
+        {
+          "scenario": "nqkd-candidate",
+          "field": "security_certified",
+          "equals": true
+        },
+        {
+          "scenario": "nqkd-candidate",
+          "field": "authentication_executed",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "cd2-energy-to-timing-and-thermal",
+      "scenarios": [
+        "injector249",
+        "metrology254",
+        "thermal251"
+      ],
+      "fields": [
+        "source_energy_kind"
+      ],
+      "requirements": [
+        {
+          "scenario": "metrology254",
+          "field": "t0_precision_calibrated",
+          "equals": true
+        },
+        {
+          "scenario": "thermal251",
+          "field": "biological_viability_certified",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "takl-conditional-to-qft-and-discovery",
+      "scenarios": [
+        "takl257",
+        "formal-PrometheusTAKLAudit"
+      ],
+      "fields": [
+        "beta_effect_model",
+        "qft_beta_derivation"
+      ],
+      "requirements": [
+        {
+          "scenario": "takl257",
+          "field": "qft_beta_derivation",
+          "equals": true
+        },
+        {
+          "scenario": "takl257",
+          "field": "com_to_beta_DOS_calibrated",
+          "equals": true
+        },
+        {
+          "scenario": "takl257",
+          "field": "four_sigma_guaranteed",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "cd2-to-calibrated-t0",
+      "scenarios": [
+        "injector249",
+        "metrology254"
+      ],
+      "fields": [
+        "source_energy_kind",
+        "source_energy_J"
+      ],
+      "requirements": [
+        {
+          "scenario": "metrology254",
+          "field": "t0_precision_calibrated",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "thermal-gate-does-not-certify-biology",
+      "scenarios": [
+        "thermal251",
+        "metrology254"
+      ],
+      "fields": [
+        "gate_full_ns"
+      ],
+      "requirements": [
+        {
+          "scenario": "thermal251",
+          "field": "biological_viability_certified",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "5ms-optimized-versus-4ms-process",
+      "scenarios": [
+        "optimized-5ms-iid",
+        "pipeline-4ms-iid9600"
+      ],
+      "fields": [
+        "arrival_period_ns",
+        "decoder_variant",
+        "queue_model",
+        "capacity_semantics",
+        "queue_drops"
+      ],
+      "requirements": [
+        {
+          "scenario": "pipeline-4ms-iid9600",
+          "field": "wcet_certified",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "four-ms-iid-versus-burst",
+      "scenarios": [
+        "pipeline-4ms-iid20000",
+        "pipeline-4ms-burst20000"
+      ],
+      "fields": [
+        "arrival_period_ns",
+        "codeword_slots",
+        "channel_law",
+        "queue_drops"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "four-ms-versus-wire200us",
+      "scenarios": [
+        "pipeline-4ms-iid20000",
+        "pipeline-200us-iid20000"
+      ],
+      "fields": [
+        "arrival_period_ns",
+        "queue_drops"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "gate-half-versus-full",
+      "scenarios": [
+        "blind-rx245",
+        "thermal251"
+      ],
+      "fields": [
+        "gate_full_ns"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "historical-versus-rounded-flip",
+      "scenarios": [
+        "fec-iid249",
+        "pipeline-4ms-iid9600"
+      ],
+      "fields": [
+        "flip_exact"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "iid-versus-frozen-trace",
+      "scenarios": [
+        "fec-iid249",
+        "fec-trace249"
+      ],
+      "fields": [
+        "channel_law",
+        "payload_bits",
+        "codeword_slots"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "iid-versus-synthetic-burst",
+      "scenarios": [
+        "blockscan-20000",
+        "pipeline-4ms-burst20000"
+      ],
+      "fields": [
+        "channel_law",
+        "payload_bits",
+        "codeword_slots"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "classical-BER-versus-sifted-QBER",
+      "scenarios": [
+        "blind-rx245",
+        "nqkd-projection"
+      ],
+      "fields": [
+        "metric_kind",
+        "error_probability"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "event-efficiency-versus-energy-efficiency",
+      "scenarios": [
+        "injector249",
+        "metrology254"
+      ],
+      "fields": [
+        "optical_efficiency_semantics"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "conditional-metrology-versus-calibration",
+      "scenarios": [
+        "metrology254",
+        "formal-PrometheusMetrologyJitter"
+      ],
+      "fields": [
+        "calibrated_phase_to_time"
+      ],
+      "requirements": [
+        {
+          "scenario": "metrology254",
+          "field": "calibrated_phase_to_time",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "formal-envelope-versus-runtime-WCET",
+      "scenarios": [
+        "formal-PrometheusDecoderQueue",
+        "formal-PrometheusPipelinedQueue",
+        "optimized-5ms-iid"
+      ],
+      "fields": [
+        "wcet_certified"
+      ],
+      "requirements": [
+        {
+          "scenario": "optimized-5ms-iid",
+          "field": "wcet_certified",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "blocklength-scan-is-not-one-code",
+      "scenarios": [
+        "blockscan-1000",
+        "blockscan-5000",
+        "blockscan-10000",
+        "blockscan-20000",
+        "fec-iid249"
+      ],
+      "fields": [
+        "codeword_slots",
+        "payload_bits",
+        "repetition"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "matched-gate-metadata-only",
+      "scenarios": [
+        "thermal251",
+        "metrology254"
+      ],
+      "fields": [
+        "gate_full_ns"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "formal-and-numerical-TAKL-assumption-only",
+      "scenarios": [
+        "takl257",
+        "formal-PrometheusTAKLAudit"
+      ],
+      "fields": [
+        "beta_effect_model"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "old-toy-versus-10ns-event-clock",
+      "scenarios": [
+        "geometry244",
+        "blind-rx245"
+      ],
+      "fields": [
+        "slot_ns"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "rx-deadtime-commonmode-versus-fec-surrogate",
+      "scenarios": [
+        "blind-rx245",
+        "fec-iid249",
+        "fec-trace249"
+      ],
+      "fields": [
+        "slot_ns",
+        "deadtime_ns",
+        "joint_deadtime_modelled",
+        "correlated_background_model"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "decoder-median-versus-route-tail",
+      "scenarios": [
+        "optimized-5ms-iid",
+        "pipeline-4ms-iid20000"
+      ],
+      "fields": [
+        "measurement_scope",
+        "timing_statistic",
+        "timing_value_ms"
+      ],
+      "requirements": [
+        {
+          "scenario": "optimized-5ms-iid",
+          "field": "wcet_certified",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "cd2-versus-pb11-laser-source",
+      "scenarios": [
+        "injector249",
+        "pb11-baseline247"
+      ],
+      "fields": [
+        "laser_target_J",
+        "source_energy_kind"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "polyneutron-baseline-versus-pb11-release",
+      "scenarios": [
+        "ucn-baseline246",
+        "pb11-baseline247"
+      ],
+      "fields": [
+        "source_energy_kind",
+        "source_energy_J"
+      ],
+      "requirements": [],
+      "claim": "metadata_compatibility_only"
+    },
+    {
+      "id": "takl-positive-alpha-versus-specific-Lean-corollary",
+      "scenarios": [
+        "takl257",
+        "formal-PrometheusTAKLAudit"
+      ],
+      "fields": [
+        "alpha_sign_domain"
+      ],
+      "requirements": [
+        {
+          "scenario": "takl257",
+          "field": "specific_periodic_bound_applicable",
+          "equals": true
+        }
+      ],
+      "claim": "metadata_compatibility_only"
+    }
+  ],
+  "claims": [
+    {
+      "id": "NC01",
+      "title": "Geometry and detector belong to different chords",
+      "groups": [
+        "geometry-long-short"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Combining a 12114.627 km ideal flight time with a 10800 km receiver as one calibrated channel",
+      "required_bridge": "A single documented geometry and a validated end-to-end detector model"
+    },
+    {
+      "id": "NC02",
+      "title": "Exact and rounded conditional error inputs differ",
+      "groups": [
+        "historical-versus-rounded-flip",
+        "iid-versus-frozen-trace"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Transferring results between 34/3336 and 0.010192 without an explicit comparison",
+      "required_bridge": "Exact parameter conversion and a justified joint noise law"
+    },
+    {
+      "id": "NC03",
+      "title": "Repetition100 does not certify the RS payload code",
+      "groups": [
+        "repetition100-to-rs256"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Transferring a repetition100 PER bound to the 256-bit RS/repetition/CRC implementation",
+      "required_bridge": "A finite-code bound for that actual decoder and its channel assumptions"
+    },
+    {
+      "id": "NC04",
+      "title": "Single-server replay is not a multiprocess decoder pool",
+      "groups": [
+        "5ms-optimized-versus-4ms-process",
+        "decoder-median-versus-route-tail"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Dividing a measured decoder median by worker count to guarantee per-packet latency",
+      "required_bridge": "Implementation-specific service, scheduling, buffer and arrival bounds"
+    },
+    {
+      "id": "NC05",
+      "title": "Ideal propagation is not delivery latency",
+      "groups": [
+        "sparse-to-wire-throughput",
+        "formal-envelope-versus-runtime-WCET"
+      ],
+      "coverage": "additional_editorial_boundary",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Claiming every packet beats fiber, or assigning zero latency to a dropped packet",
+      "required_bridge": "Delivery-aware latency accounting including service, waiting and failures"
+    },
+    {
+      "id": "NC06",
+      "title": "p-B11 and CD2 use different energy boundaries",
+      "groups": [
+        "cd2-versus-pb11-laser-source"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Treating a gross source-energy estimate as facility or network power",
+      "required_bridge": "Matched source, conversion and complete facility-energy accounting"
+    },
+    {
+      "id": "NC07",
+      "title": "Source energy does not calibrate a timestamp",
+      "groups": [
+        "cd2-to-calibrated-t0",
+        "cd2-energy-to-timing-and-thermal"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Inferring registration precision from 60 fs irradiation or emitted kinetic energy",
+      "required_bridge": "Measured moderation, conversion, transport and detector timing response"
+    },
+    {
+      "id": "NC08",
+      "title": "A static density ensemble is not temporal jitter",
+      "groups": [
+        "conditional-metrology-versus-calibration"
+      ],
+      "coverage": "additional_editorial_boundary",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Attributing observed packet erasures to changing mantle density without a dynamics model",
+      "required_bridge": "Calibrated phase-to-time response and justified temporal covariance"
+    },
+    {
+      "id": "NC09",
+      "title": "Ideal qubits do not establish neutrino encoding",
+      "groups": [
+        "nqkd-candidate-to-certified-skr"
+      ],
+      "coverage": "additional_editorial_boundary",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Treating a two-dimensional BB84 model as realized neutrino state preparation and measurement",
+      "required_bridge": "Experimental preparation, transmission, measurement and side-channel characterization"
+    },
+    {
+      "id": "NC10",
+      "title": "Intercept-resend disturbance is not general secrecy",
+      "groups": [
+        "nqkd-candidate-to-certified-skr"
+      ],
+      "coverage": "additional_editorial_boundary",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Inferring universal attack detection or certified secret-key rate from f/4",
+      "required_bridge": "A specified authenticated protocol and an applicable composable security proof"
+    },
+    {
+      "id": "NC11",
+      "title": "Candidate strings are not certified secret keys",
+      "groups": [
+        "nqkd-candidate-to-certified-skr"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Calling the 3937 postprocessed candidates secret bits or replacing unknown SKR with zero",
+      "required_bridge": "Security accounting for actual leakage, authentication and privacy amplification"
+    },
+    {
+      "id": "NC12",
+      "title": "Global phase alone does not change the fixed-DOS rate",
+      "groups": [
+        "takl-conditional-to-qft-and-discovery"
+      ],
+      "coverage": "additional_editorial_boundary",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Claiming all observables or the intrinsic beta-decay width change because of a global phase",
+      "required_bridge": "A physical mechanism beyond amplitude-norm invariance and fixed final-state density"
+    },
+    {
+      "id": "NC13",
+      "title": "A supplied DOS correction is not a QFT derivation",
+      "groups": [
+        "takl-conditional-to-qft-and-discovery",
+        "takl-positive-alpha-versus-specific-Lean-corollary"
+      ],
+      "coverage": "existing_rule",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Using center-of-mass ring density or a phenomenological correction as beta-decay QFT",
+      "required_bridge": "A weak-interaction final-state derivation with correct parameter domain"
+    },
+    {
+      "id": "NC14",
+      "title": "Unidentified loss channels do not identify beta lifetime",
+      "groups": [],
+      "coverage": "additional_editorial_boundary",
+      "state": "not_composable_without_bridge",
+      "excluded_conclusion": "Equating total-storage disappearance with intrinsic beta lifetime",
+      "required_bridge": "Independent loss calibration, exposure/censoring model and an identifiability argument"
+    }
+  ],
+  "expected_statuses": {
+    "geometry-long-short": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    },
+    "repetition100-to-rs256": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    },
+    "sparse-to-wire-throughput": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    },
+    "nqkd-candidate-to-certified-skr": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    },
+    "cd2-energy-to-timing-and-thermal": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    },
+    "takl-conditional-to-qft-and-discovery": {
+      "status": "blocked_requirements",
+      "metadata_status": "metadata_match_only",
+      "requirement_status": "false"
+    },
+    "cd2-to-calibrated-t0": {
+      "status": "unsupported_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "unknown"
+    },
+    "thermal-gate-does-not-certify-biology": {
+      "status": "blocked_requirements",
+      "metadata_status": "metadata_match_only",
+      "requirement_status": "false"
+    },
+    "5ms-optimized-versus-4ms-process": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    },
+    "four-ms-iid-versus-burst": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "four-ms-versus-wire200us": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "gate-half-versus-full": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "historical-versus-rounded-flip": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "iid-versus-frozen-trace": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "iid-versus-synthetic-burst": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "classical-BER-versus-sifted-QBER": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "event-efficiency-versus-energy-efficiency": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "conditional-metrology-versus-calibration": {
+      "status": "unsupported_requirements",
+      "metadata_status": "missing_metadata",
+      "requirement_status": "unknown"
+    },
+    "formal-envelope-versus-runtime-WCET": {
+      "status": "blocked_requirements",
+      "metadata_status": "missing_metadata",
+      "requirement_status": "false"
+    },
+    "blocklength-scan-is-not-one-code": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "matched-gate-metadata-only": {
+      "status": "metadata_match_only",
+      "metadata_status": "metadata_match_only",
+      "requirement_status": "not_requested"
+    },
+    "formal-and-numerical-TAKL-assumption-only": {
+      "status": "metadata_match_only",
+      "metadata_status": "metadata_match_only",
+      "requirement_status": "not_requested"
+    },
+    "old-toy-versus-10ns-event-clock": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "rx-deadtime-commonmode-versus-fec-surrogate": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "decoder-median-versus-route-tail": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    },
+    "cd2-versus-pb11-laser-source": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "polyneutron-baseline-versus-pb11-release": {
+      "status": "mismatch",
+      "metadata_status": "mismatch",
+      "requirement_status": "not_requested"
+    },
+    "takl-positive-alpha-versus-specific-Lean-corollary": {
+      "status": "blocked_requirements",
+      "metadata_status": "mismatch",
+      "requirement_status": "false"
+    }
+  },
+  "formal_sources": [
+    {
+      "module": "Verification.PrometheusPiModelContract",
+      "path": "Verification/PrometheusPiModelContract.lean",
+      "sha256": "105747baa66db33c1e73377858519990779c423e82832acc817295c14ee8c11d",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusPiModelContract.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusNoiseAudit",
+      "path": "Verification/PrometheusNoiseAudit.lean",
+      "sha256": "d1608470d46f047ae3550fd3d09e712b04e3a72e3a77aa2dab6ce8b8933c9b15",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusNoiseAudit.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusUCNAudit",
+      "path": "Verification/PrometheusUCNAudit.lean",
+      "sha256": "10f7bfa659d0b708cf168e0620ca74ead6b4121ef7f513bac64d3155c910bea6",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusUCNAudit.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PB11EnergyBalance",
+      "path": "Verification/PB11EnergyBalance.lean",
+      "sha256": "ad87463433482630939ea73a9f2b9d28d1a6ed77ded4edee4e418c712f4dc80a",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PB11EnergyBalance.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusChannelAndInjectorAudit",
+      "path": "Verification/PrometheusChannelAndInjectorAudit.lean",
+      "sha256": "f90256d8939c5efcf4b6837a5bc3262a77383bfb2948329714fbddc38ae70324",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusChannelAndInjectorAudit.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusDecoderQueue",
+      "path": "Verification/PrometheusDecoderQueue.lean",
+      "sha256": "b3e79f8ba16c7de42f59aade66832d36ac1818e86ba71740bb96f462daccd47e",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusDecoderQueue.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusFiniteBlockAudit",
+      "path": "Verification/PrometheusFiniteBlockAudit.lean",
+      "sha256": "d2f6990a11251f3c69d25af600bf385e4212ac35c60b708e614330ef8b38a883",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusFiniteBlockAudit.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusPipelinedQueue",
+      "path": "Verification/PrometheusPipelinedQueue.lean",
+      "sha256": "daa81227d22499bef88861a5d87fafd6bae2794aa948c9a551e7030e8785fb81",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusPipelinedQueue.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusMetrologyJitter",
+      "path": "Verification/PrometheusMetrologyJitter.lean",
+      "sha256": "ceba223a1d77a88058f4705ab646d56b89a10f2320ab37227d6afeff3f8d9404",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusMetrologyJitter.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusNQKDAudit",
+      "path": "Verification/PrometheusNQKDAudit.lean",
+      "sha256": "bd9803d7ded471e727a39cf5f9e75bf836a0836d26e87fde2a2e8cad766d63b1",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusNQKDAudit.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    },
+    {
+      "module": "Verification.PrometheusTAKLAudit",
+      "path": "Verification/PrometheusTAKLAudit.lean",
+      "sha256": "6665473f8d56882e4fb887558888e75c09f8a074bf4f398e42fae24bbd5839a2",
+      "url": "https://github.com/solanaqubits/leanbook/blob/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b/Verification/PrometheusTAKLAudit.lean",
+      "evidence": "Published source identity checked; no fresh Lean build in this export"
+    }
+  ],
+  "historical_verification": [
+    {
+      "scope": "Private v2 source audit",
+      "tests": 42,
+      "knowledge_tests": 53,
+      "source_files": 46,
+      "observations": 316,
+      "groups": 28
+    },
+    {
+      "scope": "Private reviewer reconciliation",
+      "working_registry_tests": 54,
+      "reviewer_tests": 26,
+      "knowledge_tests": 53,
+      "sources": 31,
+      "bindings": 143,
+      "lean_headers": 15,
+      "markdown_links": 344
+    }
+  ]
+}
