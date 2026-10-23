@@ -1,0 +1,10 @@
+{
+  "schema": "prometheus-program-bundle-1",
+  "files": {
+    "snapshot.json": "65252c22777ea4412229dcd1582163169e6cecae138d00cd8adb26986bdcf9e7",
+    "README.md": "05e35835b3ba878f6b04e7994d497a9e91436aa0da40e96770101355b82c0839",
+    "LIMITS.md": "609fb0e74964da63859b654347cf87b2623af6d743ff7debb5b869b439233207",
+    "check.py": "dab9a5b9ca38283a8e94ddfee8c3437b3ea05b1ab9ba40a42170b5a7e1216068",
+    "test_check.py": "525b142161443d868d5dc827a5b2154036c06204c0bcc2da0924da73ca495dbd"
+  }
+}

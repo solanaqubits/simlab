@@ -1,0 +1,184 @@
+{
+  "schema": "prometheus-program-metadata-1",
+  "source_access": "private_provenance_identifiers_not_public_proof_links",
+  "consolidation_commit": "10807f94ae027bb9b6c2de9af06301ff2517b150",
+  "research_snapshot": {
+    "leanbook": "fc48a6c47c5aadccea1cd35359c2dc24300f55f4",
+    "simlab": "7cf4b49a1dd24d6de9381e687f796a6f5e8871eb"
+  },
+  "historical_epochs": [
+    {
+      "stage": "265",
+      "questions": [
+        5,
+        10
+      ],
+      "lean_sha": "a37d50a90b400c3edaefe7671f012808363a67a2",
+      "simlab_sha": "a80f0b3a7a99e583ae8dfcd7dbb083c4119bb99d",
+      "lean_tests": 16,
+      "declarations": 36878,
+      "python_tests": 123,
+      "brain_tests": 53,
+      "scope": "historical_scoped_not_rerun"
+    },
+    {
+      "stage": "268–269",
+      "questions": [
+        1,
+        3
+      ],
+      "lean_sha": "bc7f0e827cbcc98c378967b2120d50b5a5098e95",
+      "simlab_sha": "0502ffe139af9bd5131cde0f5dae95b59667ef6f",
+      "lean_tests": 18,
+      "declarations": 37239,
+      "python_tests": 170,
+      "brain_tests": 53,
+      "scope": "historical_scoped_not_rerun"
+    },
+    {
+      "stage": "272–273",
+      "questions": [
+        2,
+        4
+      ],
+      "lean_sha": "4c55ee442291661bc82f8a4d177f137fd3278dee",
+      "simlab_sha": "83da568f4adb38414c6414f3e6de289086755a2d",
+      "lean_tests": 15,
+      "declarations": 37806,
+      "python_tests": 197,
+      "brain_tests": 53,
+      "scope": "historical_scoped_not_rerun"
+    },
+    {
+      "stage": "278",
+      "questions": [
+        6,
+        7
+      ],
+      "lean_sha": "5bca4dab04e65bc9585e659055359de712283a41",
+      "simlab_sha": "57a9a2e9685365edefa4e1fb1e92c592e60c0464",
+      "lean_tests": 14,
+      "declarations": 38331,
+      "python_tests": 178,
+      "brain_tests": 53,
+      "scope": "historical_scoped_not_rerun"
+    },
+    {
+      "stage": "281",
+      "questions": [
+        8,
+        9
+      ],
+      "lean_sha": "fc48a6c47c5aadccea1cd35359c2dc24300f55f4",
+      "simlab_sha": "7cf4b49a1dd24d6de9381e687f796a6f5e8871eb",
+      "lean_tests": 14,
+      "declarations": 38573,
+      "python_tests": 187,
+      "brain_tests": 53,
+      "scope": "historical_scoped_not_rerun"
+    }
+  ],
+  "audits": [
+    {
+      "question": 1,
+      "topic": "UCN lifetime identifiability",
+      "premises": "Known efficiencies and backgrounds; Poisson initial mean; two beta windows and terminal survivors.",
+      "formal_result": "Positive Fisher determinant and confounding with unknown beta efficiency.",
+      "historical_numerics": "10000 synthetic trials across ten configurations; local Fisher estimate about 1.76 s in one calibrated scenario.",
+      "limitations": "Neither a universal sensitivity limit nor achieved 0.1 s precision.",
+      "stage": "268–269"
+    },
+    {
+      "question": 2,
+      "topic": "Relative timing jitter",
+      "premises": "Additive common noise; finite second moments; joint Gaussian premise only for exact acceptance.",
+      "formal_result": "Common-mode cancellation, covariance of channel-specific noise, Chebyshev bound and conditional Gaussian formula.",
+      "historical_numerics": "76 regimes with 100000 synthetic event pairs each; semantic reproduction.",
+      "limitations": "No measured hardware jitter or universal erasure contribution.",
+      "stage": "272–273"
+    },
+    {
+      "question": 3,
+      "topic": "Multi-lane queue",
+      "premises": "Round-robin lanes; postulated service upper bound; constant service for overload proof.",
+      "formal_result": "Bounded waiting when S_max <= M*arrival_interval; divergence for constant S > M*arrival_interval.",
+      "historical_numerics": "192 regimes; 32 lanes remove waiting for conditional 3 ms service; saved CPU service times overflow 64 lanes even with periodic modeled arrivals.",
+      "limitations": "CPU timings are not hardware WCET; parallelism does not shorten individual service.",
+      "stage": "268–269"
+    },
+    {
+      "question": 4,
+      "topic": "RS cycle model",
+      "premises": "Specified constant controller schedule and ideal resources.",
+      "formal_result": "Controller terminates in exactly 2960 cycles regardless of error/erasure pattern.",
+      "historical_numerics": "64 vectors agree with reference statuses and candidates; conditional 11.84/5.92 microseconds at 250/500 MHz.",
+      "limitations": "No general RS implementation proof, RTL refinement, physical clock feasibility or hardware WCET.",
+      "stage": "272–273"
+    },
+    {
+      "question": 5,
+      "topic": "Cascaded FEC tail",
+      "premises": "IID slot erasures and substitutions; specified rep5 tie/byte erasure rules.",
+      "formal_result": "Conditional Chernoff bound P(2T+E >= 205) < 1.2e-5.",
+      "historical_numerics": "Rational enclosing intervals near 1.393e-6 for the multinomial tail; CRC32 collision retained.",
+      "limitations": "Not a PER certificate for the executable decoder; interleaving alone does not justify IID transfer.",
+      "stage": "265"
+    },
+    {
+      "question": 6,
+      "topic": "Two-circuit thermal model",
+      "premises": "Post-thermalization diffusion; declared geometry, material constants and external biological threshold.",
+      "formal_result": "No Lean theorem for this numerical audit.",
+      "historical_numerics": "98 regimes; global normalized energy residual about 1.34e-11.",
+      "limitations": "All four combined mesh/time convergence tests failed; D_max indeterminate; local temperature accuracy and biological integrity unestablished.",
+      "stage": "278"
+    },
+    {
+      "question": 7,
+      "topic": "Conditional NQKD finite key",
+      "premises": "External entropy/sampling security premises; separate leakage and security budgets; authentication required.",
+      "formal_result": "Scalar floor equivalence and explicit abort guards, not a complete quantum security theorem.",
+      "historical_numerics": "Conditional budgets 2764/2275 bits; released bits zero because authentication is absent, with consistency failure additionally in intercept scenario.",
+      "limitations": "Certified SKR remains unestablished; candidate strings are not secret-key certificates.",
+      "stage": "278"
+    },
+    {
+      "question": 8,
+      "topic": "Receiver thresholds",
+      "premises": "Synthetic training/test splits; threshold grid and training false-alarm constraint.",
+      "formal_result": "Counterexamples to universal convexity and concavity of threshold mutual information.",
+      "historical_numerics": "289 grid points; chosen 0.75/0.75; held-out MI 0.2897 to 0.3163 bits/signal slot, FPR 0.379% to 0.778%.",
+      "limitations": "Best admissible tested grid point only; no continuous local/global optimum or channel-with-memory capacity certificate.",
+      "stage": "281"
+    },
+    {
+      "question": 9,
+      "topic": "Mantle observation rank",
+      "premises": "Specified finite-dimensional oscillation model, geometries, energies and nuisance flux/efficiency.",
+      "formal_result": "Linear kernel/rank and duplicate-column results.",
+      "historical_numerics": "32 configurations and six regularized fits; untraversed layers and flux-times-efficiency confounding.",
+      "limitations": "Not universal tomography impossibility or a proof of nonlinear identifiability or physical instrumentation.",
+      "stage": "281"
+    },
+    {
+      "question": 10,
+      "topic": "Non-composable claims",
+      "premises": "Historical projection of 38 scenarios with explicitly scoped metadata.",
+      "formal_result": "NC01-NC14 are Python/JSON predicates, not Lean theorems.",
+      "historical_numerics": "14 negative predicates reject their invalid composite fixtures.",
+      "limitations": "Negative metadata filters do not prove physics or cryptographic security; historical 8/3/3 coverage classification remains separate.",
+      "stage": "265"
+    }
+  ],
+  "historical_scenario_projection": 38,
+  "negative_predicates": 14,
+  "coverage_classification": "historical_8_3_3_separate_from_14_predicates",
+  "obligations": {
+    "physical_realizability": "OPEN",
+    "certified_positive_skr": "OPEN",
+    "hardware_wcet": "OPEN",
+    "third_obligation": "OPEN"
+  },
+  "new_scientific_verification": false,
+  "independent_audit": "not_performed"
+}
