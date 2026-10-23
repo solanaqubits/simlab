@@ -12,3 +12,11 @@ python3 -B -m unittest discover -s studies/prometheus_program -p 'test_*.py' -v
 ```
 
 The checker verifies package hashes, schema relationships, historical scope separation and OPEN markers. It does not verify private source bytes, theorem applicability, simulations or quantum security. Its mutation tests are packaging tests, not an independent scientific audit. See [LIMITS.md](LIMITS.md).
+
+## Public formal companions
+
+Nine additional Prometheus Lean modules are now available in the pinned public
+Leanbook revision recorded in [the source map](../../docs/prometheus-lean-sources.json).
+That map supplies exact source hashes, public links and the scoped verification
+receipt. It does not change the historical numerical snapshot or certify physical
+realizability, positive SKR or hardware WCET.

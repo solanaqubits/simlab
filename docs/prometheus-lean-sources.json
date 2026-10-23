@@ -1,0 +1,66 @@
+{
+  "schema": "prometheus-public-lean-source-map-1",
+  "leanbook_public_commit": "8c38be70441e6189c4fc93051aed7012749dae52",
+  "scope": "Nine selected public proof modules; conditional model results, not a device certificate",
+  "modules": [
+    {
+      "module": "Verification.PrometheusVariableQueue",
+      "path": "Verification/PrometheusVariableQueue.lean",
+      "sha256": "d3f329fe3c01037188342f923e49deea58e6290c1ece215d6f176158155757fc",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusVariableQueue.lean"
+    },
+    {
+      "module": "Verification.PrometheusLifetimeInformation",
+      "path": "Verification/PrometheusLifetimeInformation.lean",
+      "sha256": "8995babe9ca365e602c24889f7e21227475f6324950ddb3f211a135de5c09c72",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusLifetimeInformation.lean"
+    },
+    {
+      "module": "Verification.PrometheusCascadedFECBound",
+      "path": "Verification/PrometheusCascadedFECBound.lean",
+      "sha256": "84f63cd2742baebcd9ffcfc26993c6dfb067c4bac269fbb4a27ff6c1aea91c4d",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusCascadedFECBound.lean"
+    },
+    {
+      "module": "Verification.PrometheusMultiLaneQueue",
+      "path": "Verification/PrometheusMultiLaneQueue.lean",
+      "sha256": "6c36f1c2622999d22e27ac937e5175c62cb511c738b5af7ce2700dfcc13e72a0",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusMultiLaneQueue.lean"
+    },
+    {
+      "module": "Verification.PrometheusLifetimeIdentifiability",
+      "path": "Verification/PrometheusLifetimeIdentifiability.lean",
+      "sha256": "43aab6100cf254c6653ee9d5ae6dcff49fd17805a1cb9fbab42c256e2c634681",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusLifetimeIdentifiability.lean"
+    },
+    {
+      "module": "Verification.PrometheusJitterWindow",
+      "path": "Verification/PrometheusJitterWindow.lean",
+      "sha256": "4bb1e74579ba5be44f060e7ba9fa3ef6bdd28222f88671b435235cf64037905a",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusJitterWindow.lean"
+    },
+    {
+      "module": "Verification.PrometheusRSCycleModel",
+      "path": "Verification/PrometheusRSCycleModel.lean",
+      "sha256": "4f2cf41c9c2cf25fa00fa120dc1f8c49b184ed0bcff83350cf3e220c53e7b61a",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusRSCycleModel.lean"
+    },
+    {
+      "module": "Verification.PrometheusNQKDFiniteKey",
+      "path": "Verification/PrometheusNQKDFiniteKey.lean",
+      "sha256": "455664c4f99b94810fe540d09894a4f3ff3ee898a9fd56fbd86a657ae21f8e63",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusNQKDFiniteKey.lean"
+    },
+    {
+      "module": "Verification.PrometheusThresholdTomography",
+      "path": "Verification/PrometheusThresholdTomography.lean",
+      "sha256": "e421e99e6e09120d42ba6dabb84b0dc399cf666377045195da3f94638d5cf970",
+      "url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/Verification/PrometheusThresholdTomography.lean"
+    }
+  ],
+  "verification_receipt_url": "https://github.com/solanaqubits/leanbook/blob/8c38be70441e6189c4fc93051aed7012749dae52/docs/prometheus-lean-checks.json",
+  "verification_receipt_sha256": "588521bdb97c1a72d56b33f959fb140ad38c750b0390f12c00276633a3b57931",
+  "new_scientific_simulations": false,
+  "independent_system_audit": "not_performed",
+  "third_obligation": "OPEN"
+}
