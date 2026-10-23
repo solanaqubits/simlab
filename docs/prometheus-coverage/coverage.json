@@ -1,0 +1,109 @@
+{
+  "schema": "prometheus-editorial-coverage-1",
+  "scope": "Editorial coverage of central boundaries only; no proof of semantic completeness or physical feasibility.",
+  "counts": {
+    "represented": 8,
+    "partial": 3,
+    "input_only": 3
+  },
+  "definitions": {
+    "represented": "A selected metadata rule directly addresses the central boundary; not every detail of the claim.",
+    "partial": "A selected rule addresses part of the transition; the remaining gap is explicit.",
+    "input_only": "No direct machine group; the topic may already appear in source or review prose."
+  },
+  "claims": [
+    {
+      "id": "NC01",
+      "title": "Different propagation chords",
+      "coverage": "represented",
+      "gap": "Ideal flight time does not establish a calibrated end-to-end link."
+    },
+    {
+      "id": "NC02",
+      "title": "Exact and rounded channel probabilities",
+      "coverage": "represented",
+      "gap": "A marginal probability does not establish independence or a temporal noise law."
+    },
+    {
+      "id": "NC03",
+      "title": "Code-specific finite-block certificates",
+      "coverage": "represented",
+      "gap": "A repetition-code bound does not certify a different Reed-Solomon decoder."
+    },
+    {
+      "id": "NC04",
+      "title": "Decoder implementations and timing populations",
+      "coverage": "represented",
+      "gap": "Measurements on different codecs, corpora and worker arrangements are distinct observations."
+    },
+    {
+      "id": "NC05",
+      "title": "Delivered-packet latency and loss",
+      "coverage": "partial",
+      "gap": "No single rule covers every end-to-end component and the treatment of dropped packets."
+    },
+    {
+      "id": "NC06",
+      "title": "Distinct laser-source energy budgets",
+      "coverage": "represented",
+      "gap": "A source energy balance does not determine facility power for a communication terminal."
+    },
+    {
+      "id": "NC07",
+      "title": "Energy release versus timing calibration",
+      "coverage": "represented",
+      "gap": "Energy and thermal accounting do not establish a calibrated start-time distribution."
+    },
+    {
+      "id": "NC08",
+      "title": "Spatial uncertainty versus temporal noise",
+      "coverage": "partial",
+      "gap": "A static spatial ensemble does not specify a temporal packet-noise process."
+    },
+    {
+      "id": "NC09",
+      "title": "Ideal qubits versus physical neutrino states",
+      "coverage": "input_only",
+      "gap": "No direct rule establishes physical state preparation and measurement as a refinement of the ideal qubit model."
+    },
+    {
+      "id": "NC10",
+      "title": "Attack-specific disturbance versus general security",
+      "coverage": "partial",
+      "gap": "An intercept-resend calculation does not cover arbitrary attacks or establish composable security."
+    },
+    {
+      "id": "NC11",
+      "title": "Candidate bits versus certified secret keys",
+      "coverage": "represented",
+      "gap": "Candidate output and missing certification are not a positive or zero certified secret-key rate."
+    },
+    {
+      "id": "NC12",
+      "title": "Global phase with fixed density of states",
+      "coverage": "input_only",
+      "gap": "No direct rule checks the complete premises of global-phase rate invariance."
+    },
+    {
+      "id": "NC13",
+      "title": "Conditional density-of-states bounds versus QFT",
+      "coverage": "represented",
+      "gap": "Assumed density-of-states bounds and their sign domains do not derive a weak-interaction mechanism."
+    },
+    {
+      "id": "NC14",
+      "title": "Observed disappearance versus beta lifetime",
+      "coverage": "input_only",
+      "gap": "No direct rule identifies beta lifetime in the presence of unknown competing losses."
+    }
+  ],
+  "leanbook": {
+    "commit": "aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b",
+    "url": "https://github.com/solanaqubits/leanbook/tree/aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b",
+    "role": "Published conditional mathematical models; this coverage supplement adds no Lean theorem or kernel check."
+  },
+  "physical_composition_established": false,
+  "security_composition_established": false,
+  "hardware_authorization_changed": false,
+  "third_obligation": "OPEN"
+}

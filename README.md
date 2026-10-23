@@ -40,3 +40,6 @@ links to public Leanbook sources. It is separate from the formal SQL core and
 does not establish physical feasibility, secret-key security or hardware authority.
 Its explicit export scope is recorded in [docs/PROMETHEUS_EXPORT.json](docs/PROMETHEUS_EXPORT.json);
 `docs/EXPORT.json` remains the historical SQL-core export record.
+
+The [Prometheus coverage supplement](docs/prometheus-coverage/README.md)
+distinguishes direct, partial and contextual coverage of its 14 claim boundaries.

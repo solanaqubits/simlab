@@ -1,0 +1,23 @@
+{
+  "schema": "simlab-prometheus-coverage-export-1",
+  "scope": "Selected English editorial coverage; separate from the source metadata bundle and historical SQL export.",
+  "public_registry_commit": "61c8477d6a31c460d35648be0ddc87a7ebcb8fa7",
+  "public_leanbook_commit": "aa5f03f2e1cf8777a819946bfd6328c3f66c3f7b",
+  "files": [
+    {
+      "path": "docs/prometheus-coverage/README.md",
+      "sha256": "c6599603a4f9966cd99caa90d989405c1cb88a8ac93ca53bdc1b5c26401a3c6b"
+    },
+    {
+      "path": "docs/prometheus-coverage/coverage.json",
+      "sha256": "9e1347e2fd499af8af35052701df77fe16f589ac92a0e9b9d36fdace36173dea"
+    }
+  ],
+  "integration_files": [
+    "README.md",
+    "docs/PROMETHEUS_COVERAGE_EXPORT.json"
+  ],
+  "private_sources_exported": false,
+  "new_lean_or_physics": false,
+  "third_obligation": "OPEN"
+}
