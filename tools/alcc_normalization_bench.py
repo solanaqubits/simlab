@@ -101,6 +101,7 @@ def run(binary, output, lean_commit, build_log):
               'binary_sha256': before, 'build_log_sha256': sha(build_log),
               'platform': platform.platform(), 'cpu': platform.processor(),
               'lean_num_threads': 1,
+              'lean_stack_size_kb': 8192,
               'cpuinfo_sha256': sha('/proc/cpuinfo'), 'cases': {},
               'limits': {'address_space_bytes': 1024**3, 'cpu_seconds_per_case': 10,
                          'wall_seconds_per_case': 15, 'total_wall_seconds': 180},
@@ -114,7 +115,7 @@ def run(binary, output, lean_commit, build_log):
             path = output / (name + '.txt')
             path.write_text(''.join(' '.join(map(str, term)) + '\n' for term in terms))
             input_hash = sha(path)
-            environment = dict(os.environ, LEAN_NUM_THREADS='1')
+            environment = dict(os.environ, LEAN_NUM_THREADS='1', LEAN_STACK_SIZE_KB='8192')
             process = subprocess.run([str(binary), str(path)], capture_output=True,
                                      timeout=15, preexec_fn=limits, env=environment)
             (output / (name + '.stdout')).write_bytes(process.stdout)
