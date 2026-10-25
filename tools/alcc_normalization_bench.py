@@ -4,6 +4,7 @@ Original implementation; no upstream benchmark code is copied. This is not a
 production ALCC benchmark, formal runtime proof, or statistical significance test.
 """
 import argparse
+from functools import partial
 from fractions import Fraction
 import hashlib
 import json
@@ -16,6 +17,31 @@ import subprocess
 import time
 
 PROTOCOL = 'ALCC-NORMALIZE-PILOT-1'
+LEGACY_PROFILE = 'legacy-as-1g'
+ISOLATED_PROFILE = 'isolated-as-4g-memory-1g-v2'
+PROFILES = {LEGACY_PROFILE: 1024**3, ISOLATED_PROFILE: 4 * 1024**3}
+
+
+def cgroup_snapshot(root=Path('/sys/fs/cgroup')):
+    return {name: (root / name).read_text().strip() for name in
+            ('memory.max', 'memory.swap.max', 'memory.current', 'memory.peak',
+             'memory.events', 'cpu.max', 'cpu.stat')}
+
+
+def require_isolation(snapshot):
+    """Fail closed if the requested cgroup-v2 limits are not observable."""
+    if snapshot['memory.max'] != str(1024**3) or snapshot['memory.swap.max'] != '0':
+        raise ValueError('expected 1 GiB cgroup memory and zero swap')
+    quota, period = snapshot['cpu.max'].split()
+    if quota == 'max' or int(period) <= 0 or not 0 < int(quota) <= int(period):
+        raise ValueError('expected CPU quota at most one CPU')
+
+
+def remaining_timeout(start, now):
+    remaining = 180 - (now - start)
+    if remaining <= 0:
+        raise TimeoutError('total budget exhausted')
+    return min(15, remaining)
 
 
 def sha(path):
@@ -87,12 +113,13 @@ def validate_run(stdout, expected):
             for name, values in samples.items()}
 
 
-def limits():
-    resource.setrlimit(resource.RLIMIT_AS, (1024**3, 1024**3))
+def limits(address_space_bytes):
+    resource.setrlimit(resource.RLIMIT_AS, (address_space_bytes, address_space_bytes))
     resource.setrlimit(resource.RLIMIT_CPU, (10, 10))
 
 
-def run(binary, output, lean_commit, build_log):
+def run(binary, output, lean_commit, build_log, resource_profile=LEGACY_PROFILE):
+    address_space_bytes = PROFILES[resource_profile]
     binary = binary.resolve()
     output.mkdir(parents=True, exist_ok=False)
     before = sha(binary)
@@ -103,21 +130,31 @@ def run(binary, output, lean_commit, build_log):
               'lean_num_threads': 0,
               'lean_stack_size_kb': 8192,
               'cpuinfo_sha256': sha('/proc/cpuinfo'), 'cases': {},
-              'limits': {'address_space_bytes': 1024**3, 'cpu_seconds_per_case': 10,
+              'resource_profile': resource_profile,
+              'limits': {'address_space_bytes': address_space_bytes, 'cpu_seconds_per_case': 10,
                          'wall_seconds_per_case': 15, 'total_wall_seconds': 180},
               'scope': 'Normalization plus forcing fold only; no production speedup claim.',
               'status': 'running'}
     start = time.monotonic()
     try:
+        if resource_profile == ISOLATED_PROFILE:
+            report['cgroup_before'] = cgroup_snapshot()
+            require_isolation(report['cgroup_before'])
         for name, terms in corpus().items():
-            if time.monotonic() - start > 180:
-                raise TimeoutError('total budget exhausted')
             path = output / (name + '.txt')
             path.write_text(''.join(' '.join(map(str, term)) + '\n' for term in terms))
             input_hash = sha(path)
             environment = dict(os.environ, LEAN_NUM_THREADS='0', LEAN_STACK_SIZE_KB='8192')
-            process = subprocess.run([str(binary), str(path)], capture_output=True,
-                                     timeout=15, preexec_fn=limits, env=environment)
+            timeout = remaining_timeout(start, time.monotonic())
+            try:
+                process = subprocess.run([str(binary), str(path)], capture_output=True,
+                                         timeout=timeout,
+                                         preexec_fn=partial(limits, address_space_bytes),
+                                         env=environment)
+            except subprocess.TimeoutExpired as exc:
+                (output / (name + '.stdout')).write_bytes(exc.stdout or b'')
+                (output / (name + '.stderr')).write_bytes(exc.stderr or b'')
+                raise
             (output / (name + '.stdout')).write_bytes(process.stdout)
             (output / (name + '.stderr')).write_bytes(process.stderr)
             if process.returncode != 0:
@@ -130,12 +167,21 @@ def run(binary, output, lean_commit, build_log):
                                      'exit_code': process.returncode, 'timings': summary}
         if sha(binary) != before:
             raise ValueError('binary changed during execution')
+        remaining_timeout(start, time.monotonic())
+        if resource_profile == ISOLATED_PROFILE:
+            report['cgroup_after'] = cgroup_snapshot()
+            require_isolation(report['cgroup_after'])
         report['status'] = 'passed'
     except Exception as exc:
         report['status'] = 'failed'
         report['error'] = f'{type(exc).__name__}: {exc}'
         raise
     finally:
+        if resource_profile == ISOLATED_PROFILE and 'cgroup_after' not in report:
+            try:
+                report['cgroup_after_failure'] = cgroup_snapshot()
+            except OSError as exc:
+                report['cgroup_read_error'] = str(exc)
         report['elapsed_seconds'] = time.monotonic() - start
         (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     return report
@@ -147,5 +193,6 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--lean-commit', required=True)
     parser.add_argument('--build-log', type=Path, required=True)
+    parser.add_argument('--resource-profile', choices=PROFILES, default=LEGACY_PROFILE)
     args = parser.parse_args()
-    run(args.binary, args.output, args.lean_commit, args.build_log)
+    run(args.binary, args.output, args.lean_commit, args.build_log, args.resource_profile)
