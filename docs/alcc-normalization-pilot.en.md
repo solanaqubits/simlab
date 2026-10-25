@@ -39,7 +39,9 @@ Set `LEAN_STACK_SIZE_KB=8192` as well: the
 reserves a 1-GiB thread stack, which conflicts with the process address-space cap
 even with one worker. Generated main initializes the task manager before reading
 the stack-size override in `lean_run_main`, so disabling background workers is
-also necessary. The pilot reduces reservations; it does not raise the cap.
+also relevant. These overrides are not sufficient to guarantee bounded startup:
+the current binary creates a libuv thread in `lean_initialize` before reaching
+`lean_run_main`. The pilot does not raise the cap.
 Total driver budget: 180 seconds checked between
 cases (up to one additional 15-second case before next check). No retries or
 automatic budget escalation. Build budget is separate: 8-GiB container limit.
@@ -68,3 +70,17 @@ pre/post checks do not eliminate TOCTOU. The Lean runtime, compiler, OS, clock a
 Python reference remain trusted for this diagnostic; kernel proofs certify the
 source-level equality separately. No production ALCC speedup, EVM equivalence,
 inequality checker, SIMD correctness or security certification is claimed.
+
+## Observed startup limitation
+
+The initial bounded execution failed before producing any result, and three
+subsequent startup-configuration attempts also failed. All stopped on the empty
+case with exit -6. A `strace` diagnostic showed a failed 1-GiB stack reservation;
+a GDB backtrace located the throwing thread constructor under `initialize_libuv`
+and `lean_initialize`, before the application entry point. Environment overrides
+alone did not fix this. No case has a validated native timing in this pilot.
+
+The next measurement attempt requires a separately reviewed startup adaptation
+or an explicitly revised resource contract. Failed runs remain evidence, not
+mathematical rejection or a performance result. The formal equality proof and
+protocol/reference unit tests have independent status.
