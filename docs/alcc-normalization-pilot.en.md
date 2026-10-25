@@ -32,7 +32,9 @@ Inspect generated C before accepting measurements: pure `let` bindings may be
 floated beyond a timer by compilation. This inspection is not compiler verification.
 
 Each case has a 15-second subprocess timeout, a 10-second CPU limit and a 1-GiB
-address-space limit on Linux. Total driver budget: 180 seconds checked between
+address-space limit on Linux. Lean runs with `LEAN_NUM_THREADS=1`; spawning a
+worker per host CPU can exhaust that virtual-address limit before computation.
+Total driver budget: 180 seconds checked between
 cases (up to one additional 15-second case before next check). No retries or
 automatic budget escalation. Build budget is separate: 8-GiB container limit.
 
