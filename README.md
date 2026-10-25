@@ -51,3 +51,10 @@ distinguishes direct, partial and contextual coverage of its 14 claim boundaries
 ## Provenance v1 audit preparation
 
 [Selected Leanbook sources, test topology and independent-auditor handoff](studies/provenance_v1/README.md). Runtime target qualification and industrial Witness remain pending.
+
+## ALCC polynomial-certificate verification
+
+[Compiled Leanbook byte verifier, content-pinned runner and offline receipt audit](docs/alcc.en.md).
+This optional path keeps decoder refusal, zero/nonzero residual and execution
+failure separate. Archive consistency is not authenticated execution or a new
+Lean kernel proof. It does not alter the SQL core or authority gate.

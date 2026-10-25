@@ -1,0 +1,16 @@
+name: ALCC protocol and archive tests
+on:
+  push:
+    paths: ['tools/alcc*', 'tests/*alcc*', '.github/workflows/alcc.yml']
+  pull_request:
+    paths: ['tools/alcc*', 'tests/*alcc*', '.github/workflows/alcc.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - run: python3 -m unittest tests.test_alcc_public_pin tests.test_alcc_compiled_runner tests.test_alcc_receipt_audit -v
