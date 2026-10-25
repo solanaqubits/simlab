@@ -58,3 +58,8 @@ distinguishes direct, partial and contextual coverage of its 14 claim boundaries
 This optional path keeps decoder refusal, zero/nonzero residual and execution
 failure separate. Archive consistency is not authenticated execution or a new
 Lean kernel proof. It does not alter the SQL core or authority gate.
+
+[Optional bounded Rust normalization oracle](docs/alcc-rust-oracle.en.md)
+provides a second reference for the experimental ALCC normalization corpus and
+archive replay. Range refusal remains an incomplete check, not a certificate
+rejection.

@@ -16,6 +16,11 @@ import statistics
 import subprocess
 import time
 
+if __package__:
+    from .alcc_rust_oracle import RustOracle, OracleNotChecked, OracleMismatch
+else:
+    from alcc_rust_oracle import RustOracle, OracleNotChecked, OracleMismatch
+
 PROTOCOL = 'ALCC-NORMALIZE-PILOT-1'
 LEGACY_PROFILE = 'legacy-as-1g'
 ISOLATED_PROFILE = 'isolated-as-4g-memory-1g-v2'
@@ -118,7 +123,7 @@ def limits(address_space_bytes):
     resource.setrlimit(resource.RLIMIT_CPU, (10, 10))
 
 
-def run(binary, output, lean_commit, build_log, resource_profile=LEGACY_PROFILE):
+def run(binary, output, lean_commit, build_log, resource_profile=LEGACY_PROFILE, oracle=None):
     address_space_bytes = PROFILES[resource_profile]
     binary = binary.resolve()
     output.mkdir(parents=True, exist_ok=False)
@@ -135,6 +140,7 @@ def run(binary, output, lean_commit, build_log, resource_profile=LEGACY_PROFILE)
                          'wall_seconds_per_case': 15, 'total_wall_seconds': 180},
               'scope': 'Normalization plus forcing fold only; no production speedup claim.',
               'status': 'running'}
+    report['second_oracle_requested'] = oracle is not None
     start = time.monotonic()
     try:
         if resource_profile == ISOLATED_PROFILE:
@@ -144,6 +150,9 @@ def run(binary, output, lean_commit, build_log, resource_profile=LEGACY_PROFILE)
             path = output / (name + '.txt')
             path.write_text(''.join(' '.join(map(str, term)) + '\n' for term in terms))
             input_hash = sha(path)
+            expected = reference(terms) if oracle is not None else None
+            # Outside the Lean timing interval; refusal aborts qualification.
+            oracle_receipt = oracle.check(path, expected) if oracle is not None else None
             environment = dict(os.environ, LEAN_NUM_THREADS='0', LEAN_STACK_SIZE_KB='8192')
             timeout = remaining_timeout(start, time.monotonic())
             try:
@@ -159,12 +168,15 @@ def run(binary, output, lean_commit, build_log, resource_profile=LEGACY_PROFILE)
             (output / (name + '.stderr')).write_bytes(process.stderr)
             if process.returncode != 0:
                 raise RuntimeError(f'{name}: execution failure {process.returncode}')
-            summary = validate_run(process.stdout.decode('utf-8'), reference(terms))
+            summary = validate_run(process.stdout.decode('utf-8'),
+                                   expected if oracle is not None else reference(terms))
             if sha(path) != input_hash:
                 raise ValueError('input changed during execution')
             report['cases'][name] = {'input_sha256': input_hash, 'terms': len(terms),
                                      'command': [str(binary), str(path)],
                                      'exit_code': process.returncode, 'timings': summary}
+            if oracle_receipt is not None:
+                report['cases'][name]['second_oracle'] = oracle_receipt
         if sha(binary) != before:
             raise ValueError('binary changed during execution')
         remaining_timeout(start, time.monotonic())
@@ -174,6 +186,10 @@ def run(binary, output, lean_commit, build_log, resource_profile=LEGACY_PROFILE)
         report['status'] = 'passed'
     except Exception as exc:
         report['status'] = 'failed'
+        if isinstance(exc, (OracleNotChecked, OracleMismatch)):
+            report['status'] = ('not_checked' if isinstance(exc, OracleNotChecked)
+                                else 'oracle_mismatch')
+            report['oracle_failure'] = exc.receipt
         report['error'] = f'{type(exc).__name__}: {exc}'
         raise
     finally:
@@ -194,5 +210,11 @@ if __name__ == '__main__':
     parser.add_argument('--lean-commit', required=True)
     parser.add_argument('--build-log', type=Path, required=True)
     parser.add_argument('--resource-profile', choices=PROFILES, default=LEGACY_PROFILE)
+    parser.add_argument('--rust-oracle-build', type=Path)
+    parser.add_argument('--rust-oracle-manifest-sha256')
     args = parser.parse_args()
-    run(args.binary, args.output, args.lean_commit, args.build_log, args.resource_profile)
+    if bool(args.rust_oracle_build) != bool(args.rust_oracle_manifest_sha256):
+        parser.error('both Rust oracle build directory and manifest pin are required')
+    oracle = (RustOracle(args.rust_oracle_build, args.rust_oracle_manifest_sha256)
+              if args.rust_oracle_build else None)
+    run(args.binary, args.output, args.lean_commit, args.build_log, args.resource_profile, oracle)

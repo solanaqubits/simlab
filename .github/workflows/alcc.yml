@@ -1,9 +1,9 @@
 name: ALCC protocol and archive tests
 on:
   push:
-    paths: ['tools/alcc*', 'tests/*alcc*', '.github/workflows/alcc.yml']
+    paths: ['tools/alcc*', 'tools/alcc_fraction_oracle/**', 'tests/*alcc*', '.github/workflows/alcc.yml']
   pull_request:
-    paths: ['tools/alcc*', 'tests/*alcc*', '.github/workflows/alcc.yml']
+    paths: ['tools/alcc*', 'tools/alcc_fraction_oracle/**', 'tests/*alcc*', '.github/workflows/alcc.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -14,3 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
       - run: python3 -m unittest tests.test_alcc_public_pin tests.test_alcc_compiled_runner tests.test_alcc_receipt_audit -v
+  bounded-rust-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - run: rustup toolchain install 1.95.0 --profile minimal
+      - run: python3 -m unittest tests.test_alcc_rust_oracle tests.test_alcc_normalization_bench -v
+      - run: cargo +1.95.0 test --offline --locked --manifest-path tools/alcc_fraction_oracle/Cargo.toml --target-dir "$RUNNER_TEMP/alcc-rust-tests"
