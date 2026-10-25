@@ -32,12 +32,14 @@ Inspect generated C before accepting measurements: pure `let` bindings may be
 floated beyond a timer by compilation. This inspection is not compiler verification.
 
 Each case has a 15-second subprocess timeout, a 10-second CPU limit and a 1-GiB
-address-space limit on Linux. Lean runs with `LEAN_NUM_THREADS=1`; spawning a
-worker per host CPU can exhaust that virtual-address limit before computation.
+address-space limit on Linux. Lean runs serially with `LEAN_NUM_THREADS=0`
+(no background task-manager workers); the benchmark does not use `Task` APIs.
 Set `LEAN_STACK_SIZE_KB=8192` as well: the
 [v4.33.1 runtime default](https://github.com/leanprover/lean4/blob/v4.33.1/src/runtime/thread.cpp)
 reserves a 1-GiB thread stack, which conflicts with the process address-space cap
-even with one worker. The pilot reduces that reservation; it does not raise the cap.
+even with one worker. Generated main initializes the task manager before reading
+the stack-size override in `lean_run_main`, so disabling background workers is
+also necessary. The pilot reduces reservations; it does not raise the cap.
 Total driver budget: 180 seconds checked between
 cases (up to one additional 15-second case before next check). No retries or
 automatic budget escalation. Build budget is separate: 8-GiB container limit.
