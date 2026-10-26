@@ -1,0 +1,654 @@
+{
+  "schema": "SIMLAB-QUANTUM-1",
+  "circuit": {
+    "version": 1,
+    "n_qubits": 3,
+    "n_clbits": 0,
+    "operations": [
+      {
+        "gate": "X",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "UNITARY",
+        "targets": [
+          0,
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              6.123233995736766e-17,
+              1.0
+            ]
+          ]
+        ]
+      },
+      {
+        "gate": "UNITARY",
+        "targets": [
+          0,
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.7071067811865476,
+              0.7071067811865475
+            ]
+          ]
+        ]
+      },
+      {
+        "gate": "H",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "UNITARY",
+        "targets": [
+          1,
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              6.123233995736766e-17,
+              1.0
+            ]
+          ]
+        ]
+      },
+      {
+        "gate": "H",
+        "targets": [
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "SWAP",
+        "targets": [
+          0,
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "SWAP",
+        "targets": [
+          0,
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": true,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": true,
+        "matrix": null
+      },
+      {
+        "gate": "UNITARY",
+        "targets": [
+          1,
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": true,
+        "matrix": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              6.123233995736766e-17,
+              1.0
+            ]
+          ]
+        ]
+      },
+      {
+        "gate": "H",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": true,
+        "matrix": null
+      },
+      {
+        "gate": "UNITARY",
+        "targets": [
+          0,
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": true,
+        "matrix": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.7071067811865476,
+              0.7071067811865475
+            ]
+          ]
+        ]
+      },
+      {
+        "gate": "UNITARY",
+        "targets": [
+          0,
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": true,
+        "matrix": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              6.123233995736766e-17,
+              1.0
+            ]
+          ]
+        ]
+      },
+      {
+        "gate": "H",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": true,
+        "matrix": null
+      }
+    ],
+    "name": "QFT and inverse QFT"
+  },
+  "config": {
+    "mode": "statevector",
+    "shots": 128,
+    "seed": 42
+  }
+}

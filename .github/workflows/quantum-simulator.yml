@@ -1,0 +1,21 @@
+name: Optional quantum numerical runtime
+on:
+  push:
+    paths: ['simlab_quantum/**', 'tests/test_quantum*', 'studies/quantum_simulator/**', '.github/workflows/quantum-simulator.yml']
+  pull_request:
+    paths: ['simlab_quantum/**', 'tests/test_quantum*', 'studies/quantum_simulator/**', '.github/workflows/quantum-simulator.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  numerical-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - run: python3 -m venv .venv-quantum
+      - run: .venv-quantum/bin/pip install -r simlab_quantum/requirements.txt pytest==9.1.1
+      - run: .venv-quantum/bin/python -B -m pytest -q -p no:cacheprovider tests/test_quantum_core.py tests/test_quantum_runner.py

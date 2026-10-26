@@ -9,3 +9,5 @@ simulations/**/evidence/
 simulations/**/handoff/
 simulations/**/tmp/
 simulations/**/tooling/
+
+.venv-quantum/

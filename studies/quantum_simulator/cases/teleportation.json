@@ -1,0 +1,124 @@
+{
+  "schema": "SIMLAB-QUANTUM-1",
+  "circuit": {
+    "version": 1,
+    "n_qubits": 3,
+    "n_clbits": 2,
+    "operations": [
+      {
+        "gate": "RY",
+        "targets": [
+          0
+        ],
+        "angle": 1.0471975511965976,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "CX",
+        "targets": [
+          1,
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "CX",
+        "targets": [
+          0,
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "MEASURE",
+        "targets": [
+          0,
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [
+          0,
+          1
+        ],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "X",
+        "targets": [
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": {
+          "bit": 1,
+          "value": 1
+        },
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "Z",
+        "targets": [
+          2
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": {
+          "bit": 0,
+          "value": 1
+        },
+        "inverse": false,
+        "matrix": null
+      }
+    ],
+    "name": "Teleportation Ry(\u03c0/3)|0\u27e9"
+  },
+  "config": {
+    "mode": "statevector",
+    "shots": 128,
+    "seed": 42
+  }
+}

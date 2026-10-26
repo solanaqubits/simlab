@@ -63,3 +63,11 @@ Lean kernel proof. It does not alter the SQL core or authority gate.
 provides a second reference for the experimental ALCC normalization corpus and
 archive replay. Range refusal remains an incomplete check, not a certificate
 rejection.
+
+## Optional quantum circuit simulator
+
+[Bounded Quantum runtime, examples and numerical receipts](docs/quantum-simulator.en.md)
+provides statevector/density-matrix simulation, noise and dynamic circuits on
+explicit request. Numerical dependencies are optional and loaded only by the
+worker. This path produces numerical evidence, independently of SQL/ALCC or
+Lean proof verification; it starts no web service or hardware integration.

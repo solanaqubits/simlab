@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/solanaqubits/quantum-simulator",
+  "commit": "f787b023e57cd4b011ccae73638706d441707400",
+  "files_sha256": {
+    "quantum_sim/core.py": "ee0a75eb04d0006fb04ad2a4d6a556add05d6f6f3a199d4036da8a05bacb42fc",
+    "quantum_sim/gates.py": "fff6c02596d9ff3ef75e312fe90c909a5b230b11be318b3e2d99750f07247d3a",
+    "quantum_sim/models.py": "87a790849e9c70546d3d3c1314271695d913b178712923e255647b75c734ed46",
+    "quantum_sim/resources.py": "26e3776938416d8f0e7d1f19f8dda0ef591f1a7d7de9c876fb4111d074310d89",
+    "quantum_sim/examples.py": "92e343230309ec405ec485b93284889a4246e3ac0f7a4c80e7f1983cb22dea27",
+    "tests/test_core.py": "f521ab470af131dc68ae7620b1650267af081b24ad33b7f057ee0c6b67c7b3cf"
+  },
+  "scope": "Selected numerical core and examples; original source untouched. Local migration authorized by repository owner. No general upstream LICENSE file found; no third-party redistribution license inferred.",
+  "adaptations": [
+    "Lazy package imports",
+    "Numerical rather than exact CPU description",
+    "Bounded SimLab subprocess protocol and numerical output validation"
+  ]
+}

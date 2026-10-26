@@ -1,0 +1,162 @@
+{
+  "schema": "SIMLAB-QUANTUM-1",
+  "circuit": {
+    "version": 1,
+    "n_qubits": 2,
+    "n_clbits": 0,
+    "operations": [
+      {
+        "gate": "H",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "CZ",
+        "targets": [
+          0,
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "X",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "X",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "CZ",
+        "targets": [
+          0,
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "X",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "X",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          0
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      },
+      {
+        "gate": "H",
+        "targets": [
+          1
+        ],
+        "angle": null,
+        "probability": null,
+        "clbits": [],
+        "condition": null,
+        "inverse": false,
+        "matrix": null
+      }
+    ],
+    "name": "Grover: search for 11"
+  },
+  "config": {
+    "mode": "statevector",
+    "shots": 128,
+    "seed": 42
+  }
+}
