@@ -1,0 +1,10 @@
+{
+  "image": "sha256:a40c03cbb81c59bfb0e0887ab0b1859727075da7b9cc576a1cec2c771f38c5fb",
+  "command": ["/bin/sh", "-c", "trap \"\" TERM; sleep 120 & wait"],
+  "timeout_seconds": 3,
+  "memory_bytes": 67108864,
+  "cpus": 0.5,
+  "pids": 32,
+  "tmpfs_bytes": 8388608,
+  "binds": []
+}

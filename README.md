@@ -71,3 +71,9 @@ provides statevector/density-matrix simulation, noise and dynamic circuits on
 explicit request. Numerical dependencies are optional and loaded only by the
 worker. This path produces numerical evidence, independently of SQL/ALCC or
 Lean proof verification; it starts no web service or hardware integration.
+
+## Optional container watchdog
+
+[Host-supervised container deadlines and execution receipts](docs/container-watchdog.en.md)
+provide an opt-in local Docker wrapper with confirmed stop/removal. Execution
+status is separate from ALCC certificate verdicts and numerical Quantum results.
