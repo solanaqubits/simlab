@@ -1,0 +1,50 @@
+# Одноразовая self-hosted проверка
+
+По явному решению пользователя допускается ручной GitHub Actions запуск в
+одноразовом контейнере как CI интеграционного кандидата. Hosted-результаты и их
+billing failures остаются отдельными свидетельствами; self-hosted не выдаётся
+за GitHub-hosted и не является полной β-квалификацией.
+
+Workflow выбирает `geek-work-isolated` только для workflow_dispatch от solanaqubits
+в solanaqubits/simlab-private. Push/PR продолжают использовать hosted runner.
+Runner регистрируется repository-scoped с `--ephemeral --disableupdate`, без
+сервиса. После одной задачи регистрация удаляется GitHub; контейнер уничтожается
+оператором. Отдельный предел жизни контейнера — 1200 секунд, job — 5 минут.
+
+Образ: Ubuntu24.04, Python3.12, официальный actions/runner2.338.2 с проверкой
+SHA256 опубликованного asset. При исполнении фиксируется локальный image ID;
+apt/base не дают побайтной воспроизводимости сборки. Никаких mounts, host network,
+Docker socket, SSH/config/home хоста. cap-drop ALL, no-new-privileges, non-root,
+4CPU/4GiB/512PID. Контейнеру нужен выход к GitHub; полная egress-изоляция не заявляется.
+
+Registration token получают через API только для регистрации и не сохраняют в
+репозитории/отчётах. GITHUB_TOKEN workflow — contents:read, checkout не сохраняет
+credentials. Runner-контейнер всё равно доверен на время задачи и видит checkout;
+поэтому публичные fork PR и чужие задачи сюда не маршрутизируются.
+
+После проверки: сохранить run/job SHA, conclusion и job steps; проверить удаление
+runner, остановить/удалить контейнер, сохранить итог и ограничения. Не копировать
+диагностические файлы с credentials в публичный пакет. Регистрация и старт —
+ручная операция; Dockerfile сам не создаёт runner или расписание.
+
+## Штатная команда оператора
+
+После сборки образа и ручного запуска workflow:
+
+```sh
+gh workflow run geek-work.yml --repo solanaqubits/simlab-private --ref REVIEWED_BRANCH -f execution=isolated-self-hosted
+python3 ci/self-hosted/run_once.py --repo solanaqubits/simlab-private \
+  --run-id RUN_ID --sha FULL_REVIEWED_SHA --output NEW_EVIDENCE_DIRECTORY
+```
+
+Команда проверяет владельца/ручное событие/SHA/метки ожидающей задачи, стартует
+один контейнер и ждёт результат. В finally удаляет контейнер и оставшуюся регистрацию;
+если GitHub недоступен при очистке, квитанция явно фиксирует незавершённую очистку.
+При аварийном убийстве самого процесса оператор должен проверить регистрацию;
+контейнер ограничен собственным временем жизни. Локальный lock сериализует
+операторов на этом хосте; внешние действия GitHub этим lock не блокируются.
+Output создаётся новым каталогом. receipt.json,run.json,jobs.json и job.log
+сохраняются локально. Логи приватного репозитория не публиковать.
+
+Текущий allowlist: solanaqubits/simlab-private и solanaqubits/simlab; только
+workflow_dispatch от solanaqubits. Публичные fork PR не принимаются.

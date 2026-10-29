@@ -1,0 +1,24 @@
+{
+  "schema": "geek-work-public-files-1",
+  "files": {
+    "CONTEXT-PROFILE.ru.md": "813e1e845ae8b89005529652487f3774e8fd5f0545a0f0b913ca341407c8c49a",
+    "README.md": "532eac7d2f834dd9a159c9ead646d05ad7d27b80c362e6569269a67c469845ac",
+    "VAULT.ru.md": "bac1703f54d254264c43c82543c650183889923fcdc3128746340a6ddd5af06f",
+    "check.py": "0ffba300165c06f7e8696dabe9dc53924de8a383877ef420677d0249613352b5",
+    "ci/self-hosted/Dockerfile": "c13054154164585ec5e0ed98e95991aaec993e17549ff768f0b823f17f31f5c5",
+    "ci/self-hosted/README.ru.md": "7933de0cc7a773195ee16e3ec7bb42fdd02e0a5dd60b2d1543792d2a9d920045",
+    "ci/self-hosted/run_once.py": "f9c1a73f341a1e138ce65e9a049bf1e09d02433dfae7d96ee48960110b836a91",
+    "tests/test_context_profile.py": "e887b53ba2d667fee43886a1fc33137773df9b20271f818e69e97be1a973354f",
+    "tests/test_hexagon.py": "a9595aa9bc0e08bc46fa1f7d5592545fda3c9260ed8198d1cfec43ac8767aa60",
+    "tests/test_memory.py": "cf667b323391197085016759419b1e7d2e595ef414b55629d2a44694d751e9f9",
+    "tests/test_selfhosted.py": "b14d31dfc51d9249e00fbb7b89252c067b37c7ebaad6935585d60aeb2152f025",
+    "tests/test_vault.py": "c9955aafe18d5035a2e8abfcc212ab24464195d03ce00afe2f3efcfccfcf62df",
+    "tools/geek_work_context_profile.py": "af1f211cce8c43498eb978d31febbc96e7aab4116c253d32dd72ca4c90d74cff",
+    "tools/geek_work_hexagon.py": "e6645279d2566893e51dfbaa5c98d7b46bd78d6e88f3ebbacb9c0232e3a3864c",
+    "tools/geek_work_memory.py": "0c0cf87dab10a113d2ccaa68e6f75ac3260cc2cc7c5a1091b1d5b8cfdbcd2217",
+    "tools/geek_work_vault.py": "b64459c1ba4fad289ff5090941de0c2d118134bf1fc688aca2098ef39ac62440",
+    "tools/knowledge.py": "1c892c34b22d1d47abd20bba2daa54e85bb89a2da1b474dc27eed51b4489f4bc"
+  },
+  "private_data_included": false,
+  "synthetic_tests": true
+}

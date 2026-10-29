@@ -77,3 +77,10 @@ Lean proof verification; it starts no web service or hardware integration.
 [Host-supervised container deadlines and execution receipts](docs/container-watchdog.en.md)
 provide an opt-in local Docker wrapper with confirmed stop/removal. Execution
 status is separate from ALCC certificate verdicts and numerical Quantum results.
+
+## Geek Work knowledge tools
+
+[geek_work](geek_work/README.md) contains standalone local knowledge-card tooling,
+Markdown projections, reproducible context-size checks, read-only Hexagon metadata
+intake and an optional disposable self-hosted CI operator. Examples and tests are
+synthetic; private research notes and chat archives are not part of this package.
