@@ -5,6 +5,7 @@ import fcntl
 import json
 from pathlib import Path
 import re
+import signal
 import subprocess
 import time
 import uuid
@@ -46,15 +47,16 @@ def execute(repo, run_id, sha, label, image, output, timeout):
     receipt=dict(schema='geek-work-selfhosted-receipt-1',repository=repo,run_id=run_id,
                  expected_sha=sha,runner_name=name,status='starting',runner_removed=False,
                  container_removed=False,limits='Trusted manual revision; Docker and host trusted; GitHub egress allowed.')
-    created=False
+    container_attempted=False
     try:
         run=api(f'{prefix}/runs/{run_id}');validate_run(run,sha)
         jobs=api(f'{prefix}/runs/{run_id}/jobs')['jobs'];validate_jobs(jobs,label)
         receipt['image_id']=cmd(['docker','image','inspect',image,'--format','{{.Id}}']).strip()
         # No host filesystem/socket mounts; credentials for GH API stay on the host.
+        container_attempted=True
         cmd(['docker','run','-d','--name',name,'--cpus','4','--memory','4g','--memory-swap','4g',
              '--pids-limit','512','--cap-drop','ALL','--security-opt','no-new-privileges',image,
-             '-c',f'sleep {timeout}']);created=True
+             '-c',f'sleep {timeout}'])
         token=api(f'{prefix}/runners/registration-token','POST')['token']
         script=('read -r registration_token; ./config.sh --unattended --url https://github.com/'+repo+
                 ' --token "$registration_token" --name '+name+' --labels '+label+
@@ -71,15 +73,21 @@ def execute(repo, run_id, sha, label, image, output, timeout):
         jobs=api(f'{prefix}/runs/{run_id}/jobs')['jobs']
         require(len(jobs)==1 and jobs[0].get('runner_name')==name,'job ran on another runner')
         (output/'jobs.json').write_text(json.dumps(jobs,indent=2)+'\n')
-        receipt.update(status=run['conclusion'],url=run['html_url'])
+        receipt.update(status=run['conclusion'],run_conclusion=run['conclusion'],url=run['html_url'])
         (output/'job.log').write_text(cmd(['gh','run','view',str(run_id),'--repo',repo,'--log']))
     except Exception as error:
         # Subprocess details can contain credentials; retain only the class, never command/output.
         receipt.update(status='error',error_class=type(error).__name__)
         if isinstance(error,(ValueError,TimeoutError)):receipt['reason']=str(error)
     finally:
-        if created:
-            try:cmd(['docker','rm','-f',name]);receipt['container_removed']=True
+        if container_attempted:
+            # A timed-out Docker client may still have created the container.
+            try:cmd(['docker','rm','-f',name])
+            except Exception:pass
+            try:
+                remaining=cmd(['docker','ps','-a','--filter',f'name=^{name}$','--format','{{.ID}}']).strip()
+                receipt['container_removed']=not bool(remaining)
+                if remaining:receipt['cleanup_container_error']=True
             except Exception:receipt['cleanup_container_error']=True
         else:receipt['container_removed']=True
         try:
@@ -88,6 +96,8 @@ def execute(repo, run_id, sha, label, image, output, timeout):
                     cmd(['gh','api','--method','DELETE',f"{prefix}/runners/{runner['id']}"])
             receipt['runner_removed']=not any(r['name']==name for r in api(f'{prefix}/runners')['runners'])
         except Exception:receipt['cleanup_registration_error']=True
+        if receipt['status']=='success' and not (receipt['container_removed'] and receipt['runner_removed']):
+            receipt['status']='cleanup_failed'
         (output/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
     return receipt
 
@@ -98,6 +108,9 @@ def main():
     p.add_argument('--sha',required=True);p.add_argument('--label',default='geek-work-isolated')
     p.add_argument('--image',default='geek-work-runner:20261029');p.add_argument('--output',type=Path,required=True)
     p.add_argument('--timeout',type=int,default=600);a=p.parse_args()
+    def interrupted(signum, frame):
+        raise InterruptedError('operator termination')
+    signal.signal(signal.SIGTERM, interrupted)
     # Serialize this host's operators; other GitHub writers remain outside this lock.
     with open('/tmp/geek-work-selfhosted.lock','a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX)
