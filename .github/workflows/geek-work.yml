@@ -1,0 +1,31 @@
+name: Geek Work public tools
+on:
+  push:
+    paths: ['geek_work/**', '.github/workflows/geek-work.yml']
+  pull_request:
+    paths: ['geek_work/**', '.github/workflows/geek-work.yml']
+  workflow_dispatch:
+    inputs:
+      execution:
+        description: Runner for this manually reviewed revision
+        type: choice
+        options: [hosted, isolated-self-hosted]
+        default: hosted
+permissions:
+  contents: read
+concurrency:
+  group: geek-work-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  synthetic:
+    runs-on: ${{ github.event_name == 'workflow_dispatch' && inputs.execution == 'isolated-self-hosted' && github.repository == 'solanaqubits/simlab' && github.actor == 'solanaqubits' && fromJSON('["self-hosted","geek-work-isolated"]') || fromJSON('["ubuntu-24.04"]') }}
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - run: python3 -c 'import sys; assert sys.version_info[:2] == (3, 12)'
+      - run: python3 geek_work/check.py
