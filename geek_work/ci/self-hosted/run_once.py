@@ -44,6 +44,14 @@ def execute(repo, run_id, sha, label, image, output, timeout):
     def api(path, method=None):
         return json.loads(cmd(['gh','api',*(['--method',method] if method else []),path]))
     prefix=f'repos/{repo}/actions';name='geek-work-once-'+uuid.uuid4().hex[:16]
+    def runners():
+        result=[]
+        for page in range(1,21):
+            response=api(f'{prefix}/runners?per_page=100&page={page}')
+            result.extend(response['runners'])
+            if len(result)>=response['total_count']:return result
+            require(bool(response['runners']),'incomplete runner listing')
+        raise ValueError('runner listing exceeds cleanup limit')
     receipt=dict(schema='geek-work-selfhosted-receipt-1',repository=repo,run_id=run_id,
                  expected_sha=sha,runner_name=name,status='starting',runner_removed=False,
                  container_removed=False,limits='Trusted manual revision; Docker and host trusted; GitHub egress allowed.')
@@ -91,10 +99,10 @@ def execute(repo, run_id, sha, label, image, output, timeout):
             except Exception:receipt['cleanup_container_error']=True
         else:receipt['container_removed']=True
         try:
-            for runner in api(f'{prefix}/runners')['runners']:
+            for runner in runners():
                 if runner['name']==name:
                     cmd(['gh','api','--method','DELETE',f"{prefix}/runners/{runner['id']}"])
-            receipt['runner_removed']=not any(r['name']==name for r in api(f'{prefix}/runners')['runners'])
+            receipt['runner_removed']=not any(r['name']==name for r in runners())
         except Exception:receipt['cleanup_registration_error']=True
         if receipt['status']=='success' and not (receipt['container_removed'] and receipt['runner_removed']):
             receipt['status']='cleanup_failed'

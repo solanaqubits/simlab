@@ -64,9 +64,13 @@ class FakeHost:
             path=args[-1]
             if path.endswith('/registration-token'):return json.dumps({'token':'secret-token'})
             if '/runners/7' in path and 'DELETE' in args:self.registered=False;return ''
-            if path.endswith('/runners'):
+            if path.split('?',1)[0].endswith('/runners'):
                 if self.fault=='cleanup_api_failure':raise subprocess.CalledProcessError(1,args)
-                return json.dumps({'runners':[{'name':self.name,'id':7}] if self.registered else []})
+                rows=[{'name':self.name,'id':7}] if self.registered else []
+                if self.fault=='runner_on_second_page':
+                    rows=[{'name':'other-'+str(i),'id':100+i} for i in range(100)]+rows
+                page=2 if path.endswith('page=2') else 1
+                return json.dumps({'runners':rows[(page-1)*100:page*100],'total_count':len(rows)})
             if path.endswith('/jobs'):
                 job=dict(status='queued' if self.polls==1 else 'completed',labels=['self-hosted','geek-work-isolated'],runner_name=self.name)
                 return json.dumps({'jobs':[job]})
@@ -121,3 +125,9 @@ class SelfhostedRecoveryTests(unittest.TestCase):
         self.assertEqual(result['status'],'cleanup_failed')
         self.assertFalse(result['runner_removed'])
         self.assertTrue(result['container_removed'])
+
+    def test_runner_cleanup_paginates(self):
+        result,fake=self.exercise('runner_on_second_page')
+        self.assertEqual(result['status'],'success')
+        self.assertFalse(fake.registered)
+        self.assertTrue(any('page=2' in call[-1] for call in fake.calls if call[:2]==['gh','api']))
