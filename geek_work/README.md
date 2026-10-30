@@ -2,7 +2,7 @@
 
 Python 3.12, standard library only. Tools for versioned JSON knowledge, selected
 Markdown views, context-size profiles/replay/preflight, and read-only Hexagon
-metadata intake. This package contains no private knowledge graph, chats, API
+metadata intake, recovery snapshots, offline reference queues and review comparison. This package contains no private knowledge graph, chats, API
 credentials, model adapter or autonomous agent core.
 
 Run `python3 -m unittest discover -s tests -v` from this directory.
@@ -27,3 +27,7 @@ manual self-hosted selection is restricted to the repository owner.
 
 Run `python3 check.py` for the manifest and zero-skip synthetic suite.
 See VAULT.ru.md and CONTEXT-PROFILE.ru.md for local data commands.
+
+Offline review intake/council: see REVIEW.ru.md. Snapshot recovery and reference
+queues: RECOVERY.ru.md and REFERENCES.ru.md. Real reviews and private corpora are
+not distributed. Partial decisions remain unresolved, and agreement is not truth.
