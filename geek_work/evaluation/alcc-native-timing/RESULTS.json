@@ -1,0 +1,304 @@
+{
+  "binary_sha256": "74f2154e7071cb14ef2da4feff263d1c5d0fbd95fca635894a7a3f9874a8385f",
+  "cases": [
+    {
+      "case": "chain-invalid",
+      "code": 2,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 92265
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 1149805
+        }
+      },
+      "samples": {
+        "read_ns": [
+          34646,
+          57619
+        ],
+        "verify_ns": [
+          366112,
+          783693
+        ]
+      }
+    },
+    {
+      "case": "chain-valid",
+      "code": 0,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 95109
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 1228395
+        }
+      },
+      "samples": {
+        "read_ns": [
+          58300,
+          36809
+        ],
+        "verify_ns": [
+          799573,
+          428822
+        ]
+      }
+    },
+    {
+      "case": "constant-mismatch",
+      "code": 2,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 70243
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 576781
+        }
+      },
+      "samples": {
+        "read_ns": [
+          35707,
+          34536
+        ],
+        "verify_ns": [
+          387413,
+          189368
+        ]
+      }
+    },
+    {
+      "case": "duplicate-cancellation",
+      "code": 0,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 71486
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 546533
+        }
+      },
+      "samples": {
+        "read_ns": [
+          36069,
+          35417
+        ],
+        "verify_ns": [
+          260282,
+          286251
+        ]
+      }
+    },
+    {
+      "case": "empty",
+      "code": 0,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 75793
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 325807
+        }
+      },
+      "samples": {
+        "read_ns": [
+          31730,
+          44063
+        ],
+        "verify_ns": [
+          149553,
+          176254
+        ]
+      }
+    },
+    {
+      "case": "identity-x",
+      "code": 0,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 71997
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 538679
+        }
+      },
+      "samples": {
+        "read_ns": [
+          31320,
+          40677
+        ],
+        "verify_ns": [
+          184499,
+          354180
+        ]
+      }
+    },
+    {
+      "case": "noncanonical-json",
+      "code": 3,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 88016
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 155785
+        }
+      },
+      "samples": {
+        "read_ns": [
+          40416,
+          47600
+        ],
+        "verify_ns": [
+          40547,
+          115238
+        ]
+      }
+    },
+    {
+      "case": "product-24",
+      "code": 0,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 68489
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 12285803
+        }
+      },
+      "samples": {
+        "read_ns": [
+          33483,
+          35006
+        ],
+        "verify_ns": [
+          5752022,
+          6533781
+        ]
+      }
+    },
+    {
+      "case": "product-48",
+      "code": 0,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 66015
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 35530659
+        }
+      },
+      "samples": {
+        "read_ns": [
+          28184,
+          37831
+        ],
+        "verify_ns": [
+          15874422,
+          19656237
+        ]
+      }
+    },
+    {
+      "case": "product-8",
+      "code": 0,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 61356
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 3355178
+        }
+      },
+      "samples": {
+        "read_ns": [
+          35828,
+          25528
+        ],
+        "verify_ns": [
+          2252201,
+          1102977
+        ]
+      }
+    },
+    {
+      "case": "unreduced-rational",
+      "code": 3,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 89348
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 316620
+        }
+      },
+      "samples": {
+        "read_ns": [
+          57859,
+          31489
+        ],
+        "verify_ns": [
+          232801,
+          83819
+        ]
+      }
+    },
+    {
+      "case": "wrong-problem",
+      "code": 3,
+      "medians": {
+        "read_ns": {
+          "denominator": 2,
+          "numerator": 67297
+        },
+        "verify_ns": {
+          "denominator": 2,
+          "numerator": 406599
+        }
+      },
+      "samples": {
+        "read_ns": [
+          34425,
+          32872
+        ],
+        "verify_ns": [
+          193767,
+          212832
+        ]
+      }
+    }
+  ],
+  "import_source_sha": "8768dc18c1846df60b26a564004f9fd232d8b32e",
+  "independence_verified": false,
+  "measured": 24,
+  "monetary_cost": null,
+  "new_theorems": false,
+  "peak_memory_bytes": null,
+  "performance_qualified": false,
+  "processes": 36,
+  "schema": "alcc-native-timing-pilot-1",
+  "source_sha256": "937b9bb29bc62e679402acde9a7e324cfae395ed24bab5f8e31f1929fa5e768e",
+  "warmups": 12
+}

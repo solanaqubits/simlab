@@ -1,0 +1,35 @@
+{
+  "base_image_id": "sha256:a1ac28c8a63ed7b636b84a6a3a5f392ae950cdcbc5e89623e710c2fefa439cb0",
+  "container_escape_protection_verified": false,
+  "cpu_count": 1,
+  "dpi": 96,
+  "image_id": "sha256:ffa26d27d912753c6ed475fb9e6dcc8c7d0f1fb25934c50fa9e0fb37a9dd8ca9",
+  "max_pages": 16,
+  "max_pdf_bytes": 16777216,
+  "max_pixels": 16000000,
+  "max_source_page": 100000,
+  "memory_bytes": 536870912,
+  "network": "none",
+  "pids": 64,
+  "schema": "geek-work-pdf-container-profile-2",
+  "tmpfs_bytes": 67108864,
+  "user": "1000:1000",
+  "worker_observation": {
+    "independent_build_attestation": false,
+    "max_source_page": 100000,
+    "schema": "geek-work-poppler-container-observation-2",
+    "tools": {
+      "pdfinfo": {
+        "path": "/opt/poppler/bin/pdfinfo",
+        "sha256": "bfafd501d81f963d1507cc4470e20594c055a38ccc2beafca618457ec49bc011",
+        "version": "pdfinfo version 25.12.0\nCopyright 2005-2025 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC"
+      },
+      "pdftoppm": {
+        "path": "/opt/poppler/bin/pdftoppm",
+        "sha256": "d2e6e772d99a34d710236fd00d6470109398d3eb2e9280b82a68360a17a978f6",
+        "version": "pdftoppm version 25.12.0\nCopyright 2005-2025 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC"
+      }
+    }
+  },
+  "worker_sha256": "c604545fbd19b9d2ceb1127e37b0c34b58b16ea041c65e7fce69753c47491ce9"
+}

@@ -84,3 +84,12 @@ status is separate from ALCC certificate verdicts and numerical Quantum results.
 Markdown projections, reproducible context-size checks, read-only Hexagon metadata
 intake and an optional disposable self-hosted CI operator. Examples and tests are
 synthetic; private research notes and chat archives are not part of this package.
+
+## Geek Work 1.0.0
+
+The [Geek Work component](geek_work/README.md) provides local document, knowledge,
+review and bounded research tools. Run `python3 -B geek_work/check.py` for its
+manifest and complete bundled synthetic suite. Optional renderers and model
+providers are provisioned separately; nothing is installed or connected by default.
+See [release scope and open obligations](geek_work/RELEASE.md). This component
+release does not re-certify the complete Leanbook or SimLab formal libraries.
