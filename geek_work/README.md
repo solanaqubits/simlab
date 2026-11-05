@@ -1,33 +1,72 @@
-# Geek Work: local knowledge tools
+# Geek Work 1.0.0
 
-Python 3.12, standard library only. Tools for versioned JSON knowledge, selected
-Markdown views, context-size profiles/replay/preflight, and read-only Hexagon
-metadata intake, recovery snapshots, offline reference queues and review comparison. This package contains no private knowledge graph, chats, API
-credentials, model adapter or autonomous agent core.
+Local tools for preparing documents, tracking claims and reviewing reproducible
+research artifacts. Python 3.12; the core uses the standard library. This is the
+first consolidated public Geek Work release in SimLab. It is a component release:
+it does not re-version or re-certify the Leanbook proof library.
 
-Run `python3 -m unittest discover -s tests -v` from this directory.
-Use `python3 tools/knowledge.py --help` and other tool `--help` commands.
+## Start without installing anything
 
-All tests use synthetic inputs. Structural checks, source hashes and byte budgets
-do not establish scientific truth, token cost, or authorization to transmit data.
-Markdown views do not write back to the graph. Hexagon metadata is not peer review.
-Context preflight covers the retrieval envelope only; prompts, tools and output
-need separate budgets. No installation service or background scheduler is included.
+From the repository root:
 
-Source tooling is exported by explicit allowlist; test_memory uses a newly written
-synthetic fixture rather than the private curated graph. No private Git history
-is needed. Export manifest hashes describe files, not authorship or correctness.
+```sh
+python3 -B geek_work/check.py
+python3 -B geek_work/tools/knowledge.py --help
+python3 -B geek_work/tools/geek_work_finalize.py --help
+python3 -B geek_work/tools/geek_work_manuscript.py --help
+python3 -B geek_work/tools/geek_work_document_index.py --help
+python3 -B geek_work/tools/geek_work_alcc_timing_replay.py --help
+```
 
-The optional operator command `ci/self-hosted/run_once.py` runs one explicitly
-reviewed queued GitHub workflow in a disposable container. See
-`ci/self-hosted/README.ru.md`. Build with
-`docker build -t geek-work-runner:20261029 ci/self-hosted`.
-It creates no permanent service. Public PR workflows always use hosted runners;
-manual self-hosted selection is restricted to the repository owner.
+The first command verifies the exact package inventory and runs the complete
+bundled synthetic/protocol suite. Tests create temporary fixtures and bounded
+local processes; provider and container calls are mocked. They need no private
+knowledge graph, model account, network, Lean installation or paid API call.
 
-Run `python3 check.py` for the manifest and zero-skip synthetic suite.
-See VAULT.ru.md and CONTEXT-PROFILE.ru.md for local data commands.
+Use explicit input/output paths with the individual CLIs. A new package requires
+a new output directory. Preserve the original bytes and retain the printed SHA
+outside the package before moving it. Verification checks the declared contract;
+it does not establish authenticity when package and anchor share an untrusted origin.
 
-Offline review intake/council: see REVIEW.ru.md. Snapshot recovery and reference
-queues: RECOVERY.ru.md and REFERENCES.ru.md. Real reviews and private corpora are
-not distributed. Partial decisions remain unresolved, and agreement is not truth.
+## Included capabilities
+
+| Area | Tools and boundaries |
+| --- | --- |
+| Editorial intake | Chunked snapshots, reversible edits, protected spans, transactional finalize and cost/intervention records. Unknown cost remains null. |
+| Knowledge | Versioned cards, selected Markdown views, bounded memory requests, context profiles and recovery. No private graph is included. |
+| Documents | Manuscript proposals, individual/batched hunks, source-bound claims, protected numbers, file operations, Git preflight and review status. |
+| Rendering | Separate PDF/LaTeX/Typst request, artifact and replay contracts; page selection, OCR candidate review and diagnostics. OCR is not scientific verification. |
+| Retrieval | Document indexes, source ranges, retrieval assessment and query-fidelity records. Coverage is not answer correctness. |
+| Review | Draft annotations, council comparison, abstentions, session ledgers and explicit evidence limits. Agreement is not independent validation. |
+| Research | Experiment passports, fixed exact-arithmetic controls, bounded execution series and artifact inspection. No general autonomous scientist is installed. |
+| Cryptography | Proof-envelope and nonce/recovery contracts, EVM evidence checks, rational ALCC controls and offline timing replay. No new proof system or deployed verifier is claimed. |
+| Intake | Read-only Hexagon/alphaXiv adapters and source snapshots. Remote metadata is not peer review. |
+
+See [TOOLS.md](TOOLS.md) for the exact module inventory and
+[RELEASE.md](RELEASE.md) for qualifications and excluded scope.
+
+## Optional external runtimes
+
+Nothing is installed, downloaded, scheduled or connected during setup or tests.
+Live PDF/LaTeX/Typst rendering requires separately provisioned, pinned binaries or
+container images. Runtime source and historical profiles are supplied; an image
+hash does not make that image available on another machine. Missing runtimes must
+remain unavailable rather than silently falling back. Provider adapters likewise
+require a separately installed CLI/account and explicit data-disclosure approval.
+No provider is selected by this release, and no credentials are bundled.
+
+The disposable CI operator is documented in
+[ci/self-hosted/README.ru.md](ci/self-hosted/README.ru.md). Public pull requests
+use hosted runners. Do not expose a privileged self-hosted runner to unreviewed code.
+
+## Compatibility and trust
+
+Version 1.0.0 uses the project's numeric alpha/beta/gamma convention: the leading
+number identifies the consolidated architecture, not an unstable prerelease.
+Existing artifact schema names remain unchanged. Read each schema's explicit
+limits; future incompatible formats need a new schema identifier.
+
+This release does not certify physical claims, independent annotation, model
+quality, compiler correctness, production admission or a general ALCC speedup.
+The third SimLab-to-Lean obligation remains OPEN. Hashes bind bytes, not authority.
+The code is under the repository's Apache-2.0 license, also included here.

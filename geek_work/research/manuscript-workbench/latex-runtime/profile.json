@@ -1,0 +1,13 @@
+{
+  "schema": "geek-work-latex-runtime-1",
+  "platform": "linux/amd64",
+  "image_id": "sha256:462aeea12ca4f33a2af9846aaa508e2d47f1dd99342f65242b1a402b4898173f",
+  "base_image": "python@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337",
+  "snapshot": "20261030T000000Z",
+  "files": {
+    "Dockerfile": "51fb16ff1aaa8c18f762c26d94deafdec711ea7caed4e91be5a6c4b58d113d79",
+    "worker.py": "2f5c14193e5e58bf577a1189d8175a773ad4d313f81b7fc6927737806e3a7900"
+  },
+  "packages_sha256": "d270f62183c64910a1c017648d1708e2c044a49ee8aefe845d310820db9169b2",
+  "compiler_version": "pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian)\nkpathsea version 6.3.4\nCopyright 2022 Han The Thanh (pdfTeX) et al.\nThere is NO warranty.  Redistribution of this software is\ncovered by the terms of both the pdfTeX copyright and\nthe Lesser GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING and the pdfTeX source.\nPrimary author of pdfTeX: Han The Thanh (pdfTeX) et al.\nCompiled with libpng 1.6.39; using libpng 1.6.39\nCompiled with zlib 1.2.13; using zlib 1.2.13\nCompiled with xpdf version 4.04\n"
+}
