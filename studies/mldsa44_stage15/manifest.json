@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "kind": "public-stage15-selected-source-replay",
+  "upstream_base": "78c83599f57ecb28847ba3ebc4528598318129b8",
+  "patch_sha256": "cfbe31ae486aca6f79954b154d78da9a5be4190731c53064caf633b00cf4c155",
+  "paths": {
+    "crates/ml_dsa_44/src/ct.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "b18c05b7d1d182a4b782fb3d2263d829bd3c6e1c09b971fc640f76a8094d6dc0"
+    },
+    "crates/ml_dsa_44/src/encx.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "747bb622272c102378c959ac1c2ab191d2bb0bbb8b7b39ccc11159452678630d"
+    },
+    "crates/ml_dsa_44/src/k2.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "6c675fefa1530cb855567c6261241b22b0fde2a4623b363878c1f31f98755540"
+    },
+    "crates/ml_dsa_44/src/kc0.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "466868e25f99ff5cb2cbafcea41086f505e7538a39a7bf81185e30ad1b234f48"
+    },
+    "crates/ml_dsa_44/src/lib.cairo": {
+      "base_sha256": "8a18ad33d01c108dc32a3bb0f07e924eca0c356f287dc4b012902c84336b4fc6",
+      "candidate_sha256": "229e239959728325dbf7cbb8870ee3d27c0e0aa38ddba528f67b8e5670010b99"
+    },
+    "crates/ml_dsa_44/src/nt0.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "061d24f0357026ff7957b98eec61b84c9508d13a114f6ef4bfdc233cd4e45127"
+    },
+    "crates/ml_dsa_44/src/nttu.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "4a31021706acdfd97e4a9ab41f0b25165460a508796b322eb506c962eb806606"
+    },
+    "crates/ml_dsa_44/src/pk0.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "417c447674f4a210650f513c153248a1515150b890b4a83efc07c3daf09fe13c"
+    },
+    "crates/ml_dsa_44/src/sa0.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "30c2985f7ead38b3a83b534869299ca44209a3f7127dc425e97c3358bb8b1966"
+    },
+    "crates/ml_dsa_44/src/verx.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "66f995abf5540a2d6abd37adcb24ece988e203c587899d4dbfa08a67ec0d9aa8"
+    },
+    "crates/ml_dsa_44/src/x2.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "a3111359de7010206bfefe32464b7479fc173260ddb8ecd005a548699e148701"
+    },
+    "crates/ml_dsa_44/src/zread.cairo": {
+      "base_sha256": null,
+      "candidate_sha256": "9cec0fdfa21b5231eb11187c343bf6c5d8a57f2e7f1886b1c803b7e8b89ecf8c"
+    }
+  },
+  "files": {
+    "UPSTREAM-LICENSE": "600b4070baad62fe2431e82a3106a7d7ba7264e8b38b835a4a802c8757c8f620",
+    "baseline/crates/ml_dsa_44/src/lib.cairo": "8a18ad33d01c108dc32a3bb0f07e924eca0c356f287dc4b012902c84336b4fc6",
+    "candidate.patch": "cfbe31ae486aca6f79954b154d78da9a5be4190731c53064caf633b00cf4c155",
+    "candidate/crates/ml_dsa_44/src/ct.cairo": "b18c05b7d1d182a4b782fb3d2263d829bd3c6e1c09b971fc640f76a8094d6dc0",
+    "candidate/crates/ml_dsa_44/src/encx.cairo": "747bb622272c102378c959ac1c2ab191d2bb0bbb8b7b39ccc11159452678630d",
+    "candidate/crates/ml_dsa_44/src/k2.cairo": "6c675fefa1530cb855567c6261241b22b0fde2a4623b363878c1f31f98755540",
+    "candidate/crates/ml_dsa_44/src/kc0.cairo": "466868e25f99ff5cb2cbafcea41086f505e7538a39a7bf81185e30ad1b234f48",
+    "candidate/crates/ml_dsa_44/src/lib.cairo": "229e239959728325dbf7cbb8870ee3d27c0e0aa38ddba528f67b8e5670010b99",
+    "candidate/crates/ml_dsa_44/src/nt0.cairo": "061d24f0357026ff7957b98eec61b84c9508d13a114f6ef4bfdc233cd4e45127",
+    "candidate/crates/ml_dsa_44/src/nttu.cairo": "4a31021706acdfd97e4a9ab41f0b25165460a508796b322eb506c962eb806606",
+    "candidate/crates/ml_dsa_44/src/pk0.cairo": "417c447674f4a210650f513c153248a1515150b890b4a83efc07c3daf09fe13c",
+    "candidate/crates/ml_dsa_44/src/sa0.cairo": "30c2985f7ead38b3a83b534869299ca44209a3f7127dc425e97c3358bb8b1966",
+    "candidate/crates/ml_dsa_44/src/verx.cairo": "66f995abf5540a2d6abd37adcb24ece988e203c587899d4dbfa08a67ec0d9aa8",
+    "candidate/crates/ml_dsa_44/src/x2.cairo": "a3111359de7010206bfefe32464b7479fc173260ddb8ecd005a548699e148701",
+    "candidate/crates/ml_dsa_44/src/zread.cairo": "9cec0fdfa21b5231eb11187c343bf6c5d8a57f2e7f1886b1c803b7e8b89ecf8c",
+    "context/.tool-versions": "73ec409da8bdcd761776e4cb05fe60a2e50d547def37d35ae17ef43eaef648ee",
+    "context/Scarb.lock": "7f21f976059d4b3507236f2d7633de3c7e6c4b36f57604b7fbccaa6e0f8fd24f",
+    "context/Scarb.toml": "b453aacc09d749ef6349066c4a86f2458d61fafad351b6e17758867b2c833850"
+  }
+}

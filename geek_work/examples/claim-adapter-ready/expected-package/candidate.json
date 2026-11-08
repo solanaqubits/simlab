@@ -1,0 +1,87 @@
+{
+  "cards": [
+    {
+      "contract": {
+        "conclusion_atoms": [
+          {
+            "id": "available-credits",
+            "sha256": "9cbc23723087a3e3e2bdd9d999ee2f2be4c02c0d0f65763072c33390bf84212e",
+            "text": "available = 100 credits"
+          }
+        ],
+        "domain_atoms": [
+          {
+            "id": "nonnegative-index",
+            "sha256": "ba9b6461a4f22b7a0c23a77997bcfcc0cb79c9a006350302bc68f417d0398571",
+            "text": "0 ≤ n"
+          }
+        ],
+        "evidence_ids": [],
+        "negation_atoms": [
+          {
+            "id": "no-seconds",
+            "sha256": "8c4cb3ddb84cd55797296adf0ad2b2a57d480e4f19058d99dc2e9f3f98eacd84",
+            "text": "no seconds are asserted"
+          }
+        ],
+        "non_claims": [
+          "No proved runtime budget accounting result."
+        ],
+        "open_obligations": [
+          "Prove preservation on allowed traces."
+        ],
+        "premise_atoms": [
+          {
+            "id": "nonnegative-index",
+            "sha256": "ba9b6461a4f22b7a0c23a77997bcfcc0cb79c9a006350302bc68f417d0398571",
+            "text": "0 ≤ n"
+          }
+        ],
+        "quantifier_atoms": [
+          {
+            "id": "all-indices",
+            "sha256": "385e49ed81eb706cb015760826ac3fcb749877848eb059fc7a15201d9bf67cac",
+            "text": "For every n"
+          }
+        ],
+        "quantities": [
+          {
+            "exact_literal": "100",
+            "id": "available-count",
+            "symbol": "available",
+            "unit": "credits"
+          }
+        ],
+        "reported_evidence_state": "hypothesis",
+        "scope": "Synthetic hypothesis about a declared balance; no runtime trace assertion."
+      },
+      "id": "synthetic-balance-extraction",
+      "proof_reference": null,
+      "revision": 1,
+      "source": {
+        "document": {
+          "id": "source",
+          "path": "source.txt",
+          "sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2"
+        },
+        "evidence": [],
+        "statement": {
+          "document": "source",
+          "end": 104,
+          "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+          "start": 31
+        }
+      },
+      "statement": {
+        "end": 73,
+        "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+        "sha256": "693ba7c458f1b5ee248a37356f72443030569ac4fd94ae985fa9bcd39ec7f65a",
+        "start": 0,
+        "text": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted."
+      }
+    }
+  ],
+  "plan_sha256": "2103762ecd6477611038e6c5aef2c2e7ce790c9f7a96c2fdf2bbfb6168d78d02",
+  "schema": "geek-work-claim-transport-candidate-1",
+  "source_bundle_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057"
+}

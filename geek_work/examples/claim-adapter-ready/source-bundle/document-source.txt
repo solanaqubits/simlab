@@ -1,0 +1,3 @@
+Synthetic editorial fixture 😀
+For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.
+No claim of a proved resource model.

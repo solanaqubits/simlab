@@ -1,0 +1,34 @@
+{
+  "claims": [
+    {
+      "assumptions": [
+        "0 ≤ n"
+      ],
+      "evidence": [],
+      "id": "synthetic-balance",
+      "non_claims": [
+        "No proved runtime budget accounting result."
+      ],
+      "open_obligations": [
+        "Prove preservation on allowed traces."
+      ],
+      "reported_evidence_state": "hypothesis",
+      "scope": "Synthetic hypothesis about a declared balance; no runtime trace assertion.",
+      "statement": {
+        "document": "source",
+        "end": 104,
+        "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+        "start": 31
+      }
+    }
+  ],
+  "documents": [
+    {
+      "id": "source",
+      "path": "source.txt",
+      "sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2"
+    }
+  ],
+  "materials": [],
+  "schema": "geek-work-manuscript-claim-map-1"
+}

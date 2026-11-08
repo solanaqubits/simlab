@@ -1,0 +1,28 @@
+{
+  "files": {
+    "adapter-report.json": "04eeb964d40df78f8a48c5e0cc6e49911d618d358a11491c2e1d541b315f3c29",
+    "candidate.json": "2689129f91f657bd21a2b24613c419a24928da3db5936625096ecf381e0f9865",
+    "expectations.json": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+    "extraction-report.json": "0fa9ac919d7308e21cf027e38d3b8d08ab72eee66b401c0cae791e8d890f7b16",
+    "plan.json": "2103762ecd6477611038e6c5aef2c2e7ce790c9f7a96c2fdf2bbfb6168d78d02",
+    "record.json": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+    "source-snapshot.txt": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+    "transport-report.json": "a9325127b498be667d2858bf4b83d584d61c1836a29960c72ea10fe9982e4a3b"
+  },
+  "input_hashes": {
+    "declared_source_revision": 1,
+    "expectations_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+    "expected_claim_map_bundle_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057",
+    "expected_expectations_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+    "expected_source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+    "record_sha256": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+    "source_claim_id": "synthetic-balance",
+    "source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2"
+  },
+  "kernel_replayed": false,
+  "publication_authorized": false,
+  "schema": "geek-work-claim-adapter-package-1",
+  "semantic_equivalence_verified": false,
+  "source_extraction_complete": false,
+  "status": "built"
+}

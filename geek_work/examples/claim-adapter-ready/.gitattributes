@@ -1,0 +1,4 @@
+# Byte-pinned CRLF inputs: preserve line endings and treat CR as part of EOL.
+source.txt -text whitespace=cr-at-eol
+source-bundle/document-source.txt -text whitespace=cr-at-eol
+expected-package/source-snapshot.txt -text whitespace=cr-at-eol

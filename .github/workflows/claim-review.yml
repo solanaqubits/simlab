@@ -1,0 +1,39 @@
+name: Claim Review public API and browser checks
+on:
+  push:
+    paths: ['geek_work/**', '.github/workflows/claim-review.yml']
+  pull_request:
+    paths: ['geek_work/**', '.github/workflows/claim-review.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: claim-review-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  loopback:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Install development-only schema and CDP clients
+        run: |
+          python3 -m venv /tmp/claim-review-ci
+          /tmp/claim-review-ci/bin/pip install jsonschema==4.10.3 websocket-client==1.7.0
+          echo '/tmp/claim-review-ci/bin' >> "$GITHUB_PATH"
+          google-chrome --version
+      - name: Check protocol schemas and harness
+        run: |
+          python3 geek_work/contracts/claim-review-api/check_examples.py
+          python3 -m unittest discover -s geek_work/contracts/claim-review-api/harness_tests -v
+      - name: Check real server and failure handling
+        run: python3 -m unittest discover -s geek_work/contracts/claim-review-api/server_tests -v
+      - name: Browser acceptance and static route boundary
+        run: python3 -m unittest discover -s geek_work/contracts/claim-review-api/ui_tests -v
+      - name: Replay ready and blocked records through actual CLI sessions
+        run: python3 geek_work/contracts/claim-review-api/server_tests/replay.py --output /tmp/claim-review-api-replay

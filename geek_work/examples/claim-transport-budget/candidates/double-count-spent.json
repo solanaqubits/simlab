@@ -1,0 +1,173 @@
+{
+  "cards": [
+    {
+      "contract": {
+        "conclusion_atoms": [
+          {
+            "id": "changed-double-count-spent",
+            "sha256": "793571e82bd3fca88237cf2a590c52848eada062f5f922b0b0b43e40891aafb7",
+            "text": "A + R + S + S + C = T."
+          }
+        ],
+        "domain_atoms": [
+          {
+            "id": "nonnegative-integers",
+            "sha256": "30d5dfde2587c449b8f72cf81b9a87f496eac77bcff4b32c0c781e7334c6a480",
+            "text": "A, R, S, C and T are integers greater than or equal to 0."
+          },
+          {
+            "id": "common-unit",
+            "sha256": "7608b53755c951813b7b4c046d3b3cfb079d80b872b50438e430775cc42378eb",
+            "text": "All five counters use the same unit compute_credit."
+          },
+          {
+            "id": "single-budget-epoch",
+            "sha256": "ce67d08333474bbb4b795b35788ec908fc097557d65eed8bb489b65661e700bb",
+            "text": "All counters refer to one budget_id and one epoch."
+          }
+        ],
+        "evidence_ids": [
+          "fd88cb0d5c7534cef10ed2f640cbcc70c72cb8860b0faeb66d0d99512148c86d"
+        ],
+        "negation_atoms": [],
+        "non_claims": [
+          "No Lean proof or implementation refinement is supplied.",
+          "No physical, financial or spiritual mechanism is asserted.",
+          "Accounting balance alone does not establish authorization or exactly-once execution."
+        ],
+        "open_obligations": [
+          "Prove balance and nonnegativity preservation for each permitted transition and every finite trace.",
+          "Refine implementation atomicity, replay handling, recovery and epoch isolation to the model.",
+          "Review extraction completeness and atom-role assignments; no Python-to-Lean refinement is proved."
+        ],
+        "premise_atoms": [
+          {
+            "id": "nonnegative-integers",
+            "sha256": "30d5dfde2587c449b8f72cf81b9a87f496eac77bcff4b32c0c781e7334c6a480",
+            "text": "A, R, S, C and T are integers greater than or equal to 0."
+          },
+          {
+            "id": "common-unit",
+            "sha256": "7608b53755c951813b7b4c046d3b3cfb079d80b872b50438e430775cc42378eb",
+            "text": "All five counters use the same unit compute_credit."
+          },
+          {
+            "id": "single-budget-epoch",
+            "sha256": "ce67d08333474bbb4b795b35788ec908fc097557d65eed8bb489b65661e700bb",
+            "text": "All counters refer to one budget_id and one epoch."
+          },
+          {
+            "id": "disjoint-categories",
+            "sha256": "6b24ec9f081077731c345e0944a31183223d85c0e061727c42bf2ba1a1954de5",
+            "text": "Available, reserved, spent and cancelled categories are disjoint."
+          },
+          {
+            "id": "balanced-initial-state",
+            "sha256": "a79bbd70cd2524457c95e5f144b95fb863ec4e8ba127491923a7c142c2eaa5cb",
+            "text": "The initial state satisfies A + R + S + C = T."
+          },
+          {
+            "id": "allowed-atomic-transfers",
+            "sha256": "c2eaa5c00fad789fa296db1041dd18100dab709dda31634e7a360c8a36f5d2e1",
+            "text": "Only the five transfers specified below are permitted; each is applied atomically exactly once."
+          },
+          {
+            "id": "fixed-allocation",
+            "sha256": "9ee1ae434e7c69520dc74e2d38f7275249774b594de0d4fa4d4f169eac148fc0",
+            "text": "T is fixed throughout the trace; no new allocation or external debit is permitted."
+          }
+        ],
+        "quantifier_atoms": [
+          {
+            "id": "all-finite-traces",
+            "sha256": "9576d8fec29697a3e1c6d77595e34556f6a253caf3bb22126044a7ec9c883f80",
+            "text": "For every finite valid trace and every state reached along it:"
+          }
+        ],
+        "quantities": [
+          {
+            "exact_literal": "0",
+            "id": "minimum-a",
+            "symbol": "A_min",
+            "unit": "compute_credit"
+          },
+          {
+            "exact_literal": "0",
+            "id": "minimum-r",
+            "symbol": "R_min",
+            "unit": "compute_credit"
+          },
+          {
+            "exact_literal": "0",
+            "id": "minimum-s",
+            "symbol": "S_min",
+            "unit": "compute_credit"
+          },
+          {
+            "exact_literal": "0",
+            "id": "minimum-c",
+            "symbol": "C_min",
+            "unit": "compute_credit"
+          },
+          {
+            "exact_literal": "0",
+            "id": "minimum-t",
+            "symbol": "T_min",
+            "unit": "compute_credit"
+          }
+        ],
+        "reported_evidence_state": "hypothesis",
+        "scope": "Fixed-budget epoch; sequential abstract accounting in compute_credit. Desired invariant, not a verified implementation."
+      },
+      "id": "transported-budget-invariant",
+      "proof_reference": null,
+      "revision": 1,
+      "source": {
+        "document": {
+          "id": "selected-contract",
+          "path": "contract.txt",
+          "sha256": "a503401a32ee1c57f02ebf45ad0c85a1ae40f908ca145cfc4fd259c040770f20"
+        },
+        "evidence": [
+          {
+            "binding": {
+              "citation": {
+                "end": 1430,
+                "material": "budget-draft",
+                "quote": "A, R, S, C and T are integers greater than or equal to 0.\nAll five counters use the same unit compute_credit.\nAll counters refer to one budget_id and one epoch.\nAvailable, reserved, spent and cancelled categories are disjoint.\nThe initial state satisfies A + R + S + C = T.\nOnly the five transfers specified below are permitted; each is applied atomically exactly once.\nT is fixed throughout the trace; no new allocation or external debit is permitted.\nFor every finite valid trace and every state reached along it:\nA + R + S + C = T.",
+                "start": 896
+              },
+              "declaration": null
+            },
+            "material": {
+              "id": "budget-draft",
+              "kind": "reference_material",
+              "origin": {
+                "commit": "12c9edad88784718ec908d8e0a0bd2f8ddbd3600",
+                "repository": "SimLab private local engineering draft (not an external scientific source)"
+              },
+              "path": "CONTRACT-0.1.md",
+              "sha256": "5985d0a9e93abf49624d84b97cf322d8f41599affe5e54887baf8e7d8eee7072"
+            }
+          }
+        ],
+        "statement": {
+          "document": "selected-contract",
+          "end": 534,
+          "quote": "A, R, S, C and T are integers greater than or equal to 0.\nAll five counters use the same unit compute_credit.\nAll counters refer to one budget_id and one epoch.\nAvailable, reserved, spent and cancelled categories are disjoint.\nThe initial state satisfies A + R + S + C = T.\nOnly the five transfers specified below are permitted; each is applied atomically exactly once.\nT is fixed throughout the trace; no new allocation or external debit is permitted.\nFor every finite valid trace and every state reached along it:\nA + R + S + C = T.",
+          "start": 0
+        }
+      },
+      "statement": {
+        "end": 538,
+        "quote": "A, R, S, C and T are integers greater than or equal to 0.\nAll five counters use the same unit compute_credit.\nAll counters refer to one budget_id and one epoch.\nAvailable, reserved, spent and cancelled categories are disjoint.\nThe initial state satisfies A + R + S + C = T.\nOnly the five transfers specified below are permitted; each is applied atomically exactly once.\nT is fixed throughout the trace; no new allocation or external debit is permitted.\nFor every finite valid trace and every state reached along it:\nA + R + S + S + C = T.",
+        "sha256": "24e87af6799710fc875f97be5eca37a955916a8383ddddbaae5a14805bdff1c0",
+        "start": 0,
+        "text": "A, R, S, C and T are integers greater than or equal to 0.\nAll five counters use the same unit compute_credit.\nAll counters refer to one budget_id and one epoch.\nAvailable, reserved, spent and cancelled categories are disjoint.\nThe initial state satisfies A + R + S + C = T.\nOnly the five transfers specified below are permitted; each is applied atomically exactly once.\nT is fixed throughout the trace; no new allocation or external debit is permitted.\nFor every finite valid trace and every state reached along it:\nA + R + S + S + C = T."
+      }
+    }
+  ],
+  "plan_sha256": "83cf833d0be2086d9ffcc7131438ab3486c23124e4dbf6187b00ac1673ab692f",
+  "schema": "geek-work-claim-transport-candidate-1",
+  "source_bundle_sha256": "b7aeeb50b3113509a5ac82dec467fed45ff6d0fbb422a95d2563e9702efd1100"
+}

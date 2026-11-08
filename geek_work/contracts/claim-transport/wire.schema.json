@@ -1,0 +1,752 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Shape only. Offline validator additionally checks cumulative bytes, unique IDs, hashes, exact quotes, pins and claim-map replay.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/plan"
+    },
+    {
+      "$ref": "#/$defs/candidate"
+    },
+    {
+      "$ref": "#/$defs/report"
+    }
+  ],
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000,
+      "pattern": "\\S"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "atom": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "quantity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "symbol": {
+          "$ref": "#/$defs/text"
+        },
+        "exact_literal": {
+          "$ref": "#/$defs/text"
+        },
+        "unit": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": [
+        "id",
+        "symbol",
+        "exact_literal",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "type": "object",
+      "properties": {
+        "premise_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "conclusion_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "domain_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "quantifier_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "negation_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "quantities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quantity"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "premise_atoms",
+        "conclusion_atoms",
+        "domain_atoms",
+        "quantifier_atoms",
+        "negation_atoms",
+        "quantities"
+      ],
+      "additionalProperties": false
+    },
+    "contract": {
+      "type": "object",
+      "properties": {
+        "premise_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "conclusion_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "domain_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "quantifier_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "negation_atoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/atom"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "quantities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quantity"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "scope": {
+          "$ref": "#/$defs/text"
+        },
+        "reported_evidence_state": {
+          "enum": [
+            "formal_reported",
+            "empirical_reported",
+            "source_only",
+            "reference_only",
+            "hypothesis",
+            "open"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "non_claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "open_obligations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "premise_atoms",
+        "conclusion_atoms",
+        "domain_atoms",
+        "quantifier_atoms",
+        "negation_atoms",
+        "quantities",
+        "scope",
+        "reported_evidence_state",
+        "evidence_ids",
+        "non_claims",
+        "open_obligations"
+      ],
+      "additionalProperties": false
+    },
+    "span": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "$ref": "#/$defs/id"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": [
+        "document",
+        "start",
+        "end",
+        "quote"
+      ],
+      "additionalProperties": false
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 240,
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "material": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 240,
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "kind": {
+          "enum": [
+            "lean_source",
+            "audit_report",
+            "measurement_report",
+            "reference_material"
+          ]
+        },
+        "origin": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "$ref": "#/$defs/text"
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          },
+          "required": [
+            "repository",
+            "commit"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "sha256",
+        "kind",
+        "origin"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "binding": {
+          "type": "object",
+          "properties": {
+            "citation": {
+              "type": "object",
+              "properties": {
+                "material": {
+                  "$ref": "#/$defs/id"
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "quote": {
+                  "$ref": "#/$defs/text"
+                }
+              },
+              "required": [
+                "material",
+                "start",
+                "end",
+                "quote"
+              ],
+              "additionalProperties": false
+            },
+            "declaration": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/text"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "citation",
+            "declaration"
+          ],
+          "additionalProperties": false
+        },
+        "material": {
+          "$ref": "#/$defs/material"
+        }
+      },
+      "required": [
+        "binding",
+        "material"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "$ref": "#/$defs/document"
+        },
+        "statement": {
+          "$ref": "#/$defs/span"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "maxItems": 8,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "document",
+        "statement",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "statement": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/text"
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": [
+        "text",
+        "sha256",
+        "start",
+        "end",
+        "quote"
+      ],
+      "additionalProperties": false
+    },
+    "card": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "statement": {
+          "$ref": "#/$defs/statement"
+        },
+        "contract": {
+          "$ref": "#/$defs/contract"
+        },
+        "proof_reference": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/text"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "source",
+        "statement",
+        "contract",
+        "proof_reference"
+      ],
+      "additionalProperties": false
+    },
+    "pair": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_claim_id": {
+          "$ref": "#/$defs/id"
+        },
+        "candidate_claim_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "candidate_revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "annotations": {
+          "$ref": "#/$defs/annotations"
+        }
+      },
+      "required": [
+        "id",
+        "source_claim_id",
+        "candidate_claim_id",
+        "source_revision",
+        "candidate_revision",
+        "annotations"
+      ],
+      "additionalProperties": false
+    },
+    "pair_result": {
+      "type": "object",
+      "properties": {
+        "pair_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_claim_id": {
+          "$ref": "#/$defs/id"
+        },
+        "candidate_claim_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "candidate_revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 32,
+          "minItems": 0
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "candidate_statement": {
+          "$ref": "#/$defs/statement"
+        }
+      },
+      "required": [
+        "pair_id",
+        "source_claim_id",
+        "candidate_claim_id",
+        "source_revision",
+        "candidate_revision",
+        "changes",
+        "source",
+        "candidate_statement"
+      ],
+      "additionalProperties": false
+    },
+    "plan": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "geek-work-claim-transport-plan-1"
+        },
+        "mode": {
+          "const": "exact_contract"
+        },
+        "source_bundle_sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "pairs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/pair"
+          },
+          "maxItems": 16,
+          "minItems": 1
+        }
+      },
+      "required": [
+        "schema",
+        "mode",
+        "source_bundle_sha256",
+        "pairs"
+      ],
+      "additionalProperties": false
+    },
+    "candidate": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "geek-work-claim-transport-candidate-1"
+        },
+        "source_bundle_sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "plan_sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/card"
+          },
+          "maxItems": 16,
+          "minItems": 1
+        }
+      },
+      "required": [
+        "schema",
+        "source_bundle_sha256",
+        "plan_sha256",
+        "cards"
+      ],
+      "additionalProperties": false
+    },
+    "report": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "geek-work-claim-transport-report-1"
+            },
+            "mode": {
+              "const": "exact_contract"
+            },
+            "semantic_equivalence_verified": {
+              "const": false
+            },
+            "source_extraction_complete": {
+              "const": false
+            },
+            "kernel_replayed": {
+              "const": false
+            },
+            "publication_authorized": {
+              "const": false
+            },
+            "status": {
+              "const": "invalid_input"
+            },
+            "reason": {
+              "$ref": "#/$defs/text"
+            },
+            "selected_pairs": {
+              "const": 0
+            },
+            "pairs": {
+              "type": "array",
+              "items": {},
+              "maxItems": 0,
+              "minItems": 0
+            }
+          },
+          "required": [
+            "schema",
+            "mode",
+            "semantic_equivalence_verified",
+            "source_extraction_complete",
+            "kernel_replayed",
+            "publication_authorized",
+            "status",
+            "reason",
+            "selected_pairs",
+            "pairs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "geek-work-claim-transport-report-1"
+            },
+            "mode": {
+              "const": "exact_contract"
+            },
+            "semantic_equivalence_verified": {
+              "const": false
+            },
+            "source_extraction_complete": {
+              "const": false
+            },
+            "kernel_replayed": {
+              "const": false
+            },
+            "publication_authorized": {
+              "const": false
+            },
+            "status": {
+              "enum": [
+                "contract_preserved",
+                "review_required"
+              ]
+            },
+            "source_bundle_sha256": {
+              "$ref": "#/$defs/digest"
+            },
+            "plan_sha256": {
+              "$ref": "#/$defs/digest"
+            },
+            "candidate_sha256": {
+              "$ref": "#/$defs/digest"
+            },
+            "selected_pairs": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16
+            },
+            "pairs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/pair_result"
+              },
+              "maxItems": 16,
+              "minItems": 1
+            }
+          },
+          "required": [
+            "schema",
+            "mode",
+            "semantic_equivalence_verified",
+            "source_extraction_complete",
+            "kernel_replayed",
+            "publication_authorized",
+            "status",
+            "source_bundle_sha256",
+            "plan_sha256",
+            "candidate_sha256",
+            "selected_pairs",
+            "pairs"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}
+    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :
+    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))

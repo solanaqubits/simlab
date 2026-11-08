@@ -1,0 +1,16 @@
+{
+  "all_manuscript_claims_covered": false,
+  "claims": 1,
+  "declaration_resolution_verified": false,
+  "kernel_replayed": false,
+  "limits": "Selected excerpts and bytes only. States, origins, declaration names, scope and assumptions are supplied editorial metadata. A matching quotation may be a comment, not a theorem. No Git lookup, Lean execution, evidence interpretation, completeness, authenticity or independent review is established.",
+  "origin_commits_verified": false,
+  "publication_authorized": false,
+  "reported_states": {
+    "source_only": 1
+  },
+  "schema": "geek-work-manuscript-claim-report-1",
+  "semantic_correspondence_verified": false,
+  "status": "byte_bindings_verified",
+  "unused_materials": []
+}

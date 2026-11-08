@@ -1,0 +1,14 @@
+{
+  "atom_binding_count": 5,
+  "differences": [],
+  "editorial_state": "ready_for_transport",
+  "expectations_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+  "kernel_replayed": false,
+  "publication_authorized": false,
+  "record_sha256": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+  "schema": "geek-work-claim-extraction-report-1",
+  "semantic_equivalence_verified": false,
+  "source_extraction_complete": false,
+  "source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+  "status": "record_consistent"
+}

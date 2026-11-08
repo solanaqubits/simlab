@@ -1,0 +1,73 @@
+{
+  "mode": "exact_contract",
+  "pairs": [
+    {
+      "annotations": {
+        "conclusion_atoms": [
+          {
+            "id": "orbit-tendsto-quarter",
+            "sha256": "80f4f684746427b7e3fcc9f0fa0e777ae9baf9c4c3b06af93c6d699546435f77",
+            "text": "Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))"
+          }
+        ],
+        "domain_atoms": [
+          {
+            "id": "nonnegative-input",
+            "sha256": "242aa7ddec36d69d8a74dd1bc157e1d8d7e105c7cef6345d4487b00871299d0c",
+            "text": "0 ≤ F"
+          },
+          {
+            "id": "input-upper-bound",
+            "sha256": "e7ccb6479641ade869653a88405c9be2ff4602c17b583e72c7772857b7873ad8",
+            "text": "F ≤ 1"
+          }
+        ],
+        "negation_atoms": [],
+        "premise_atoms": [
+          {
+            "id": "nonnegative-noise",
+            "sha256": "a66a92756520827215dad6ed3981b78d13f1baa32f9175e18c9e0c460d63a9b4",
+            "text": "0 ≤ γ"
+          },
+          {
+            "id": "subcritical-noise",
+            "sha256": "85807c8d998ce5ad1a8a3e4ea793cff4e82dd6077c74c3f8bc623d52e336bbb6",
+            "text": "γ < criticalGamma"
+          },
+          {
+            "id": "nonnegative-input",
+            "sha256": "242aa7ddec36d69d8a74dd1bc157e1d8d7e105c7cef6345d4487b00871299d0c",
+            "text": "0 ≤ F"
+          },
+          {
+            "id": "input-upper-bound",
+            "sha256": "e7ccb6479641ade869653a88405c9be2ff4602c17b583e72c7772857b7873ad8",
+            "text": "F ≤ 1"
+          }
+        ],
+        "quantifier_atoms": [
+          {
+            "id": "real-parameters",
+            "sha256": "3b41d32fab1825beb62a2c6f2edd61bdc230dd9299742756809557b9b88bad52",
+            "text": "{γ F : ℝ}"
+          }
+        ],
+        "quantities": [
+          {
+            "exact_literal": "1 / 4",
+            "id": "limiting-fidelity",
+            "symbol": "F∞",
+            "unit": "dimensionless"
+          }
+        ]
+      },
+      "candidate_claim_id": "transported-orbit-limit",
+      "candidate_revision": 1,
+      "id": "orbit-transfer",
+      "source_claim_id": "subcritical-orbit-limit",
+      "source_revision": 1
+    }
+  ],
+  "schema": "geek-work-claim-transport-plan-1",
+  "source_bundle_sha256": "022bbbc4659daa6cb249aed9bdb8dc8a90c85f7fb9bd828ab53964458398281b"
+}

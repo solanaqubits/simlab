@@ -1,0 +1,59 @@
+{
+  "mode": "exact_contract",
+  "pairs": [
+    {
+      "annotations": {
+        "conclusion_atoms": [
+          {
+            "id": "available-credits",
+            "sha256": "9cbc23723087a3e3e2bdd9d999ee2f2be4c02c0d0f65763072c33390bf84212e",
+            "text": "available = 100 credits"
+          }
+        ],
+        "domain_atoms": [
+          {
+            "id": "nonnegative-index",
+            "sha256": "ba9b6461a4f22b7a0c23a77997bcfcc0cb79c9a006350302bc68f417d0398571",
+            "text": "0 ≤ n"
+          }
+        ],
+        "negation_atoms": [
+          {
+            "id": "no-seconds",
+            "sha256": "8c4cb3ddb84cd55797296adf0ad2b2a57d480e4f19058d99dc2e9f3f98eacd84",
+            "text": "no seconds are asserted"
+          }
+        ],
+        "premise_atoms": [
+          {
+            "id": "nonnegative-index",
+            "sha256": "ba9b6461a4f22b7a0c23a77997bcfcc0cb79c9a006350302bc68f417d0398571",
+            "text": "0 ≤ n"
+          }
+        ],
+        "quantifier_atoms": [
+          {
+            "id": "all-indices",
+            "sha256": "385e49ed81eb706cb015760826ac3fcb749877848eb059fc7a15201d9bf67cac",
+            "text": "For every n"
+          }
+        ],
+        "quantities": [
+          {
+            "exact_literal": "100",
+            "id": "available-count",
+            "symbol": "available",
+            "unit": "credits"
+          }
+        ]
+      },
+      "candidate_claim_id": "synthetic-balance-extraction",
+      "candidate_revision": 1,
+      "id": "extraction-pair",
+      "source_claim_id": "synthetic-balance",
+      "source_revision": 1
+    }
+  ],
+  "schema": "geek-work-claim-transport-plan-1",
+  "source_bundle_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057"
+}

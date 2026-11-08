@@ -1,0 +1,70 @@
+{
+  "candidate_sha256": "c8990a527d993f199fa5d5b7a693110964d0a0267c0a6c46580b0004ca6f9638",
+  "kernel_replayed": false,
+  "mode": "exact_contract",
+  "pairs": [
+    {
+      "candidate_claim_id": "transported-orbit-limit",
+      "candidate_revision": 1,
+      "candidate_statement": {
+        "end": 145,
+        "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+        "sha256": "ecd4fad91f039f5cc619f2b2904a23fd270446d33e349056d16c099745120a1e",
+        "start": 0,
+        "text": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))"
+      },
+      "changes": [
+        "premise_changed",
+        "premise_removed",
+        "selected_statement_changed"
+      ],
+      "pair_id": "orbit-transfer",
+      "source": {
+        "document": {
+          "id": "signature",
+          "path": "statement.txt",
+          "sha256": "9af31bfa4296114f55f03e326c10e8030facb52b2627df86b995db98cc374ba9"
+        },
+        "evidence": [
+          {
+            "binding": {
+              "citation": {
+                "end": 10419,
+                "material": "lean-source",
+                "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+                "start": 10249
+              },
+              "declaration": "QuantumNoisyBBPSSWCritical.subcriticalOrbit_tendsto_quarter"
+            },
+            "material": {
+              "id": "lean-source",
+              "kind": "lean_source",
+              "origin": {
+                "commit": "82124834f7aba30adcb460769d84f03eebfa5ce8",
+                "repository": "Leanbook local Git snapshot (not a publication assertion)"
+              },
+              "path": "QuantumNoisyBBPSSWCritical.lean",
+              "sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3"
+            }
+          }
+        ],
+        "statement": {
+          "document": "signature",
+          "end": 170,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start": 0
+        }
+      },
+      "source_claim_id": "subcritical-orbit-limit",
+      "source_revision": 1
+    }
+  ],
+  "plan_sha256": "ede1850f2cc6adc8f35aad4d67056450dadbe13f485b56163439502c704a89ea",
+  "publication_authorized": false,
+  "schema": "geek-work-claim-transport-report-1",
+  "selected_pairs": 1,
+  "semantic_equivalence_verified": false,
+  "source_bundle_sha256": "022bbbc4659daa6cb249aed9bdb8dc8a90c85f7fb9bd828ab53964458398281b",
+  "source_extraction_complete": false,
+  "status": "review_required"
+}

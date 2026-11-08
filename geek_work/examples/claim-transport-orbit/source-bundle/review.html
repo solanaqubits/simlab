@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'"><title>Manuscript claim map</title><h1>Selected claim/evidence bindings</h1><p>Byte bindings only; reported states are not new verification or semantic approval.</p><article><h2>subcritical-orbit-limit</h2><h3>statement</h3><pre>{
+  &quot;document&quot;: &quot;signature&quot;,
+  &quot;end&quot;: 170,
+  &quot;quote&quot;: &quot;theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ &lt; criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))&quot;,
+  &quot;start&quot;: 0
+}
+</pre><h3>reported_evidence_state</h3><pre>&quot;source_only&quot;
+</pre><h3>scope</h3><pre>&quot;Fixed real γ and F in the displayed Lean signature; asymptotic Tendsto, not finite-step equality.&quot;
+</pre><h3>assumptions</h3><pre>[
+  &quot;0 ≤ γ&quot;,
+  &quot;γ &lt; criticalGamma&quot;,
+  &quot;0 ≤ F&quot;,
+  &quot;F ≤ 1&quot;
+]
+</pre><h3>non_claims</h3><pre>[
+  &quot;No convergence rate is asserted.&quot;,
+  &quot;No time-varying γ is covered.&quot;,
+  &quot;No expected resource yield or spatial repeater convergence is asserted.&quot;,
+  &quot;This transport pilot does not replay the Lean kernel.&quot;
+]
+</pre><h3>open_obligations</h3><pre>[
+  &quot;Independent review of atom-role assignment and extraction completeness.&quot;,
+  &quot;Correspondence of Python/JSON validation to the Lean model remains unproved.&quot;
+]
+</pre><h3>evidence</h3><pre>[
+  {
+    &quot;citation&quot;: {
+      &quot;end&quot;: 10419,
+      &quot;material&quot;: &quot;lean-source&quot;,
+      &quot;quote&quot;: &quot;theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ &lt; criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))&quot;,
+      &quot;start&quot;: 10249
+    },
+    &quot;declaration&quot;: &quot;QuantumNoisyBBPSSWCritical.subcriticalOrbit_tendsto_quarter&quot;
+  }
+]
+</pre></article><h3>Source identities and declared origins</h3><pre>{
+  &quot;documents&quot;: [
+    {
+      &quot;id&quot;: &quot;signature&quot;,
+      &quot;path&quot;: &quot;statement.txt&quot;,
+      &quot;sha256&quot;: &quot;9af31bfa4296114f55f03e326c10e8030facb52b2627df86b995db98cc374ba9&quot;
+    }
+  ],
+  &quot;materials&quot;: [
+    {
+      &quot;id&quot;: &quot;lean-source&quot;,
+      &quot;kind&quot;: &quot;lean_source&quot;,
+      &quot;origin&quot;: {
+        &quot;commit&quot;: &quot;82124834f7aba30adcb460769d84f03eebfa5ce8&quot;,
+        &quot;repository&quot;: &quot;Leanbook local Git snapshot (not a publication assertion)&quot;
+      },
+      &quot;path&quot;: &quot;QuantumNoisyBBPSSWCritical.lean&quot;,
+      &quot;sha256&quot;: &quot;c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3&quot;
+    }
+  ]
+}
+</pre><h3>Verification limits</h3><pre>{
+  &quot;all_manuscript_claims_covered&quot;: false,
+  &quot;claims&quot;: 1,
+  &quot;declaration_resolution_verified&quot;: false,
+  &quot;kernel_replayed&quot;: false,
+  &quot;limits&quot;: &quot;Selected excerpts and bytes only. States, origins, declaration names, scope and assumptions are supplied editorial metadata. A matching quotation may be a comment, not a theorem. No Git lookup, Lean execution, evidence interpretation, completeness, authenticity or independent review is established.&quot;,
+  &quot;origin_commits_verified&quot;: false,
+  &quot;publication_authorized&quot;: false,
+  &quot;reported_states&quot;: {
+    &quot;source_only&quot;: 1
+  },
+  &quot;schema&quot;: &quot;geek-work-manuscript-claim-report-1&quot;,
+  &quot;semantic_correspondence_verified&quot;: false,
+  &quot;status&quot;: &quot;byte_bindings_verified&quot;,
+  &quot;unused_materials&quot;: []
+}
+</pre></html>

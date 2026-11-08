@@ -1,0 +1,12 @@
+{
+  "kernel_replayed": false,
+  "mode": "exact_contract",
+  "pairs": [],
+  "publication_authorized": false,
+  "reason": "atom id rebinding",
+  "schema": "geek-work-claim-transport-report-1",
+  "selected_pairs": 0,
+  "semantic_equivalence_verified": false,
+  "source_extraction_complete": false,
+  "status": "invalid_input"
+}

@@ -1,0 +1,885 @@
+{
+  "source_commit": "a5df4ad33db018eade6b710be8f82ac3d2439eeb",
+  "public_base": "30739c655e4dd82c52410c7d097af086d12ae89e",
+  "export_plan_sha256": "5191fd95cc378c4ec1ef6e1e9f5dd73394ac5401f4d50686d0f34da83e1b6626",
+  "selected_new_files": [
+    {
+      "source": "digital-brain/contracts/claim-adapter/README.md",
+      "destination": "geek_work/contracts/claim-adapter/README.md",
+      "source_sha256": "e786157d7160b12c05f051be229dbea7a5b5db7ac712c27566e4097da91073e9",
+      "public_sha256": "a4ab5bfa23841d19fcacc680311b51f9c4558970763bc63a7f7525141916429d",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-extraction/README.md",
+      "destination": "geek_work/contracts/claim-extraction/README.md",
+      "source_sha256": "e66c7b096be25eaa374a2cc3f59a528f81bf48126c197871b7d504696b64712c",
+      "public_sha256": "a7ad1677a1bc9b584471b55712c29950445d3983b250a93780e810335f2ce3e2",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/COORDINATOR.ru.md",
+      "destination": "geek_work/contracts/claim-review-api/COORDINATOR.ru.md",
+      "source_sha256": "adffd3df973321f34d34b576f793d61ad022cd56e8e8c324f581b9b0758a6132",
+      "public_sha256": "99c27a8a277ddecfb310d3d41a68fdb0d2de588d45b98a662227a9154660e73a",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/HARNESS.ru.md",
+      "destination": "geek_work/contracts/claim-review-api/HARNESS.ru.md",
+      "source_sha256": "b1bfa7a8fd028b40f7b958e57e897460d5c8bfc1355cc5bd694d425b2d730847",
+      "public_sha256": "42ed79805027d03a9dc2f476d1ecb127cf439f9466d4e1f4a029ee58eb02c965",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/README.ru.md",
+      "destination": "geek_work/contracts/claim-review-api/README.ru.md",
+      "source_sha256": "04f944b8c8c5a934573f173c2cb8588d4f4b201a844dc375254a078a843b2fe9",
+      "public_sha256": "80e981ce2952cecd98f58c573b8830db0e3152ce644be128076f222510b67748",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/SERVER.ru.md",
+      "destination": "geek_work/contracts/claim-review-api/SERVER.ru.md",
+      "source_sha256": "28c12c9a83dd7f0b18e23e4fcea224d1a7260868f74dbd706f598c00135a3ac6",
+      "public_sha256": "2e4380029231f861741b54b2c5332605a0916e8f414f1817070cd7834cd53c8a",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/check_examples.py",
+      "destination": "geek_work/contracts/claim-review-api/check_examples.py",
+      "source_sha256": "7495582530f95455c35532b8a2ee9dc6853c39c07aadfe9fbc2c5c6bf7ba2f4b",
+      "public_sha256": "7495582530f95455c35532b8a2ee9dc6853c39c07aadfe9fbc2c5c6bf7ba2f4b",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/artifacts-read.request.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/artifacts-read.request.json",
+      "source_sha256": "5bc96010170a7c0057d1fee9efe85e9a7d76b1295fc8659b118d5b1fd33e9071",
+      "public_sha256": "5bc96010170a7c0057d1fee9efe85e9a7d76b1295fc8659b118d5b1fd33e9071",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/artifacts-read.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/artifacts-read.response.json",
+      "source_sha256": "ddf3220f057a8da0e6b7405e9482689db4ab229f6a67ce85bca4561ade810c4f",
+      "public_sha256": "ddf3220f057a8da0e6b7405e9482689db4ab229f6a67ce85bca4561ade810c4f",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/builds.request.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/builds.request.json",
+      "source_sha256": "68b5a534df2c9d7859e878d1343d8419cbe197af4fb581c999c91d573823f6ea",
+      "public_sha256": "68b5a534df2c9d7859e878d1343d8419cbe197af4fb581c999c91d573823f6ea",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/builds.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/builds.response.json",
+      "source_sha256": "cae85f13d665c00836294748f758f17f8606d876babdc669f0d1a801f36a1a15",
+      "public_sha256": "cae85f13d665c00836294748f758f17f8606d876babdc669f0d1a801f36a1a15",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/check-invalid_input.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/check-invalid_input.response.json",
+      "source_sha256": "cd75a0a450c7555d68b007536ead8f065d79f22893d3aba54ed53b669ac9d74e",
+      "public_sha256": "cd75a0a450c7555d68b007536ead8f065d79f22893d3aba54ed53b669ac9d74e",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/check-needs_context.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/check-needs_context.response.json",
+      "source_sha256": "36c0407c2fbf30fdab66ca7292512c8158e26f3a6473476170c261168647601a",
+      "public_sha256": "36c0407c2fbf30fdab66ca7292512c8158e26f3a6473476170c261168647601a",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/check-record_consistent.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/check-record_consistent.response.json",
+      "source_sha256": "2e3366c548f37e90b78058910452fdb3a57a3d3d1bbd61dc3998a39a7ed1fee4",
+      "public_sha256": "2e3366c548f37e90b78058910452fdb3a57a3d3d1bbd61dc3998a39a7ed1fee4",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/check-review_required.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/check-review_required.response.json",
+      "source_sha256": "94a3fab29bb32f67d0ca5e2933ead5702c981a5f735f0b1e44c28d5d9b69ed26",
+      "public_sha256": "94a3fab29bb32f67d0ca5e2933ead5702c981a5f735f0b1e44c28d5d9b69ed26",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/checks.request.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/checks.request.json",
+      "source_sha256": "3716812cfa27179ee813b06ac533f6a74971e595e2d2564faac41a3e9f03992a",
+      "public_sha256": "3716812cfa27179ee813b06ac533f6a74971e595e2d2564faac41a3e9f03992a",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/checks.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/checks.response.json",
+      "source_sha256": "c5661ab8a80d76b782ff997ac50520f05a3ac3893cb9056f4a1f93ad63cc66db",
+      "public_sha256": "c5661ab8a80d76b782ff997ac50520f05a3ac3893cb9056f4a1f93ad63cc66db",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/context.request.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/context.request.json",
+      "source_sha256": "12428f18f4b32781afc3ae93973d4ebcc3673a290b622ca4e5c1188d0d88d7cb",
+      "public_sha256": "12428f18f4b32781afc3ae93973d4ebcc3673a290b622ca4e5c1188d0d88d7cb",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/context.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/context.response.json",
+      "source_sha256": "6b56bf1f426632fbdd862f9782e18b689c7ca7491ddb075ec6b63b7e67b80e45",
+      "public_sha256": "6b56bf1f426632fbdd862f9782e18b689c7ca7491ddb075ec6b63b7e67b80e45",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/drafts.request.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/drafts.request.json",
+      "source_sha256": "26d0543e9a05ea514bb5d220f6da799c4b7258d156c0c9c0e60ccc5eb2c97240",
+      "public_sha256": "26d0543e9a05ea514bb5d220f6da799c4b7258d156c0c9c0e60ccc5eb2c97240",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/drafts.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/drafts.response.json",
+      "source_sha256": "564a1300451de73683377a143fa2e9fd37e7a295df906cf43b115c947d7f8ec9",
+      "public_sha256": "564a1300451de73683377a143fa2e9fd37e7a295df906cf43b115c947d7f8ec9",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/error.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/error.response.json",
+      "source_sha256": "57c7b20c3acc84c9e15f38854dabb362c76bf1cbb387aef06f45f32cf0cd673e",
+      "public_sha256": "57c7b20c3acc84c9e15f38854dabb362c76bf1cbb387aef06f45f32cf0cd673e",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/job-blocked.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/job-blocked.response.json",
+      "source_sha256": "03b89bc7f33d10b41e8cce592928dfe7c8f6f95d1076f7d0cca7464486a30335",
+      "public_sha256": "03b89bc7f33d10b41e8cce592928dfe7c8f6f95d1076f7d0cca7464486a30335",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/job-built.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/job-built.response.json",
+      "source_sha256": "2a63cc2704a1aa56f30270015906bd17041d8a2bddc3b36b61ab8c32a89b2e1f",
+      "public_sha256": "2a63cc2704a1aa56f30270015906bd17041d8a2bddc3b36b61ab8c32a89b2e1f",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/job-failed.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/job-failed.response.json",
+      "source_sha256": "e352bae3f2a7fae050ee9c692bafd3d84ade26c7d25fdaac5009058ca16abdbc",
+      "public_sha256": "e352bae3f2a7fae050ee9c692bafd3d84ade26c7d25fdaac5009058ca16abdbc",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/job-queued.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/job-queued.response.json",
+      "source_sha256": "1c3c98449b6c7c3b18b43c32d33484e50ca91ac09fc362d8382d2779e4ae7dda",
+      "public_sha256": "1c3c98449b6c7c3b18b43c32d33484e50ca91ac09fc362d8382d2779e4ae7dda",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/job-running.response.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/job-running.response.json",
+      "source_sha256": "d292ca0e5d7f18f09c35fa6b3bae13e6267e28cff58916fe73a73a1f81c0f184",
+      "public_sha256": "d292ca0e5d7f18f09c35fa6b3bae13e6267e28cff58916fe73a73a1f81c0f184",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/examples/jobs-status.request.json",
+      "destination": "geek_work/contracts/claim-review-api/examples/jobs-status.request.json",
+      "source_sha256": "b58180f77868b6c04c32685afdd5f13fef3a604c5a32a4600dc1ada8c1e64996",
+      "public_sha256": "b58180f77868b6c04c32685afdd5f13fef3a604c5a32a4600dc1ada8c1e64996",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/harness_tests/test_harness.py",
+      "destination": "geek_work/contracts/claim-review-api/harness_tests/test_harness.py",
+      "source_sha256": "ccdb7ef33ec0ef1a14fc5e510949e316dc666fc1015a7788be68e149741080ee",
+      "public_sha256": "12b3573d389443f1eadd10f5fc49e6e8fd4d678ba3126942384072579ed8aaa1",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/limits.json",
+      "destination": "geek_work/contracts/claim-review-api/limits.json",
+      "source_sha256": "e3f6342865e9ebed9661529e21867dc997ed723d1ca202f25b4a20af9f6834fb",
+      "public_sha256": "e3f6342865e9ebed9661529e21867dc997ed723d1ca202f25b4a20af9f6834fb",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/request.schema.json",
+      "destination": "geek_work/contracts/claim-review-api/request.schema.json",
+      "source_sha256": "5d32f0cadd912550c8ddc631e77e375acaca392e9fa257875af4e3a7ea84f3ca",
+      "public_sha256": "5d32f0cadd912550c8ddc631e77e375acaca392e9fa257875af4e3a7ea84f3ca",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/response.schema.json",
+      "destination": "geek_work/contracts/claim-review-api/response.schema.json",
+      "source_sha256": "ae4cf2e13a4019fdabcf111fe5f63ccd0bf01861ac0e861b4ef24e3931937bf9",
+      "public_sha256": "ae4cf2e13a4019fdabcf111fe5f63ccd0bf01861ac0e861b4ef24e3931937bf9",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/server_tests/replay.py",
+      "destination": "geek_work/contracts/claim-review-api/server_tests/replay.py",
+      "source_sha256": "3d54913c00ec03817a82adf9a16926ab9e3185fe339dfc9a911d18337a80b1b5",
+      "public_sha256": "3d54913c00ec03817a82adf9a16926ab9e3185fe339dfc9a911d18337a80b1b5",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/server_tests/test_server.py",
+      "destination": "geek_work/contracts/claim-review-api/server_tests/test_server.py",
+      "source_sha256": "16275ee64d62c3cd6b674f41038113470b9a729e831212afd030df95a26405e3",
+      "public_sha256": "16275ee64d62c3cd6b674f41038113470b9a729e831212afd030df95a26405e3",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/ui_tests/test_browser.py",
+      "destination": "geek_work/contracts/claim-review-api/ui_tests/test_browser.py",
+      "source_sha256": "4148aadc0275bf5980ba0c75c2b1941435b84bd13c0137e0494214431b2a4c48",
+      "public_sha256": "4148aadc0275bf5980ba0c75c2b1941435b84bd13c0137e0494214431b2a4c48",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-review-api/ui_tests/test_static.py",
+      "destination": "geek_work/contracts/claim-review-api/ui_tests/test_static.py",
+      "source_sha256": "423aa32550525deb0848e0e38741da025cddf646986b246bc50b104e345523e0",
+      "public_sha256": "423aa32550525deb0848e0e38741da025cddf646986b246bc50b104e345523e0",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/contracts/claim-transport/README.md",
+      "destination": "geek_work/contracts/claim-transport/README.md",
+      "source_sha256": "269c275057e91219f37a0a9815f8cfea24ca7645ccb1c8e11554737e5d2f78ba",
+      "public_sha256": "10a74df01c956b3d3971a6e7836242d5abc4c73a5120de8b4665cd7054cf9dc0",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/contracts/claim-transport/wire.schema.json",
+      "destination": "geek_work/contracts/claim-transport/wire.schema.json",
+      "source_sha256": "685947c0a54c97646ccd29fbb1de5c6fd233b0ca9f24bf743c67adf99f3019e6",
+      "public_sha256": "685947c0a54c97646ccd29fbb1de5c6fd233b0ca9f24bf743c67adf99f3019e6",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/.gitattributes",
+      "destination": "geek_work/examples/claim-adapter-ready/.gitattributes",
+      "source_sha256": "f818ab43e66d704b2d5868b9c74924dfad42e37ebae4fbed48511af665228471",
+      "public_sha256": "f818ab43e66d704b2d5868b9c74924dfad42e37ebae4fbed48511af665228471",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/README.ru.md",
+      "destination": "geek_work/examples/claim-adapter-ready/README.ru.md",
+      "source_sha256": "f82e0608c95ae5a1375cc5a468d265d805413a4a0382967b2c98219ee750961c",
+      "public_sha256": "54e9acbbaf78159d570107505b1d1e69e778a006f5070b0b89df6ede8e8487bd",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expectations.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expectations.json",
+      "source_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+      "public_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/adapter-report.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/adapter-report.json",
+      "source_sha256": "04eeb964d40df78f8a48c5e0cc6e49911d618d358a11491c2e1d541b315f3c29",
+      "public_sha256": "04eeb964d40df78f8a48c5e0cc6e49911d618d358a11491c2e1d541b315f3c29",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/candidate.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/candidate.json",
+      "source_sha256": "2689129f91f657bd21a2b24613c419a24928da3db5936625096ecf381e0f9865",
+      "public_sha256": "2689129f91f657bd21a2b24613c419a24928da3db5936625096ecf381e0f9865",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/expectations.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/expectations.json",
+      "source_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+      "public_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/extraction-report.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/extraction-report.json",
+      "source_sha256": "0fa9ac919d7308e21cf027e38d3b8d08ab72eee66b401c0cae791e8d890f7b16",
+      "public_sha256": "0fa9ac919d7308e21cf027e38d3b8d08ab72eee66b401c0cae791e8d890f7b16",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/manifest.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/manifest.json",
+      "source_sha256": "95682d4c025af7b514c0f21d34fe9d0b97fb46c9eb9bdeb312f0ce1ec6582a56",
+      "public_sha256": "95682d4c025af7b514c0f21d34fe9d0b97fb46c9eb9bdeb312f0ce1ec6582a56",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/plan.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/plan.json",
+      "source_sha256": "2103762ecd6477611038e6c5aef2c2e7ce790c9f7a96c2fdf2bbfb6168d78d02",
+      "public_sha256": "2103762ecd6477611038e6c5aef2c2e7ce790c9f7a96c2fdf2bbfb6168d78d02",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/record.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/record.json",
+      "source_sha256": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+      "public_sha256": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/source-snapshot.txt",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/source-snapshot.txt",
+      "source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+      "public_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/expected-package/transport-report.json",
+      "destination": "geek_work/examples/claim-adapter-ready/expected-package/transport-report.json",
+      "source_sha256": "a9325127b498be667d2858bf4b83d584d61c1836a29960c72ea10fe9982e4a3b",
+      "public_sha256": "a9325127b498be667d2858bf4b83d584d61c1836a29960c72ea10fe9982e4a3b",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/pins.json",
+      "destination": "geek_work/examples/claim-adapter-ready/pins.json",
+      "source_sha256": "b29d0957b59d26dd754d0ba5afa28c5cda16e105ea610fc9b351a7d94905382e",
+      "public_sha256": "b29d0957b59d26dd754d0ba5afa28c5cda16e105ea610fc9b351a7d94905382e",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/record.json",
+      "destination": "geek_work/examples/claim-adapter-ready/record.json",
+      "source_sha256": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+      "public_sha256": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/source-bundle/document-source.txt",
+      "destination": "geek_work/examples/claim-adapter-ready/source-bundle/document-source.txt",
+      "source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+      "public_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/source-bundle/manifest.json",
+      "destination": "geek_work/examples/claim-adapter-ready/source-bundle/manifest.json",
+      "source_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057",
+      "public_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/source-bundle/map.json",
+      "destination": "geek_work/examples/claim-adapter-ready/source-bundle/map.json",
+      "source_sha256": "e85b86c1e3e09af4fe0434416522cc37770fe65a351fc6479016e2e58dd6e712",
+      "public_sha256": "e85b86c1e3e09af4fe0434416522cc37770fe65a351fc6479016e2e58dd6e712",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/source-bundle/report.json",
+      "destination": "geek_work/examples/claim-adapter-ready/source-bundle/report.json",
+      "source_sha256": "3ca56c155bd42a92d9f73253237561c87e3a1d4b9f42ec5598c79aa7671567e7",
+      "public_sha256": "3ca56c155bd42a92d9f73253237561c87e3a1d4b9f42ec5598c79aa7671567e7",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/source-bundle/review.html",
+      "destination": "geek_work/examples/claim-adapter-ready/source-bundle/review.html",
+      "source_sha256": "8f99bc9b14fbd21ffec083ba6b141735da61f04a0159863cf2ac0d0bbbb03640",
+      "public_sha256": "8f99bc9b14fbd21ffec083ba6b141735da61f04a0159863cf2ac0d0bbbb03640",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-adapter-ready/source.txt",
+      "destination": "geek_work/examples/claim-adapter-ready/source.txt",
+      "source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+      "public_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-extraction-orbit/README.ru.md",
+      "destination": "geek_work/examples/claim-extraction-orbit/README.ru.md",
+      "source_sha256": "dbe6754df1b26ba157e5e25c3bdf2044fd947b4943888f08a89687e7daf83be5",
+      "public_sha256": "f3c36fa3184badd17a556f6279e52ee90d89be030a006f40db1d1f97bf257080",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/examples/claim-extraction-orbit/expectations.json",
+      "destination": "geek_work/examples/claim-extraction-orbit/expectations.json",
+      "source_sha256": "4f7374637b3c69fbfc46e44e69dbc6316c43454232e40ee780872956f4ad7e36",
+      "public_sha256": "4f7374637b3c69fbfc46e44e69dbc6316c43454232e40ee780872956f4ad7e36",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-extraction-orbit/orbit-invalid-promotion.json",
+      "destination": "geek_work/examples/claim-extraction-orbit/orbit-invalid-promotion.json",
+      "source_sha256": "41702eba7b366a4eda95c6173671fa17f299f3dfe2b5d012c75e2745f2f2412e",
+      "public_sha256": "41702eba7b366a4eda95c6173671fa17f299f3dfe2b5d012c75e2745f2f2412e",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-extraction-orbit/orbit-invalid-promotion.report.json",
+      "destination": "geek_work/examples/claim-extraction-orbit/orbit-invalid-promotion.report.json",
+      "source_sha256": "5ad7940f301c35c9f65c6a6797f63b1488b5ac73afdace2517beea687feb3649",
+      "public_sha256": "5ad7940f301c35c9f65c6a6797f63b1488b5ac73afdace2517beea687feb3649",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-extraction-orbit/orbit-needs-context.json",
+      "destination": "geek_work/examples/claim-extraction-orbit/orbit-needs-context.json",
+      "source_sha256": "21519f5ed73c15206d943a196233fb2d5f81e8539d5213f7882dd25d2c6ad276",
+      "public_sha256": "21519f5ed73c15206d943a196233fb2d5f81e8539d5213f7882dd25d2c6ad276",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-extraction-orbit/orbit-needs-context.report.json",
+      "destination": "geek_work/examples/claim-extraction-orbit/orbit-needs-context.report.json",
+      "source_sha256": "67abaee1219b52b2f9f6be95102df5416f13fa7cdb67186b11bd7d8677931114",
+      "public_sha256": "67abaee1219b52b2f9f6be95102df5416f13fa7cdb67186b11bd7d8677931114",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-extraction-orbit/pins.json",
+      "destination": "geek_work/examples/claim-extraction-orbit/pins.json",
+      "source_sha256": "200fcc3dfba6e3b844f651c0a05f84b88f9f548e3025386e0690600529910cea",
+      "public_sha256": "200fcc3dfba6e3b844f651c0a05f84b88f9f548e3025386e0690600529910cea",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/README.ru.md",
+      "destination": "geek_work/examples/claim-transport-budget/README.ru.md",
+      "source_sha256": "52dd8d811a13f46a58207f17541b67d145f7323d8cf632e38fbb87bec624232f",
+      "public_sha256": "47266e1e7184741861563c9df76c807aa5dea1e704d5dc9e1883f4f9e8a88205",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/candidates/double-count-spent.json",
+      "destination": "geek_work/examples/claim-transport-budget/candidates/double-count-spent.json",
+      "source_sha256": "d059783f8bbeaca651255a8a59dab7114ee083c990e0b7884d4ec5ca4c24567d",
+      "public_sha256": "d059783f8bbeaca651255a8a59dab7114ee083c990e0b7884d4ec5ca4c24567d",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/candidates/drop-nonnegativity.json",
+      "destination": "geek_work/examples/claim-transport-budget/candidates/drop-nonnegativity.json",
+      "source_sha256": "fd12ab82a9a5979c662818a1ed54c8077cbf476d1ebfc285ec55e781251de378",
+      "public_sha256": "fd12ab82a9a5979c662818a1ed54c8077cbf476d1ebfc285ec55e781251de378",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/candidates/mixed-units.json",
+      "destination": "geek_work/examples/claim-transport-budget/candidates/mixed-units.json",
+      "source_sha256": "2e00402ee39bac1c60ef1527149bfecba3a351ab337ea47e3d86cbbd64abf488",
+      "public_sha256": "2e00402ee39bac1c60ef1527149bfecba3a351ab337ea47e3d86cbbd64abf488",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/candidates/omit-cancelled.json",
+      "destination": "geek_work/examples/claim-transport-budget/candidates/omit-cancelled.json",
+      "source_sha256": "b22dd968ccf3ab8df72fcc13951e665e8156cc20a598beeafae38f4fb131bd29",
+      "public_sha256": "b22dd968ccf3ab8df72fcc13951e665e8156cc20a598beeafae38f4fb131bd29",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/candidates/preserved.json",
+      "destination": "geek_work/examples/claim-transport-budget/candidates/preserved.json",
+      "source_sha256": "f18be790841d8b58a3475e4878bdf296bf7526a917019961c80bd33ec10ee8b6",
+      "public_sha256": "f18be790841d8b58a3475e4878bdf296bf7526a917019961c80bd33ec10ee8b6",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/candidates/rebound-atom.json",
+      "destination": "geek_work/examples/claim-transport-budget/candidates/rebound-atom.json",
+      "source_sha256": "a8fbb873bed6391475a1926158c54ac94013ff1e39db6117d0ac27892ba4625b",
+      "public_sha256": "a8fbb873bed6391475a1926158c54ac94013ff1e39db6117d0ac27892ba4625b",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/candidates/unsupported-proof.json",
+      "destination": "geek_work/examples/claim-transport-budget/candidates/unsupported-proof.json",
+      "source_sha256": "e1a3b887024d9e9527d67b4ccb474405822962e043d4312a350b829b7cccb513",
+      "public_sha256": "e1a3b887024d9e9527d67b4ccb474405822962e043d4312a350b829b7cccb513",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/manifest.json",
+      "destination": "geek_work/examples/claim-transport-budget/manifest.json",
+      "source_sha256": "fdb0bf26aa13db9d57973a9614a4c2d4f492257b72d3d1d96d1ea88b7512a181",
+      "public_sha256": "fdb0bf26aa13db9d57973a9614a4c2d4f492257b72d3d1d96d1ea88b7512a181",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/plan.json",
+      "destination": "geek_work/examples/claim-transport-budget/plan.json",
+      "source_sha256": "83cf833d0be2086d9ffcc7131438ab3486c23124e4dbf6187b00ac1673ab692f",
+      "public_sha256": "83cf833d0be2086d9ffcc7131438ab3486c23124e4dbf6187b00ac1673ab692f",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/replay.py",
+      "destination": "geek_work/examples/claim-transport-budget/replay.py",
+      "source_sha256": "75c1077de72e3169281217e320e2834c85cd216bec49f38ed70da888763afd9b",
+      "public_sha256": "75c1077de72e3169281217e320e2834c85cd216bec49f38ed70da888763afd9b",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/reports/double-count-spent.json",
+      "destination": "geek_work/examples/claim-transport-budget/reports/double-count-spent.json",
+      "source_sha256": "873de7604a398634046c2c5ea275fa593d5ac6308eec99790cf232a7a423479c",
+      "public_sha256": "873de7604a398634046c2c5ea275fa593d5ac6308eec99790cf232a7a423479c",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/reports/drop-nonnegativity.json",
+      "destination": "geek_work/examples/claim-transport-budget/reports/drop-nonnegativity.json",
+      "source_sha256": "68de1966fbc5bf0325ef8223d953e6b204bc4158f75184641792ecb64b6c5c48",
+      "public_sha256": "68de1966fbc5bf0325ef8223d953e6b204bc4158f75184641792ecb64b6c5c48",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/reports/mixed-units.json",
+      "destination": "geek_work/examples/claim-transport-budget/reports/mixed-units.json",
+      "source_sha256": "95fb9362890a899166b2b3b7f348c85ab699f3f9f8e005ebc5fa50a52b60e023",
+      "public_sha256": "95fb9362890a899166b2b3b7f348c85ab699f3f9f8e005ebc5fa50a52b60e023",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/reports/omit-cancelled.json",
+      "destination": "geek_work/examples/claim-transport-budget/reports/omit-cancelled.json",
+      "source_sha256": "3324f3709a28e33b84e2152e305a5969fafd3968a8e8056633d67d245fa8cbca",
+      "public_sha256": "3324f3709a28e33b84e2152e305a5969fafd3968a8e8056633d67d245fa8cbca",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/reports/preserved.json",
+      "destination": "geek_work/examples/claim-transport-budget/reports/preserved.json",
+      "source_sha256": "3e44e850b09aef6458ee4d7f081fea89c7b3d885e242e8e2629830764dd234ea",
+      "public_sha256": "3e44e850b09aef6458ee4d7f081fea89c7b3d885e242e8e2629830764dd234ea",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/reports/rebound-atom.json",
+      "destination": "geek_work/examples/claim-transport-budget/reports/rebound-atom.json",
+      "source_sha256": "f0a2167d416d57031f52bd69e24b7974c6e530a0f4621602ef21f7612eed9197",
+      "public_sha256": "f0a2167d416d57031f52bd69e24b7974c6e530a0f4621602ef21f7612eed9197",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/reports/unsupported-proof.json",
+      "destination": "geek_work/examples/claim-transport-budget/reports/unsupported-proof.json",
+      "source_sha256": "de85b35b666e455947ae8d6d740464685cd08a5fcbfff9c56c5f7ff3f7c32a26",
+      "public_sha256": "de85b35b666e455947ae8d6d740464685cd08a5fcbfff9c56c5f7ff3f7c32a26",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/source-bundle/document-selected-contract.txt",
+      "destination": "geek_work/examples/claim-transport-budget/source-bundle/document-selected-contract.txt",
+      "source_sha256": "a503401a32ee1c57f02ebf45ad0c85a1ae40f908ca145cfc4fd259c040770f20",
+      "public_sha256": "a503401a32ee1c57f02ebf45ad0c85a1ae40f908ca145cfc4fd259c040770f20",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/source-bundle/manifest.json",
+      "destination": "geek_work/examples/claim-transport-budget/source-bundle/manifest.json",
+      "source_sha256": "b7aeeb50b3113509a5ac82dec467fed45ff6d0fbb422a95d2563e9702efd1100",
+      "public_sha256": "b7aeeb50b3113509a5ac82dec467fed45ff6d0fbb422a95d2563e9702efd1100",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/source-bundle/map.json",
+      "destination": "geek_work/examples/claim-transport-budget/source-bundle/map.json",
+      "source_sha256": "e2afe07b87cb7d44a56dc7813f7a47e9fd0a9806072e7ff5d42cd0020306d75e",
+      "public_sha256": "e2afe07b87cb7d44a56dc7813f7a47e9fd0a9806072e7ff5d42cd0020306d75e",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/source-bundle/material-budget-draft.txt",
+      "destination": "geek_work/examples/claim-transport-budget/source-bundle/material-budget-draft.txt",
+      "source_sha256": "5985d0a9e93abf49624d84b97cf322d8f41599affe5e54887baf8e7d8eee7072",
+      "public_sha256": "5985d0a9e93abf49624d84b97cf322d8f41599affe5e54887baf8e7d8eee7072",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/source-bundle/report.json",
+      "destination": "geek_work/examples/claim-transport-budget/source-bundle/report.json",
+      "source_sha256": "3ca56c155bd42a92d9f73253237561c87e3a1d4b9f42ec5598c79aa7671567e7",
+      "public_sha256": "3ca56c155bd42a92d9f73253237561c87e3a1d4b9f42ec5598c79aa7671567e7",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-budget/source-bundle/review.html",
+      "destination": "geek_work/examples/claim-transport-budget/source-bundle/review.html",
+      "source_sha256": "bc05b20f793ac626ab13a733e68b5d45cb9772fc4b0a35c03540d782e3265edd",
+      "public_sha256": "bc05b20f793ac626ab13a733e68b5d45cb9772fc4b0a35c03540d782e3265edd",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/README.ru.md",
+      "destination": "geek_work/examples/claim-transport-orbit/README.ru.md",
+      "source_sha256": "9870f11e35a5c100044bd1ab1b5ca5752148ed5b7dc0dcafa85a72723527a1c3",
+      "public_sha256": "67315b635a0a6b65b0cb72f3bdcd6c7f4289a6118d3880aabba28a536045f07a",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/candidates/invalid-quote.json",
+      "destination": "geek_work/examples/claim-transport-orbit/candidates/invalid-quote.json",
+      "source_sha256": "c094e7db35f2446c9b0c8e68e9a11017bb9fe9704a3fb1a04fddf33589058874",
+      "public_sha256": "c094e7db35f2446c9b0c8e68e9a11017bb9fe9704a3fb1a04fddf33589058874",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/candidates/preserved.json",
+      "destination": "geek_work/examples/claim-transport-orbit/candidates/preserved.json",
+      "source_sha256": "9982ab67b82f20f4283abc08382551da83316a4aeef123b2b2ec95f68d632dc1",
+      "public_sha256": "9982ab67b82f20f4283abc08382551da83316a4aeef123b2b2ec95f68d632dc1",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/candidates/strict-upper-bound.json",
+      "destination": "geek_work/examples/claim-transport-orbit/candidates/strict-upper-bound.json",
+      "source_sha256": "4d0b05c6c2602cb1cd2ed15f9b2ae28b24d79103bbfb7cc2ad31c5438b8025d2",
+      "public_sha256": "4d0b05c6c2602cb1cd2ed15f9b2ae28b24d79103bbfb7cc2ad31c5438b8025d2",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/candidates/unaudited-proof-reference.json",
+      "destination": "geek_work/examples/claim-transport-orbit/candidates/unaudited-proof-reference.json",
+      "source_sha256": "5bff53d024581cf2b3d9fd2c40687673feb959125c0732a4ef76c7e1ef934a85",
+      "public_sha256": "5bff53d024581cf2b3d9fd2c40687673feb959125c0732a4ef76c7e1ef934a85",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/candidates/without-noise-bound.json",
+      "destination": "geek_work/examples/claim-transport-orbit/candidates/without-noise-bound.json",
+      "source_sha256": "c8990a527d993f199fa5d5b7a693110964d0a0267c0a6c46580b0004ca6f9638",
+      "public_sha256": "c8990a527d993f199fa5d5b7a693110964d0a0267c0a6c46580b0004ca6f9638",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/manifest.json",
+      "destination": "geek_work/examples/claim-transport-orbit/manifest.json",
+      "source_sha256": "2460bed9bc5d2c4c98fdee47058d9e737b8dc61c20cb75f848946440ef666951",
+      "public_sha256": "2460bed9bc5d2c4c98fdee47058d9e737b8dc61c20cb75f848946440ef666951",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/plan.json",
+      "destination": "geek_work/examples/claim-transport-orbit/plan.json",
+      "source_sha256": "ede1850f2cc6adc8f35aad4d67056450dadbe13f485b56163439502c704a89ea",
+      "public_sha256": "ede1850f2cc6adc8f35aad4d67056450dadbe13f485b56163439502c704a89ea",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/replay.py",
+      "destination": "geek_work/examples/claim-transport-orbit/replay.py",
+      "source_sha256": "653f2ba3525536a07ec4e49985e73270b7d5fb06d3859a494ba3c928430ffe32",
+      "public_sha256": "653f2ba3525536a07ec4e49985e73270b7d5fb06d3859a494ba3c928430ffe32",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/reports/invalid-quote.json",
+      "destination": "geek_work/examples/claim-transport-orbit/reports/invalid-quote.json",
+      "source_sha256": "110dab8f680341662a81620e02da59cda35fdab8d5154a2dc0efdb25e8445057",
+      "public_sha256": "110dab8f680341662a81620e02da59cda35fdab8d5154a2dc0efdb25e8445057",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/reports/preserved.json",
+      "destination": "geek_work/examples/claim-transport-orbit/reports/preserved.json",
+      "source_sha256": "ae5302cec06918a851ab5ed4fa6291c08ea52138ae52d2e6701abcf5de80edcc",
+      "public_sha256": "ae5302cec06918a851ab5ed4fa6291c08ea52138ae52d2e6701abcf5de80edcc",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/reports/strict-upper-bound.json",
+      "destination": "geek_work/examples/claim-transport-orbit/reports/strict-upper-bound.json",
+      "source_sha256": "c5e183f49e916edb1bc78cca9a142c2ca11029aaa50ea832d41bd2d43c59a30c",
+      "public_sha256": "c5e183f49e916edb1bc78cca9a142c2ca11029aaa50ea832d41bd2d43c59a30c",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/reports/unaudited-proof-reference.json",
+      "destination": "geek_work/examples/claim-transport-orbit/reports/unaudited-proof-reference.json",
+      "source_sha256": "1ae57652a7f345381d39a4e06e1b8c394be69cae58d5aae3a8164caba5b519ab",
+      "public_sha256": "1ae57652a7f345381d39a4e06e1b8c394be69cae58d5aae3a8164caba5b519ab",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/reports/without-noise-bound.json",
+      "destination": "geek_work/examples/claim-transport-orbit/reports/without-noise-bound.json",
+      "source_sha256": "e6dd653dcad73a59bc379e2290685ff8205ac670446d960fdefa8d3cd827cfab",
+      "public_sha256": "e6dd653dcad73a59bc379e2290685ff8205ac670446d960fdefa8d3cd827cfab",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/source-bundle/document-signature.txt",
+      "destination": "geek_work/examples/claim-transport-orbit/source-bundle/document-signature.txt",
+      "source_sha256": "9af31bfa4296114f55f03e326c10e8030facb52b2627df86b995db98cc374ba9",
+      "public_sha256": "9af31bfa4296114f55f03e326c10e8030facb52b2627df86b995db98cc374ba9",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/source-bundle/manifest.json",
+      "destination": "geek_work/examples/claim-transport-orbit/source-bundle/manifest.json",
+      "source_sha256": "022bbbc4659daa6cb249aed9bdb8dc8a90c85f7fb9bd828ab53964458398281b",
+      "public_sha256": "022bbbc4659daa6cb249aed9bdb8dc8a90c85f7fb9bd828ab53964458398281b",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/source-bundle/map.json",
+      "destination": "geek_work/examples/claim-transport-orbit/source-bundle/map.json",
+      "source_sha256": "e4bfbfb79726aca78d0d745f339710628ce937bd8834e529721b4f97a31237bc",
+      "public_sha256": "e4bfbfb79726aca78d0d745f339710628ce937bd8834e529721b4f97a31237bc",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/source-bundle/material-lean-source.txt",
+      "destination": "geek_work/examples/claim-transport-orbit/source-bundle/material-lean-source.txt",
+      "source_sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3",
+      "public_sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/source-bundle/report.json",
+      "destination": "geek_work/examples/claim-transport-orbit/source-bundle/report.json",
+      "source_sha256": "a8bf8024aa58c37d9b6701185bd5cc70b5bc6e8871b75c6efc112815b4c3f8cd",
+      "public_sha256": "a8bf8024aa58c37d9b6701185bd5cc70b5bc6e8871b75c6efc112815b4c3f8cd",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/examples/claim-transport-orbit/source-bundle/review.html",
+      "destination": "geek_work/examples/claim-transport-orbit/source-bundle/review.html",
+      "source_sha256": "8f6f35c68571d1d705aa653363667a0ffffcfa2d9f48e29d065348d17a7dd46c",
+      "public_sha256": "8f6f35c68571d1d705aa653363667a0ffffcfa2d9f48e29d065348d17a7dd46c",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tests/test_claim_adapter.py",
+      "destination": "geek_work/tests/test_claim_adapter.py",
+      "source_sha256": "941ef75fe7b37f684edbd810e3eb0acfd5029d2861be875ba2db214c07043d60",
+      "public_sha256": "0b996f9f4023e259d7cecf2198a29e54084fe4c3ca889ac182cac75276e49558",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/tests/test_claim_extraction.py",
+      "destination": "geek_work/tests/test_claim_extraction.py",
+      "source_sha256": "9e072deb38a5dcfd65da63c57f1e8fa83724169aa0c2b6baff5a136a1ce69886",
+      "public_sha256": "3e1bca7a7f7a491ed03508dbe0e0bb89d0675645adc1a3e29d3d9b5dc04ba779",
+      "adapted": true
+    },
+    {
+      "source": "digital-brain/tests/test_claim_transport.py",
+      "destination": "geek_work/tests/test_claim_transport.py",
+      "source_sha256": "e6f478644fb3c3d36487255544795883d518038569c40686836eec0f58a5e8db",
+      "public_sha256": "e6f478644fb3c3d36487255544795883d518038569c40686836eec0f58a5e8db",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tests/test_claim_transport_budget_pilot.py",
+      "destination": "geek_work/tests/test_claim_transport_budget_pilot.py",
+      "source_sha256": "80484280781c1bbf65f98c0d878b1322138ead799b6e40c1e01fa5ec9fc244dc",
+      "public_sha256": "80484280781c1bbf65f98c0d878b1322138ead799b6e40c1e01fa5ec9fc244dc",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tests/test_claim_transport_orbit_pilot.py",
+      "destination": "geek_work/tests/test_claim_transport_orbit_pilot.py",
+      "source_sha256": "d10e1637f08372cbc922474cc15bfa78e0e5bb5066cc88a1155e1d907b09a676",
+      "public_sha256": "d10e1637f08372cbc922474cc15bfa78e0e5bb5066cc88a1155e1d907b09a676",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tools/geek_work_claim_adapter.py",
+      "destination": "geek_work/tools/geek_work_claim_adapter.py",
+      "source_sha256": "dfa7e8520e97a799dabf014fb1d69cb7a0d158a08e14d08af9eeef129808db9e",
+      "public_sha256": "dfa7e8520e97a799dabf014fb1d69cb7a0d158a08e14d08af9eeef129808db9e",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tools/geek_work_claim_api_harness.py",
+      "destination": "geek_work/tools/geek_work_claim_api_harness.py",
+      "source_sha256": "050ea11022852bdba522915632f65f23f0b43c2a5dbf4a7b6183e3bc6423706e",
+      "public_sha256": "050ea11022852bdba522915632f65f23f0b43c2a5dbf4a7b6183e3bc6423706e",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tools/geek_work_claim_api_server.py",
+      "destination": "geek_work/tools/geek_work_claim_api_server.py",
+      "source_sha256": "af3664a09e328f246fc4bfda53acb3ad8b134fa2a361f78c93b2c4187c02aa15",
+      "public_sha256": "af3664a09e328f246fc4bfda53acb3ad8b134fa2a361f78c93b2c4187c02aa15",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tools/geek_work_claim_api_worker.py",
+      "destination": "geek_work/tools/geek_work_claim_api_worker.py",
+      "source_sha256": "1204d97af5f1097f744c65aea52cdc159e8e07b8d02fff01563ad043f3442ce7",
+      "public_sha256": "1204d97af5f1097f744c65aea52cdc159e8e07b8d02fff01563ad043f3442ce7",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tools/geek_work_claim_extraction.py",
+      "destination": "geek_work/tools/geek_work_claim_extraction.py",
+      "source_sha256": "f4ba82fb52357d7dd9f9c9b461313f970291d5c38f958d547b3f24affe6c22c1",
+      "public_sha256": "f4ba82fb52357d7dd9f9c9b461313f970291d5c38f958d547b3f24affe6c22c1",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/tools/geek_work_claim_transport.py",
+      "destination": "geek_work/tools/geek_work_claim_transport.py",
+      "source_sha256": "862370d57a57a1ce0319f4ee4204663b4be3d1bcd1152d62afe383939155a3b8",
+      "public_sha256": "862370d57a57a1ce0319f4ee4204663b4be3d1bcd1152d62afe383939155a3b8",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/web/claim-review/app.js",
+      "destination": "geek_work/web/claim-review/app.js",
+      "source_sha256": "c883e5d6ff6402e3873863bfd10db5115d2ee33a95736b914b1c58f63c6fc548",
+      "public_sha256": "c883e5d6ff6402e3873863bfd10db5115d2ee33a95736b914b1c58f63c6fc548",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/web/claim-review/core.js",
+      "destination": "geek_work/web/claim-review/core.js",
+      "source_sha256": "ef1325f590a20069b50c775084e2f6ab8fa6d10afd40d222bdcad65e3f255669",
+      "public_sha256": "ef1325f590a20069b50c775084e2f6ab8fa6d10afd40d222bdcad65e3f255669",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/web/claim-review/index.html",
+      "destination": "geek_work/web/claim-review/index.html",
+      "source_sha256": "472d3bc18f6eaa92d04a5ce5e2fac4333c01e9d6f6c700a89f694294b38dbc00",
+      "public_sha256": "472d3bc18f6eaa92d04a5ce5e2fac4333c01e9d6f6c700a89f694294b38dbc00",
+      "adapted": false
+    },
+    {
+      "source": "digital-brain/web/claim-review/style.css",
+      "destination": "geek_work/web/claim-review/style.css",
+      "source_sha256": "4e2076ab9d8731b0798172e4b88f72fc4a214cf58a4104c04fbc82a0f182f426",
+      "public_sha256": "4e2076ab9d8731b0798172e4b88f72fc4a214cf58a4104c04fbc82a0f182f426",
+      "adapted": false
+    }
+  ],
+  "excluded_scope": [
+    "Private Git history, graph, chats and source-review essays",
+    "Private operational logs, host diagnostics, tokens and browser profiles",
+    "Unfinished Cairo research"
+  ],
+  "assurance_flags_unchanged": true,
+  "public_adaptations": [
+    "Relocated public paths; frozen JSON source pins remain unchanged.",
+    "Orbit harness generates its blocked adapter receipt from public inputs, replacing the private historical-log dependency."
+  ]
+}

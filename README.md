@@ -100,3 +100,10 @@ release does not re-certify the complete Leanbook or SimLab formal libraries.
 publish the frozen Cairo candidate with licensing, attribution and historical
 finite-corpus results. The offline checker validates source correspondence; it
 does not run a new benchmark or prove the complete signature implementation.
+
+## Claim Review and ML-DSA research additions
+
+- [Claim Review 0.1 coordinator guide](geek_work/contracts/claim-review-api/COORDINATOR.ru.md): local manual editor, bounded API, Extraction and Transport checks.
+- [ML-DSA Stage 15 selected-source replay](studies/mldsa44_stage15/README.md): frozen production patch and attribution, distinct from a fresh benchmark or full verifier proof.
+
+These are main-branch additions. Existing release tags and historical release assets remain unchanged.

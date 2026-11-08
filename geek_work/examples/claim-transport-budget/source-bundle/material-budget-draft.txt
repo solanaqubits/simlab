@@ -1,0 +1,65 @@
+# Resource budget accounting — draft 0.1
+
+Status: **design obligation / hypothesis**, not a Lean theorem or an implementation
+of a live ledger. This is a new engineering model prompted by the user's proposed
+balance invariant. It is not extracted from, or evidence for, the speculative
+physical/economic claims in earlier NotebookLM material.
+
+## State and meaning
+
+One state has five counters: available `A`, reserved `R`, spent `S`, cancelled `C`,
+and allocated `T`. The first four categories are disjoint account states of the
+allocated resource. `S` and `C` are cumulative sinks within the budget epoch;
+`C` counts an irrevocably retired allocation, not a release of a reservation.
+`compute_credit` is an abstract accounting unit, not seconds, money, energy or
+quantum-pair generation rate. This pilot does not define its physical calibration.
+
+## Selected transport contract
+
+BEGIN CONTRACT
+A, R, S, C and T are integers greater than or equal to 0.
+All five counters use the same unit compute_credit.
+All counters refer to one budget_id and one epoch.
+Available, reserved, spent and cancelled categories are disjoint.
+The initial state satisfies A + R + S + C = T.
+Only the five transfers specified below are permitted; each is applied atomically exactly once.
+T is fixed throughout the trace; no new allocation or external debit is permitted.
+For every finite valid trace and every state reached along it:
+A + R + S + C = T.
+END CONTRACT
+
+## Permitted transfers (sequential abstract state)
+
+A transfer amount `q` is an integer with `0 ≤ q ≤` the source account. Exactly the
+two stated counters change; all others, including `T`, remain unchanged.
+
+| Action | Source debit | Destination credit |
+|---|---|---|
+| reserve(q) | A := A − q | R := R + q |
+| release(q) | R := R − q | A := A + q |
+| spend(q) | R := R − q | S := S + q |
+| cancel_available(q) | A := A − q | C := C + q |
+| cancel_reserved(q) | R := R − q | C := C + q |
+
+A release returns a reservation to availability; it does not increment `C`.
+Cancellation is retirement into `C`; cancelled units remain in the accounting sum.
+Spending moves units from `R` to `S`; it does not create a second retained copy in `R`.
+A zero-amount transfer is allowed and leaves the state unchanged.
+
+## Obligations and non-claims
+
+Open: prove preservation of the balance and nonnegativity for every permitted
+transition, then lift that result to every finite valid trace from a balanced
+initial state. No result is being assumed about arbitrary unlisted transitions.
+
+Open: refine any future implementation to this abstract model, including atomicity,
+concurrent access, exactly-once processing, failure recovery, authorization and
+cross-epoch isolation. A checksum does not solve those obligations.
+
+The equation alone does not prove that resource use is authorized or useful; the
+exactly-once premise here is not a security theorem. Even a balanced ledger can
+record unauthorized transfers. No token emission, subjective intention measurement,
+financial value, physical conservation law or quantum performance is established.
+
+Claim Transport can check a selected structured representation of this contract.
+Its success does not discharge these obligations or prove extraction completeness.

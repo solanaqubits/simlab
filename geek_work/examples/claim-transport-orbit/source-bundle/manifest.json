@@ -1,0 +1,10 @@
+{
+  "files": {
+    "document-signature.txt": "9af31bfa4296114f55f03e326c10e8030facb52b2627df86b995db98cc374ba9",
+    "map.json": "e4bfbfb79726aca78d0d745f339710628ce937bd8834e529721b4f97a31237bc",
+    "material-lean-source.txt": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3",
+    "report.json": "a8bf8024aa58c37d9b6701185bd5cc70b5bc6e8871b75c6efc112815b4c3f8cd",
+    "review.html": "8f6f35c68571d1d705aa653363667a0ffffcfa2d9f48e29d065348d17a7dd46c"
+  },
+  "schema": "geek-work-manuscript-claim-bundle-1"
+}

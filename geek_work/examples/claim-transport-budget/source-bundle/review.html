@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'"><title>Manuscript claim map</title><h1>Selected claim/evidence bindings</h1><p>Byte bindings only; reported states are not new verification or semantic approval.</p><article><h2>resource-budget-invariant</h2><h3>statement</h3><pre>{
+  &quot;document&quot;: &quot;selected-contract&quot;,
+  &quot;end&quot;: 534,
+  &quot;quote&quot;: &quot;A, R, S, C and T are integers greater than or equal to 0.\nAll five counters use the same unit compute_credit.\nAll counters refer to one budget_id and one epoch.\nAvailable, reserved, spent and cancelled categories are disjoint.\nThe initial state satisfies A + R + S + C = T.\nOnly the five transfers specified below are permitted; each is applied atomically exactly once.\nT is fixed throughout the trace; no new allocation or external debit is permitted.\nFor every finite valid trace and every state reached along it:\nA + R + S + C = T.&quot;,
+  &quot;start&quot;: 0
+}
+</pre><h3>reported_evidence_state</h3><pre>&quot;hypothesis&quot;
+</pre><h3>scope</h3><pre>&quot;Fixed-budget epoch; sequential abstract accounting in compute_credit. Desired invariant, not a verified implementation.&quot;
+</pre><h3>assumptions</h3><pre>[
+  &quot;A, R, S, C and T are integers greater than or equal to 0.&quot;,
+  &quot;All five counters use the same unit compute_credit.&quot;,
+  &quot;All counters refer to one budget_id and one epoch.&quot;,
+  &quot;Available, reserved, spent and cancelled categories are disjoint.&quot;,
+  &quot;The initial state satisfies A + R + S + C = T.&quot;,
+  &quot;Only the five transfers specified below are permitted; each is applied atomically exactly once.&quot;,
+  &quot;T is fixed throughout the trace; no new allocation or external debit is permitted.&quot;
+]
+</pre><h3>non_claims</h3><pre>[
+  &quot;No Lean proof or implementation refinement is supplied.&quot;,
+  &quot;No physical, financial or spiritual mechanism is asserted.&quot;,
+  &quot;Accounting balance alone does not establish authorization or exactly-once execution.&quot;
+]
+</pre><h3>open_obligations</h3><pre>[
+  &quot;Prove balance and nonnegativity preservation for each permitted transition and every finite trace.&quot;,
+  &quot;Refine implementation atomicity, replay handling, recovery and epoch isolation to the model.&quot;,
+  &quot;Review extraction completeness and atom-role assignments; no Python-to-Lean refinement is proved.&quot;
+]
+</pre><h3>evidence</h3><pre>[
+  {
+    &quot;citation&quot;: {
+      &quot;end&quot;: 1430,
+      &quot;material&quot;: &quot;budget-draft&quot;,
+      &quot;quote&quot;: &quot;A, R, S, C and T are integers greater than or equal to 0.\nAll five counters use the same unit compute_credit.\nAll counters refer to one budget_id and one epoch.\nAvailable, reserved, spent and cancelled categories are disjoint.\nThe initial state satisfies A + R + S + C = T.\nOnly the five transfers specified below are permitted; each is applied atomically exactly once.\nT is fixed throughout the trace; no new allocation or external debit is permitted.\nFor every finite valid trace and every state reached along it:\nA + R + S + C = T.&quot;,
+      &quot;start&quot;: 896
+    },
+    &quot;declaration&quot;: null
+  }
+]
+</pre></article><h3>Source identities and declared origins</h3><pre>{
+  &quot;documents&quot;: [
+    {
+      &quot;id&quot;: &quot;selected-contract&quot;,
+      &quot;path&quot;: &quot;contract.txt&quot;,
+      &quot;sha256&quot;: &quot;a503401a32ee1c57f02ebf45ad0c85a1ae40f908ca145cfc4fd259c040770f20&quot;
+    }
+  ],
+  &quot;materials&quot;: [
+    {
+      &quot;id&quot;: &quot;budget-draft&quot;,
+      &quot;kind&quot;: &quot;reference_material&quot;,
+      &quot;origin&quot;: {
+        &quot;commit&quot;: &quot;12c9edad88784718ec908d8e0a0bd2f8ddbd3600&quot;,
+        &quot;repository&quot;: &quot;SimLab private local engineering draft (not an external scientific source)&quot;
+      },
+      &quot;path&quot;: &quot;CONTRACT-0.1.md&quot;,
+      &quot;sha256&quot;: &quot;5985d0a9e93abf49624d84b97cf322d8f41599affe5e54887baf8e7d8eee7072&quot;
+    }
+  ]
+}
+</pre><h3>Verification limits</h3><pre>{
+  &quot;all_manuscript_claims_covered&quot;: false,
+  &quot;claims&quot;: 1,
+  &quot;declaration_resolution_verified&quot;: false,
+  &quot;kernel_replayed&quot;: false,
+  &quot;limits&quot;: &quot;Selected excerpts and bytes only. States, origins, declaration names, scope and assumptions are supplied editorial metadata. A matching quotation may be a comment, not a theorem. No Git lookup, Lean execution, evidence interpretation, completeness, authenticity or independent review is established.&quot;,
+  &quot;origin_commits_verified&quot;: false,
+  &quot;publication_authorized&quot;: false,
+  &quot;reported_states&quot;: {
+    &quot;hypothesis&quot;: 1
+  },
+  &quot;schema&quot;: &quot;geek-work-manuscript-claim-report-1&quot;,
+  &quot;semantic_correspondence_verified&quot;: false,
+  &quot;status&quot;: &quot;byte_bindings_verified&quot;,
+  &quot;unused_materials&quot;: []
+}
+</pre></html>

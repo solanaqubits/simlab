@@ -1,0 +1,20 @@
+{
+  "schema": "claim-review-api-response-1",
+  "operation": "drafts",
+  "request_id": "00000000-0000-4000-8000-000000000001",
+  "context_id": "00000000-0000-4000-8000-000000000002",
+  "ok": true,
+  "assurances": {
+    "semantic_equivalence_verified": false,
+    "source_extraction_complete": false,
+    "kernel_replayed": false,
+    "publication_authorized": false
+  },
+  "data": {
+    "draft_id": "00000000-0000-4000-8000-000000000003",
+    "parent_draft_id": null,
+    "draft_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "size_bytes": 2,
+    "validation_state": "not_run"
+  }
+}

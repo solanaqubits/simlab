@@ -1,0 +1,9 @@
+{
+  "kernel_replayed": false,
+  "publication_authorized": false,
+  "reason": "mandatory_unresolved_question_incompatible_with_ready_for_transport",
+  "schema": "geek-work-claim-extraction-report-1",
+  "semantic_equivalence_verified": false,
+  "source_extraction_complete": false,
+  "status": "invalid_input"
+}

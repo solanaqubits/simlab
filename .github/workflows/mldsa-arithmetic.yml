@@ -1,9 +1,9 @@
 name: ML-DSA public source replay
 on:
   push:
-    paths: ['studies/mldsa44_arithmetic/**', 'tests/test_mldsa_public_package.py', '.github/workflows/mldsa-arithmetic.yml']
+    paths: ['studies/mldsa44_arithmetic/**', 'studies/mldsa44_stage15/**', 'tests/test_mldsa_public_package.py', 'tests/test_mldsa_stage15_public_package.py', '.github/workflows/mldsa-arithmetic.yml']
   pull_request:
-    paths: ['studies/mldsa44_arithmetic/**', 'tests/test_mldsa_public_package.py', '.github/workflows/mldsa-arithmetic.yml']
+    paths: ['studies/mldsa44_arithmetic/**', 'studies/mldsa44_stage15/**', 'tests/test_mldsa_public_package.py', 'tests/test_mldsa_stage15_public_package.py', '.github/workflows/mldsa-arithmetic.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -28,4 +28,10 @@ jobs:
         timeout-minutes: 1
       - name: Check catalog
         run: python3 -B scripts/check_catalog.py
+        timeout-minutes: 1
+      - name: Replay frozen Stage 15 selected sources
+        run: python3 -B studies/mldsa44_stage15/check_package.py
+        timeout-minutes: 1
+      - name: Check Stage 15 tamper controls
+        run: python3 -B -m unittest tests.test_mldsa_stage15_public_package -v
         timeout-minutes: 1

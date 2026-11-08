@@ -1,0 +1,2093 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claim Review Local API 0.1 responses — specification",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}(?![\\s\\S])"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}(?![\\s\\S])"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "assurances": {
+      "type": "object",
+      "properties": {
+        "semantic_equivalence_verified": {
+          "const": false
+        },
+        "source_extraction_complete": {
+          "const": false
+        },
+        "kernel_replayed": {
+          "const": false
+        },
+        "publication_authorized": {
+          "const": false
+        }
+      },
+      "required": [
+        "semantic_equivalence_verified",
+        "source_extraction_complete",
+        "kernel_replayed",
+        "publication_authorized"
+      ],
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16777216
+        },
+        "media_type": {
+          "enum": [
+            "application/json",
+            "text/plain",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "required": [
+        "artifact_id",
+        "sha256",
+        "size_bytes",
+        "media_type"
+      ],
+      "additionalProperties": false
+    },
+    "anchor": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "matched"
+            },
+            "expected_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "observed_sha256": {
+              "$ref": "#/$defs/hash"
+            }
+          },
+          "required": [
+            "state",
+            "expected_sha256",
+            "observed_sha256"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "mismatch"
+            },
+            "expected_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "observed_sha256": {
+              "$ref": "#/$defs/hash"
+            }
+          },
+          "required": [
+            "state",
+            "expected_sha256",
+            "observed_sha256"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unavailable"
+            },
+            "expected_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "observed_sha256": {
+              "const": null
+            }
+          },
+          "required": [
+            "state",
+            "expected_sha256",
+            "observed_sha256"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "error_code": {
+      "enum": [
+        "malformed_request",
+        "invalid_schema",
+        "noncanonical_base64",
+        "invalid_record_json",
+        "unauthorized",
+        "origin_host_rejected",
+        "unknown_context",
+        "unknown_draft",
+        "unknown_job",
+        "unknown_artifact",
+        "draft_hash_mismatch",
+        "context_fingerprint_mismatch",
+        "anchor_mismatch",
+        "anchor_unavailable",
+        "context_busy",
+        "idempotency_conflict",
+        "artifact_unavailable",
+        "artifact_integrity_failure",
+        "payload_too_large",
+        "unsupported_media_type",
+        "range_not_satisfiable",
+        "rate_limited",
+        "quota_exceeded",
+        "request_timeout",
+        "internal_error",
+        "unknown_route",
+        "method_not_allowed"
+      ]
+    },
+    "failure": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "anchor_mismatch",
+            "anchor_unavailable",
+            "snapshot_failure",
+            "timeout",
+            "output_limit",
+            "storage_failure",
+            "process_crash",
+            "invalid_cli_report",
+            "artifact_integrity_failure",
+            "worker_failure"
+          ]
+        },
+        "message": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "extraction_report": {
+      "type": "object",
+      "properties": {
+        "validator": {
+          "const": "extraction"
+        },
+        "status": {
+          "enum": [
+            "record_consistent",
+            "needs_context",
+            "review_required",
+            "invalid_input"
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/text"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "artifact": {
+          "$ref": "#/$defs/artifact"
+        }
+      },
+      "required": [
+        "validator",
+        "status",
+        "reason",
+        "artifact"
+      ],
+      "additionalProperties": false
+    },
+    "adapter_report": {
+      "type": "object",
+      "properties": {
+        "validator": {
+          "const": "adapter"
+        },
+        "status": {
+          "enum": [
+            "built",
+            "build_blocked",
+            "invalid_input"
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/text"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "artifact": {
+          "$ref": "#/$defs/artifact"
+        }
+      },
+      "required": [
+        "validator",
+        "status",
+        "reason",
+        "artifact"
+      ],
+      "additionalProperties": false
+    },
+    "transport_report": {
+      "type": "object",
+      "properties": {
+        "validator": {
+          "const": "transport"
+        },
+        "status": {
+          "enum": [
+            "contract_preserved",
+            "review_required",
+            "invalid_input"
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/text"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "artifact": {
+          "$ref": "#/$defs/artifact"
+        }
+      },
+      "required": [
+        "validator",
+        "status",
+        "reason",
+        "artifact"
+      ],
+      "additionalProperties": false
+    },
+    "report": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/extraction_report"
+        },
+        {
+          "$ref": "#/$defs/adapter_report"
+        },
+        {
+          "$ref": "#/$defs/transport_report"
+        }
+      ]
+    },
+    "job": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "enum": [
+                "check",
+                "build"
+              ]
+            },
+            "state": {
+              "const": "queued"
+            },
+            "exit_code": {
+              "const": null
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 0,
+              "maxItems": 0
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 0
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "enum": [
+                "check",
+                "build"
+              ]
+            },
+            "state": {
+              "const": "running"
+            },
+            "exit_code": {
+              "const": null
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 0,
+              "maxItems": 0
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 0
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "enum": [
+                "check",
+                "build"
+              ]
+            },
+            "state": {
+              "const": "failed"
+            },
+            "exit_code": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": -255,
+                  "maximum": 255
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 0,
+              "maxItems": 0
+            },
+            "failure": {
+              "$ref": "#/$defs/failure"
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "const": "check"
+            },
+            "state": {
+              "const": "completed"
+            },
+            "exit_code": {
+              "const": 0
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 1,
+              "maxItems": 1,
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "validator": {
+                    "const": "extraction"
+                  },
+                  "status": {
+                    "const": "record_consistent"
+                  },
+                  "reason": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/text"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artifact": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                },
+                "required": [
+                  "validator",
+                  "status",
+                  "reason",
+                  "artifact"
+                ],
+                "additionalProperties": false
+              },
+              "minContains": 1,
+              "maxContains": 1,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "adapter"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                }
+              ]
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "const": "check"
+            },
+            "state": {
+              "const": "completed"
+            },
+            "exit_code": {
+              "const": 1
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 1,
+              "maxItems": 1,
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "validator": {
+                    "const": "extraction"
+                  },
+                  "status": {
+                    "const": "needs_context"
+                  },
+                  "reason": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/text"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artifact": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                },
+                "required": [
+                  "validator",
+                  "status",
+                  "reason",
+                  "artifact"
+                ],
+                "additionalProperties": false
+              },
+              "minContains": 1,
+              "maxContains": 1,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "adapter"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                }
+              ]
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "const": "check"
+            },
+            "state": {
+              "const": "completed"
+            },
+            "exit_code": {
+              "const": 1
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 1,
+              "maxItems": 1,
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "validator": {
+                    "const": "extraction"
+                  },
+                  "status": {
+                    "const": "review_required"
+                  },
+                  "reason": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/text"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artifact": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                },
+                "required": [
+                  "validator",
+                  "status",
+                  "reason",
+                  "artifact"
+                ],
+                "additionalProperties": false
+              },
+              "minContains": 1,
+              "maxContains": 1,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "adapter"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                }
+              ]
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "const": "check"
+            },
+            "state": {
+              "const": "completed"
+            },
+            "exit_code": {
+              "const": 2
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 1,
+              "maxItems": 1,
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "validator": {
+                    "const": "extraction"
+                  },
+                  "status": {
+                    "const": "invalid_input"
+                  },
+                  "reason": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/text"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artifact": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                },
+                "required": [
+                  "validator",
+                  "status",
+                  "reason",
+                  "artifact"
+                ],
+                "additionalProperties": false
+              },
+              "minContains": 1,
+              "maxContains": 1,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "adapter"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                }
+              ]
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "const": "build"
+            },
+            "state": {
+              "const": "completed"
+            },
+            "exit_code": {
+              "const": 0
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 3,
+              "maxItems": 3,
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "validator": {
+                    "const": "adapter"
+                  },
+                  "status": {
+                    "const": "built"
+                  },
+                  "reason": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/text"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artifact": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                },
+                "required": [
+                  "validator",
+                  "status",
+                  "reason",
+                  "artifact"
+                ],
+                "additionalProperties": false
+              },
+              "minContains": 1,
+              "maxContains": 1,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      },
+                      "status": {
+                        "const": "contract_preserved"
+                      }
+                    },
+                    "required": [
+                      "validator",
+                      "status"
+                    ]
+                  }
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "adapter"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      },
+                      "status": {
+                        "const": "record_consistent"
+                      }
+                    },
+                    "required": [
+                      "validator",
+                      "status"
+                    ]
+                  }
+                }
+              ]
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": true
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "const": "build"
+            },
+            "state": {
+              "const": "completed"
+            },
+            "exit_code": {
+              "const": 1
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 1,
+              "maxItems": 3,
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "validator": {
+                    "const": "adapter"
+                  },
+                  "status": {
+                    "const": "build_blocked"
+                  },
+                  "reason": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/text"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artifact": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                },
+                "required": [
+                  "validator",
+                  "status",
+                  "reason",
+                  "artifact"
+                ],
+                "additionalProperties": false
+              },
+              "minContains": 1,
+              "maxContains": 1,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "adapter"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                }
+              ]
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "kind": {
+              "const": "build"
+            },
+            "state": {
+              "const": "completed"
+            },
+            "exit_code": {
+              "const": 2
+            },
+            "reports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/report"
+              },
+              "minItems": 1,
+              "maxItems": 3,
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "validator": {
+                    "const": "adapter"
+                  },
+                  "status": {
+                    "const": "invalid_input"
+                  },
+                  "reason": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/text"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artifact": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                },
+                "required": [
+                  "validator",
+                  "status",
+                  "reason",
+                  "artifact"
+                ],
+                "additionalProperties": false
+              },
+              "minContains": 1,
+              "maxContains": 1,
+              "allOf": [
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "extraction"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "adapter"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                },
+                {
+                  "contains": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "const": "transport"
+                      }
+                    },
+                    "required": [
+                      "validator"
+                    ]
+                  },
+                  "minContains": 0,
+                  "maxContains": 1
+                }
+              ]
+            },
+            "failure": {
+              "const": null
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/artifact"
+              },
+              "minItems": 0,
+              "maxItems": 32
+            },
+            "package_available": {
+              "const": false
+            }
+          },
+          "required": [
+            "job_id",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint",
+            "kind",
+            "state",
+            "exit_code",
+            "reports",
+            "failure",
+            "artifacts",
+            "package_available"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "claim-review-api-response-1"
+        },
+        "operation": {
+          "const": "context"
+        },
+        "request_id": {
+          "$ref": "#/$defs/id"
+        },
+        "context_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ok": {
+          "const": true
+        },
+        "assurances": {
+          "$ref": "#/$defs/assurances"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            },
+            "source_claim_id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]{0,63}(?![\\s\\S])"
+            },
+            "source_revision": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2147483647
+            },
+            "anchors": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "$ref": "#/$defs/anchor"
+                },
+                "expectations": {
+                  "$ref": "#/$defs/anchor"
+                },
+                "claim_map_manifest": {
+                  "$ref": "#/$defs/anchor"
+                }
+              },
+              "required": [
+                "source",
+                "expectations",
+                "claim_map_manifest"
+              ],
+              "additionalProperties": false
+            },
+            "source_snapshot": {
+              "$ref": "#/$defs/artifact"
+            },
+            "expectations": {
+              "$ref": "#/$defs/artifact"
+            },
+            "claim_map_manifest": {
+              "$ref": "#/$defs/artifact"
+            },
+            "limits": {
+              "const": {
+                "profile": "claim-review-local-api-limits-1",
+                "post_body_bytes": 2097152,
+                "header_bytes": 16384,
+                "header_count": 32,
+                "body_read_seconds": 5,
+                "response_write_seconds": 10,
+                "record_bytes": 1048576,
+                "source_bytes": 1048576,
+                "expectations_bytes": 1048576,
+                "extraction_combined_bytes": 2097152,
+                "claim_map_bundle_bytes": 16777216,
+                "active_jobs_per_context": 1,
+                "waiting_queue_depth": 0,
+                "check_timeout_seconds": 60,
+                "build_timeout_seconds": 180,
+                "terminate_grace_seconds": 2,
+                "kill_wait_seconds": 2,
+                "stdout_bytes": 262144,
+                "stderr_bytes": 262144,
+                "output_file_bytes": 16777216,
+                "job_output_bytes": 67108864,
+                "context_storage_bytes": 536870912,
+                "job_reserved_bytes": 67108864,
+                "artifact_chunk_bytes": 65536,
+                "max_drafts": 128,
+                "max_jobs": 128,
+                "requests_per_second": 8,
+                "request_burst": 16,
+                "json_depth": 32,
+                "integer_token_digits": 128,
+                "job_start_seconds": 5
+              }
+            }
+          },
+          "required": [
+            "context_fingerprint",
+            "source_claim_id",
+            "source_revision",
+            "anchors",
+            "source_snapshot",
+            "expectations",
+            "claim_map_manifest",
+            "limits"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema",
+        "operation",
+        "request_id",
+        "context_id",
+        "ok",
+        "assurances",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "drafts": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "claim-review-api-response-1"
+        },
+        "operation": {
+          "const": "drafts"
+        },
+        "request_id": {
+          "$ref": "#/$defs/id"
+        },
+        "context_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ok": {
+          "const": true
+        },
+        "assurances": {
+          "$ref": "#/$defs/assurances"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "parent_draft_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "size_bytes": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 1048576
+            },
+            "validation_state": {
+              "const": "not_run"
+            }
+          },
+          "required": [
+            "draft_id",
+            "parent_draft_id",
+            "draft_sha256",
+            "size_bytes",
+            "validation_state"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema",
+        "operation",
+        "request_id",
+        "context_id",
+        "ok",
+        "assurances",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "claim-review-api-response-1"
+        },
+        "operation": {
+          "const": "checks"
+        },
+        "request_id": {
+          "$ref": "#/$defs/id"
+        },
+        "context_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ok": {
+          "const": true
+        },
+        "assurances": {
+          "$ref": "#/$defs/assurances"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "check"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            }
+          },
+          "required": [
+            "job_id",
+            "kind",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema",
+        "operation",
+        "request_id",
+        "context_id",
+        "ok",
+        "assurances",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "builds": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "claim-review-api-response-1"
+        },
+        "operation": {
+          "const": "builds"
+        },
+        "request_id": {
+          "$ref": "#/$defs/id"
+        },
+        "context_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ok": {
+          "const": true
+        },
+        "assurances": {
+          "$ref": "#/$defs/assurances"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "job_id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "build"
+            },
+            "draft_id": {
+              "$ref": "#/$defs/id"
+            },
+            "draft_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "context_fingerprint": {
+              "$ref": "#/$defs/hash"
+            }
+          },
+          "required": [
+            "job_id",
+            "kind",
+            "draft_id",
+            "draft_sha256",
+            "context_fingerprint"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema",
+        "operation",
+        "request_id",
+        "context_id",
+        "ok",
+        "assurances",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "jobs_status": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "claim-review-api-response-1"
+        },
+        "operation": {
+          "const": "jobs/status"
+        },
+        "request_id": {
+          "$ref": "#/$defs/id"
+        },
+        "context_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ok": {
+          "const": true
+        },
+        "assurances": {
+          "$ref": "#/$defs/assurances"
+        },
+        "data": {
+          "$ref": "#/$defs/job"
+        }
+      },
+      "required": [
+        "schema",
+        "operation",
+        "request_id",
+        "context_id",
+        "ok",
+        "assurances",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "artifacts_read": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "claim-review-api-response-1"
+        },
+        "operation": {
+          "const": "artifacts/read"
+        },
+        "request_id": {
+          "$ref": "#/$defs/id"
+        },
+        "context_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ok": {
+          "const": true
+        },
+        "assurances": {
+          "$ref": "#/$defs/assurances"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "artifact_id": {
+              "$ref": "#/$defs/id"
+            },
+            "artifact_sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "total_size_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 16777216
+            },
+            "offset": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 16777216
+            },
+            "returned_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65536
+            },
+            "eof": {
+              "type": "boolean"
+            },
+            "chunk_base64": {
+              "type": "string",
+              "maxLength": 87384,
+              "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?(?![\\s\\S])"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "artifact_sha256",
+            "total_size_bytes",
+            "offset",
+            "returned_bytes",
+            "eof",
+            "chunk_base64"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema",
+        "operation",
+        "request_id",
+        "context_id",
+        "ok",
+        "assurances",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "claim-review-api-response-1"
+        },
+        "operation": {
+          "anyOf": [
+            {
+              "enum": [
+                "context",
+                "drafts",
+                "checks",
+                "builds",
+                "jobs/status",
+                "artifacts/read"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "request_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "context_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ok": {
+          "const": false
+        },
+        "assurances": {
+          "$ref": "#/$defs/assurances"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "$ref": "#/$defs/error_code"
+            },
+            "message": {
+              "$ref": "#/$defs/text"
+            },
+            "retry_after_seconds": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 60
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "code",
+            "message",
+            "retry_after_seconds"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema",
+        "operation",
+        "request_id",
+        "context_id",
+        "ok",
+        "assurances",
+        "error"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/context"
+    },
+    {
+      "$ref": "#/$defs/drafts"
+    },
+    {
+      "$ref": "#/$defs/checks"
+    },
+    {
+      "$ref": "#/$defs/builds"
+    },
+    {
+      "$ref": "#/$defs/jobs_status"
+    },
+    {
+      "$ref": "#/$defs/artifacts_read"
+    },
+    {
+      "$ref": "#/$defs/error"
+    }
+  ]
+}

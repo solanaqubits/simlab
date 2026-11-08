@@ -1,0 +1,13 @@
+{
+  "expectations_sha256": "4f7374637b3c69fbfc46e44e69dbc6316c43454232e40ee780872956f4ad7e36",
+  "files": {
+    "expectations.json": "4f7374637b3c69fbfc46e44e69dbc6316c43454232e40ee780872956f4ad7e36",
+    "orbit-invalid-promotion.json": "41702eba7b366a4eda95c6173671fa17f299f3dfe2b5d012c75e2745f2f2412e",
+    "orbit-invalid-promotion.report.json": "5ad7940f301c35c9f65c6a6797f63b1488b5ac73afdace2517beea687feb3649",
+    "orbit-needs-context.json": "21519f5ed73c15206d943a196233fb2d5f81e8539d5213f7882dd25d2c6ad276",
+    "orbit-needs-context.report.json": "67abaee1219b52b2f9f6be95102df5416f13fa7cdb67186b11bd7d8677931114"
+  },
+  "schema": "claim-extraction-orbit-example-pins-1",
+  "source_path": "digital-brain/examples/claim-transport-orbit/source-bundle/material-lean-source.txt",
+  "source_sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3"
+}

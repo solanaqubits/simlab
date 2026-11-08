@@ -1,0 +1,378 @@
+{
+  "claim_type": "theorem",
+  "contract": {
+    "conclusion_atoms": [
+      {
+        "atom_id": "orbit-tendsto-quarter",
+        "quote_span": {
+          "end_char": 10419,
+          "quote": "Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10374
+        },
+        "text_raw": "Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+        "text_sha256": "80f4f684746427b7e3fcc9f0fa0e777ae9baf9c4c3b06af93c6d699546435f77"
+      }
+    ],
+    "domain_atoms": [
+      {
+        "atom_id": "nonnegative-input",
+        "quote_span": {
+          "end_char": 10353,
+          "quote": "0 ≤ F",
+          "start_char": 10348
+        },
+        "text_raw": "0 ≤ F",
+        "text_sha256": "242aa7ddec36d69d8a74dd1bc157e1d8d7e105c7cef6345d4487b00871299d0c"
+      },
+      {
+        "atom_id": "input-upper-bound",
+        "quote_span": {
+          "end_char": 10366,
+          "quote": "F ≤ 1",
+          "start_char": 10361
+        },
+        "text_raw": "F ≤ 1",
+        "text_sha256": "e7ccb6479641ade869653a88405c9be2ff4602c17b583e72c7772857b7873ad8"
+      }
+    ],
+    "evidence_ids": [
+      "a01e47285b6db91971e5a8f2143338062bced877f3bf48bee07975c215ce22f7"
+    ],
+    "negation_atoms": [],
+    "non_claims": [
+      "No convergence rate is asserted.",
+      "No time-varying γ is covered.",
+      "No expected resource yield or spatial repeater convergence is asserted.",
+      "This transport pilot does not replay the Lean kernel."
+    ],
+    "open_obligations": [
+      "Independent review of atom-role assignment and extraction completeness.",
+      "Correspondence of Python/JSON validation to the Lean model remains unproved."
+    ],
+    "premise_atoms": [
+      {
+        "atom_id": "nonnegative-noise",
+        "quote_span": {
+          "end_char": 10315,
+          "quote": "0 ≤ γ",
+          "start_char": 10310
+        },
+        "text_raw": "0 ≤ γ",
+        "text_sha256": "a66a92756520827215dad6ed3981b78d13f1baa32f9175e18c9e0c460d63a9b4"
+      },
+      {
+        "atom_id": "subcritical-noise",
+        "quote_span": {
+          "end_char": 10340,
+          "quote": "γ < criticalGamma",
+          "start_char": 10323
+        },
+        "text_raw": "γ < criticalGamma",
+        "text_sha256": "85807c8d998ce5ad1a8a3e4ea793cff4e82dd6077c74c3f8bc623d52e336bbb6"
+      },
+      {
+        "atom_id": "nonnegative-input",
+        "quote_span": {
+          "end_char": 10353,
+          "quote": "0 ≤ F",
+          "start_char": 10348
+        },
+        "text_raw": "0 ≤ F",
+        "text_sha256": "242aa7ddec36d69d8a74dd1bc157e1d8d7e105c7cef6345d4487b00871299d0c"
+      },
+      {
+        "atom_id": "input-upper-bound",
+        "quote_span": {
+          "end_char": 10366,
+          "quote": "F ≤ 1",
+          "start_char": 10361
+        },
+        "text_raw": "F ≤ 1",
+        "text_sha256": "e7ccb6479641ade869653a88405c9be2ff4602c17b583e72c7772857b7873ad8"
+      }
+    ],
+    "quantifier_atoms": [
+      {
+        "atom_id": "real-parameters",
+        "quote_span": {
+          "end_char": 10299,
+          "quote": "{γ F : ℝ}",
+          "start_char": 10290
+        },
+        "text_raw": "{γ F : ℝ}",
+        "text_sha256": "3b41d32fab1825beb62a2c6f2edd61bdc230dd9299742756809557b9b88bad52"
+      }
+    ],
+    "quantities": [
+      {
+        "exact_literal": "1 / 4",
+        "literal_span": {
+          "end_char": 10417,
+          "quote": "1 / 4",
+          "start_char": 10412
+        },
+        "quantity_id": "limiting-fidelity",
+        "symbol": "F∞",
+        "unit_canonical": null,
+        "unit_interpretation": "unknown",
+        "unit_mapping_basis": "Prior pinned transport plan annotated dimensionless; its source basis remains unestablished in this selected signature. No unit mapping is approved here.",
+        "unit_raw": null,
+        "unit_span": null
+      }
+    ],
+    "scope": "Fixed real γ and F in the displayed Lean signature; asymptotic Tendsto, not finite-step equality."
+  },
+  "coverage_checks": [
+    {
+      "check_id": "premise-atoms-nonnegative-noise",
+      "evidence_spans": [
+        {
+          "end_char": 10315,
+          "quote": "0 ≤ γ",
+          "start_char": 10310
+        }
+      ],
+      "expected_condition_editorial_text": "0 ≤ γ",
+      "expected_role": "premise_atoms",
+      "extracted_atom_ids": [
+        "nonnegative-noise"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "premise-atoms-subcritical-noise",
+      "evidence_spans": [
+        {
+          "end_char": 10340,
+          "quote": "γ < criticalGamma",
+          "start_char": 10323
+        }
+      ],
+      "expected_condition_editorial_text": "γ < criticalGamma",
+      "expected_role": "premise_atoms",
+      "extracted_atom_ids": [
+        "subcritical-noise"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "premise-atoms-nonnegative-input",
+      "evidence_spans": [
+        {
+          "end_char": 10353,
+          "quote": "0 ≤ F",
+          "start_char": 10348
+        }
+      ],
+      "expected_condition_editorial_text": "0 ≤ F",
+      "expected_role": "premise_atoms",
+      "extracted_atom_ids": [
+        "nonnegative-input"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "premise-atoms-input-upper-bound",
+      "evidence_spans": [
+        {
+          "end_char": 10366,
+          "quote": "F ≤ 1",
+          "start_char": 10361
+        }
+      ],
+      "expected_condition_editorial_text": "F ≤ 1",
+      "expected_role": "premise_atoms",
+      "extracted_atom_ids": [
+        "input-upper-bound"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "conclusion-atoms-orbit-tendsto-quarter",
+      "evidence_spans": [
+        {
+          "end_char": 10419,
+          "quote": "Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10374
+        }
+      ],
+      "expected_condition_editorial_text": "Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+      "expected_role": "conclusion_atoms",
+      "extracted_atom_ids": [
+        "orbit-tendsto-quarter"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "domain-atoms-nonnegative-input",
+      "evidence_spans": [
+        {
+          "end_char": 10353,
+          "quote": "0 ≤ F",
+          "start_char": 10348
+        }
+      ],
+      "expected_condition_editorial_text": "0 ≤ F",
+      "expected_role": "domain_atoms",
+      "extracted_atom_ids": [
+        "nonnegative-input"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "domain-atoms-input-upper-bound",
+      "evidence_spans": [
+        {
+          "end_char": 10366,
+          "quote": "F ≤ 1",
+          "start_char": 10361
+        }
+      ],
+      "expected_condition_editorial_text": "F ≤ 1",
+      "expected_role": "domain_atoms",
+      "extracted_atom_ids": [
+        "input-upper-bound"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "quantifier-atoms-real-parameters",
+      "evidence_spans": [
+        {
+          "end_char": 10299,
+          "quote": "{γ F : ℝ}",
+          "start_char": 10290
+        }
+      ],
+      "expected_condition_editorial_text": "{γ F : ℝ}",
+      "expected_role": "quantifier_atoms",
+      "extracted_atom_ids": [
+        "real-parameters"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Exact source substring located; role is an editorial annotation, not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "explicit-negation-in-signature",
+      "evidence_spans": [],
+      "expected_condition_editorial_text": "Explicit negation syntax in the selected theorem signature",
+      "expected_role": "negation_atoms",
+      "extracted_atom_ids": [],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 10419,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start_char": 10249
+        }
+      ],
+      "review_notes": "Scoped editorial observation: no explicit ¬ or Not expression in these 170 Unicode codepoints. No claim about the rest of the source or equivalent logical formulations.",
+      "source_observation": "condition_absent"
+    },
+    {
+      "check_id": "dimensionless-unit-context",
+      "evidence_spans": [],
+      "expected_condition_editorial_text": "Source context establishing the unit interpretation used in the prior pilot",
+      "expected_role": "quantities",
+      "extracted_atom_ids": [],
+      "finding": "unresolved_unit_basis",
+      "inspected_spans": [],
+      "review_notes": "The selected signature was inspected, but additional unit context has not been inspected or bound. Unknown is not dimensionless.",
+      "source_observation": "condition_not_inspected"
+    }
+  ],
+  "extraction_id": "orbit-subcritical-manual-001",
+  "reported_evidence_state": "source_only",
+  "schema": "geek-work-claim-extraction-expectations-1",
+  "selected_span": {
+    "end_char": 10419,
+    "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+    "start_char": 10249
+  },
+  "source_snapshot": {
+    "commit": "82124834f7aba30adcb460769d84f03eebfa5ce8",
+    "encoding": "UTF-8",
+    "file_path": "Verification/QuantumNoisyBBPSSWCritical.lean",
+    "repository": "Leanbook local Git snapshot",
+    "sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3"
+  },
+  "unresolved_questions": [
+    {
+      "description": "Bind the context supporting dimensionless from the prior plan, or explicitly revise the source card/plan after review. ℝ alone does not establish a physical unit.",
+      "item_id": "confirm-limiting-fidelity-unit",
+      "required_before_transport": true,
+      "resolution": null
+    }
+  ]
+}

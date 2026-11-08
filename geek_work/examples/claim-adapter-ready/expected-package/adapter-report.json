@@ -1,0 +1,23 @@
+{
+  "candidate_sha256": "2689129f91f657bd21a2b24613c419a24928da3db5936625096ecf381e0f9865",
+  "claim_map_bundle_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057",
+  "expectations_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+  "extraction_status": "record_consistent",
+  "kernel_replayed": false,
+  "plan_sha256": "2103762ecd6477611038e6c5aef2c2e7ce790c9f7a96c2fdf2bbfb6168d78d02",
+  "publication_authorized": false,
+  "record_sha256": "652c0b56e0f096b1301b8b7c02a45c5da37d036b71474fa609402bb7f9d943c9",
+  "schema": "geek-work-claim-adapter-report-1",
+  "semantic_equivalence_verified": false,
+  "source_binding": {
+    "id": "source",
+    "kind": "document"
+  },
+  "source_claim_id": "synthetic-balance",
+  "source_extraction_complete": false,
+  "source_revision": 1,
+  "source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2",
+  "stage": "complete",
+  "status": "built",
+  "transport_status": "contract_preserved"
+}

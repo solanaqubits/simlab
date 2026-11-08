@@ -1,0 +1,24 @@
+{
+  "kind": "historical-finite-corpus-observations",
+  "stage": 15,
+  "recorded_date": "2026-11-08",
+  "official_job": "mj_51c7a1c99b6f41ee96bc62c13b950396",
+  "official_mean_gas": 168436945,
+  "paired_diagnostic": {
+    "before": 168507977,
+    "after": 168503517
+  },
+  "casm_felts": 81499,
+  "casm_limit": 81920,
+  "sierra_json_bytes": 4082603,
+  "sierra_limit": 4089446,
+  "historical_candidate_tests": 805,
+  "historical_control_tests": 805,
+  "fits_validation_cap": false,
+  "source_manifest_sha256": "176b3e2d444193d5d9a304b80f3ff58572a4b6c4e683c70884f58862d9f9c18d",
+  "source_report_sha256": "a4184137160f573d436038ec491d8b84bc971b0c88df5a62e5a17dd4d015f58b",
+  "fresh_cairo_build": false,
+  "fresh_benchmark": false,
+  "whole_verifier_equivalence": false,
+  "cryptographic_security_proved": false
+}

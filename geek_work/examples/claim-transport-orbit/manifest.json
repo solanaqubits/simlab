@@ -1,0 +1,97 @@
+{
+  "assurance_flags": {
+    "kernel_replayed": false,
+    "publication_authorized": false,
+    "semantic_equivalence_verified": false,
+    "source_extraction_complete": false
+  },
+  "cases": [
+    {
+      "candidate": "candidates/preserved.json",
+      "case": "preserved",
+      "changes": [],
+      "expected_status": "contract_preserved",
+      "reason": null,
+      "report": "reports/preserved.json"
+    },
+    {
+      "candidate": "candidates/without-noise-bound.json",
+      "case": "without-noise-bound",
+      "changes": [
+        "premise_changed",
+        "premise_removed",
+        "selected_statement_changed"
+      ],
+      "expected_status": "review_required",
+      "reason": null,
+      "report": "reports/without-noise-bound.json"
+    },
+    {
+      "candidate": "candidates/strict-upper-bound.json",
+      "case": "strict-upper-bound",
+      "changes": [
+        "premise_changed",
+        "premise_removed",
+        "scope_or_domain_changed",
+        "selected_statement_changed",
+        "unreviewed_atom"
+      ],
+      "expected_status": "review_required",
+      "reason": null,
+      "report": "reports/strict-upper-bound.json"
+    },
+    {
+      "candidate": "candidates/unaudited-proof-reference.json",
+      "case": "unaudited-proof-reference",
+      "changes": [
+        "evidence_state_changed",
+        "unverified_proof_reference"
+      ],
+      "expected_status": "review_required",
+      "reason": null,
+      "report": "reports/unaudited-proof-reference.json"
+    },
+    {
+      "candidate": "candidates/invalid-quote.json",
+      "case": "invalid-quote",
+      "changes": [],
+      "expected_status": "invalid_input",
+      "reason": "candidate quote mismatch",
+      "report": "reports/invalid-quote.json"
+    }
+  ],
+  "files": {
+    "candidates/invalid-quote.json": "c094e7db35f2446c9b0c8e68e9a11017bb9fe9704a3fb1a04fddf33589058874",
+    "candidates/preserved.json": "9982ab67b82f20f4283abc08382551da83316a4aeef123b2b2ec95f68d632dc1",
+    "candidates/strict-upper-bound.json": "4d0b05c6c2602cb1cd2ed15f9b2ae28b24d79103bbfb7cc2ad31c5438b8025d2",
+    "candidates/unaudited-proof-reference.json": "5bff53d024581cf2b3d9fd2c40687673feb959125c0732a4ef76c7e1ef934a85",
+    "candidates/without-noise-bound.json": "c8990a527d993f199fa5d5b7a693110964d0a0267c0a6c46580b0004ca6f9638",
+    "plan.json": "ede1850f2cc6adc8f35aad4d67056450dadbe13f485b56163439502c704a89ea",
+    "reports/invalid-quote.json": "110dab8f680341662a81620e02da59cda35fdab8d5154a2dc0efdb25e8445057",
+    "reports/preserved.json": "ae5302cec06918a851ab5ed4fa6291c08ea52138ae52d2e6701abcf5de80edcc",
+    "reports/strict-upper-bound.json": "c5e183f49e916edb1bc78cca9a142c2ca11029aaa50ea832d41bd2d43c59a30c",
+    "reports/unaudited-proof-reference.json": "1ae57652a7f345381d39a4e06e1b8c394be69cae58d5aae3a8164caba5b519ab",
+    "reports/without-noise-bound.json": "e6dd653dcad73a59bc379e2290685ff8205ac670446d960fdefa8d3cd827cfab",
+    "source-bundle/document-signature.txt": "9af31bfa4296114f55f03e326c10e8030facb52b2627df86b995db98cc374ba9",
+    "source-bundle/manifest.json": "022bbbc4659daa6cb249aed9bdb8dc8a90c85f7fb9bd828ab53964458398281b",
+    "source-bundle/map.json": "e4bfbfb79726aca78d0d745f339710628ce937bd8834e529721b4f97a31237bc",
+    "source-bundle/material-lean-source.txt": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3",
+    "source-bundle/report.json": "a8bf8024aa58c37d9b6701185bd5cc70b5bc6e8871b75c6efc112815b4c3f8cd",
+    "source-bundle/review.html": "8f6f35c68571d1d705aa653363667a0ffffcfa2d9f48e29d065348d17a7dd46c"
+  },
+  "plan_sha256": "ede1850f2cc6adc8f35aad4d67056450dadbe13f485b56163439502c704a89ea",
+  "reported_evidence_state": "source_only",
+  "schema": "claim-transport-orbit-pilot-1",
+  "source": {
+    "commit": "82124834f7aba30adcb460769d84f03eebfa5ce8",
+    "declaration": "QuantumNoisyBBPSSWCritical.subcriticalOrbit_tendsto_quarter",
+    "line_end": 241,
+    "line_start": 239,
+    "path": "Verification/QuantumNoisyBBPSSWCritical.lean",
+    "quote_end": 10419,
+    "quote_start": 10249,
+    "sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3"
+  },
+  "source_bundle_sha256": "022bbbc4659daa6cb249aed9bdb8dc8a90c85f7fb9bd828ab53964458398281b",
+  "validator_commit": "810a7c687ebdde4393a98e158bc44b5f98964ea1"
+}

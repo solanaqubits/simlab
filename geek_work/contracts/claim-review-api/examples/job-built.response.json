@@ -1,0 +1,67 @@
+{
+  "schema": "claim-review-api-response-1",
+  "operation": "jobs/status",
+  "request_id": "00000000-0000-4000-8000-000000000001",
+  "context_id": "00000000-0000-4000-8000-000000000002",
+  "ok": true,
+  "assurances": {
+    "semantic_equivalence_verified": false,
+    "source_extraction_complete": false,
+    "kernel_replayed": false,
+    "publication_authorized": false
+  },
+  "data": {
+    "job_id": "00000000-0000-4000-8000-000000000004",
+    "kind": "build",
+    "draft_id": "00000000-0000-4000-8000-000000000003",
+    "draft_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "context_fingerprint": "0000000000000000000000000000000000000000000000000000000000000000",
+    "state": "completed",
+    "exit_code": 0,
+    "reports": [
+      {
+        "validator": "extraction",
+        "status": "record_consistent",
+        "reason": null,
+        "artifact": {
+          "artifact_id": "00000000-0000-4000-8000-000000000020",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "size_bytes": 2,
+          "media_type": "application/json"
+        }
+      },
+      {
+        "validator": "adapter",
+        "status": "built",
+        "reason": null,
+        "artifact": {
+          "artifact_id": "00000000-0000-4000-8000-000000000020",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "size_bytes": 2,
+          "media_type": "application/json"
+        }
+      },
+      {
+        "validator": "transport",
+        "status": "contract_preserved",
+        "reason": null,
+        "artifact": {
+          "artifact_id": "00000000-0000-4000-8000-000000000020",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "size_bytes": 2,
+          "media_type": "application/json"
+        }
+      }
+    ],
+    "failure": null,
+    "artifacts": [
+      {
+        "artifact_id": "00000000-0000-4000-8000-000000000020",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "size_bytes": 2,
+        "media_type": "application/json"
+      }
+    ],
+    "package_available": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "public-integration-local-checks-1",
+  "claim_source_commit": "a5df4ad33db018eade6b710be8f82ac3d2439eeb",
+  "cairo_source_commit": "7993221f312136975f565742156a03fd685120f0",
+  "scope": "Public export and selected-source replay; no new Cairo benchmark or semantic guarantee",
+  "checks": [
+    {
+      "name": "geek-work-final.log",
+      "tests": 1540,
+      "passed": true,
+      "log_sha256": "d30fdf1e7fdaf4d24a071123c903bc1b58fe6594daaa4b6e2add06b22f8755a4"
+    },
+    {
+      "name": "harness-final.log",
+      "tests": 28,
+      "passed": true,
+      "log_sha256": "8feaef2d9c42dcaed557d894c58aa2bffa9a899948ff50ff5176b80dd45085b3"
+    },
+    {
+      "name": "server.log",
+      "tests": 37,
+      "passed": true,
+      "log_sha256": "83d929fe3daf80e47ac089ee7d5f111f6ac61a904bdd5f00e9cacae563995c11"
+    },
+    {
+      "name": "public-browser.log",
+      "tests": 19,
+      "passed": true,
+      "log_sha256": "83de85a1f1a0bf94fa5a312d4e2423ffe3b49e5b07742b54f36450abb442c15d"
+    },
+    {
+      "name": "stage15-tests.log",
+      "tests": 5,
+      "passed": true,
+      "log_sha256": "371d953d2b6f01d39ad46110a91e5ea59b9d8026404c8f373b5b614268973a3e"
+    }
+  ],
+  "api_replay": {
+    "ready": "record_consistent/built/contract_preserved",
+    "orbit": "needs_context/build_blocked",
+    "passed": true
+  },
+  "schema_examples": {
+    "valid": 21,
+    "negative": 73
+  },
+  "failed_attempts": [
+    {
+      "test": "harness orbit in-memory fixture",
+      "reason": "Private historical receipt path excluded from allowlist",
+      "resolution": "Generate receipt with current adapter and public inputs; rerun all 28 tests passed"
+    }
+  ],
+  "assurance_flags": {
+    "semantic_equivalence_verified": false,
+    "source_extraction_complete": false,
+    "kernel_replayed": false,
+    "publication_authorized": false
+  },
+  "publication_authorization_note": "Publication of reviewed source code authorized separately by user; validator publication_authorized remains false.",
+  "geek_work_manifest_sha256": "c32d5261bb49d7c00798eee90305f7a45bcbb77a83a394b4059f60a493e80548"
+}

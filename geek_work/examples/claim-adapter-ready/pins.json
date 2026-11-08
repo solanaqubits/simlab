@@ -1,0 +1,8 @@
+{
+  "claim_map_bundle_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057",
+  "expectations_sha256": "d89b842e18302492a04804878c586f15cf0f0d0e7ce4786a0f3e0acda435f72b",
+  "schema": "claim-adapter-ready-pins-1",
+  "source_claim_id": "synthetic-balance",
+  "source_revision": 1,
+  "source_sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2"
+}

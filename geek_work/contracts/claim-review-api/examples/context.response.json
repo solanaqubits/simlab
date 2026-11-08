@@ -1,0 +1,86 @@
+{
+  "schema": "claim-review-api-response-1",
+  "operation": "context",
+  "request_id": "00000000-0000-4000-8000-000000000001",
+  "context_id": "00000000-0000-4000-8000-000000000002",
+  "ok": true,
+  "assurances": {
+    "semantic_equivalence_verified": false,
+    "source_extraction_complete": false,
+    "kernel_replayed": false,
+    "publication_authorized": false
+  },
+  "data": {
+    "context_fingerprint": "0000000000000000000000000000000000000000000000000000000000000000",
+    "source_claim_id": "synthetic-balance",
+    "source_revision": 1,
+    "anchors": {
+      "source": {
+        "state": "matched",
+        "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "observed_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "expectations": {
+        "state": "matched",
+        "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "observed_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "claim_map_manifest": {
+        "state": "matched",
+        "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "observed_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "source_snapshot": {
+      "artifact_id": "00000000-0000-4000-8000-000000000020",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 2,
+      "media_type": "application/json"
+    },
+    "expectations": {
+      "artifact_id": "00000000-0000-4000-8000-000000000020",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 2,
+      "media_type": "application/json"
+    },
+    "claim_map_manifest": {
+      "artifact_id": "00000000-0000-4000-8000-000000000020",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 2,
+      "media_type": "application/json"
+    },
+    "limits": {
+      "profile": "claim-review-local-api-limits-1",
+      "post_body_bytes": 2097152,
+      "header_bytes": 16384,
+      "header_count": 32,
+      "body_read_seconds": 5,
+      "response_write_seconds": 10,
+      "record_bytes": 1048576,
+      "source_bytes": 1048576,
+      "expectations_bytes": 1048576,
+      "extraction_combined_bytes": 2097152,
+      "claim_map_bundle_bytes": 16777216,
+      "active_jobs_per_context": 1,
+      "waiting_queue_depth": 0,
+      "check_timeout_seconds": 60,
+      "build_timeout_seconds": 180,
+      "terminate_grace_seconds": 2,
+      "kill_wait_seconds": 2,
+      "stdout_bytes": 262144,
+      "stderr_bytes": 262144,
+      "output_file_bytes": 16777216,
+      "job_output_bytes": 67108864,
+      "context_storage_bytes": 536870912,
+      "job_reserved_bytes": 67108864,
+      "artifact_chunk_bytes": 65536,
+      "max_drafts": 128,
+      "max_jobs": 128,
+      "requests_per_second": 8,
+      "request_burst": 16,
+      "json_depth": 32,
+      "integer_token_digits": 128,
+      "job_start_seconds": 5
+    }
+  }
+}

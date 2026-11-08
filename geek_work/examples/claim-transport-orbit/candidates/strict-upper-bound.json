@@ -1,0 +1,129 @@
+{
+  "cards": [
+    {
+      "contract": {
+        "conclusion_atoms": [
+          {
+            "id": "orbit-tendsto-quarter",
+            "sha256": "80f4f684746427b7e3fcc9f0fa0e777ae9baf9c4c3b06af93c6d699546435f77",
+            "text": "Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))"
+          }
+        ],
+        "domain_atoms": [
+          {
+            "id": "nonnegative-input",
+            "sha256": "242aa7ddec36d69d8a74dd1bc157e1d8d7e105c7cef6345d4487b00871299d0c",
+            "text": "0 ≤ F"
+          },
+          {
+            "id": "strict-input-upper-bound",
+            "sha256": "541b3687c7be7930adb9ec44c30db2466356cd49590f301e0b7b377d4ab9c68c",
+            "text": "F < 1"
+          }
+        ],
+        "evidence_ids": [
+          "a01e47285b6db91971e5a8f2143338062bced877f3bf48bee07975c215ce22f7"
+        ],
+        "negation_atoms": [],
+        "non_claims": [
+          "No convergence rate is asserted.",
+          "No time-varying γ is covered.",
+          "No expected resource yield or spatial repeater convergence is asserted.",
+          "This transport pilot does not replay the Lean kernel."
+        ],
+        "open_obligations": [
+          "Independent review of atom-role assignment and extraction completeness.",
+          "Correspondence of Python/JSON validation to the Lean model remains unproved."
+        ],
+        "premise_atoms": [
+          {
+            "id": "nonnegative-noise",
+            "sha256": "a66a92756520827215dad6ed3981b78d13f1baa32f9175e18c9e0c460d63a9b4",
+            "text": "0 ≤ γ"
+          },
+          {
+            "id": "subcritical-noise",
+            "sha256": "85807c8d998ce5ad1a8a3e4ea793cff4e82dd6077c74c3f8bc623d52e336bbb6",
+            "text": "γ < criticalGamma"
+          },
+          {
+            "id": "nonnegative-input",
+            "sha256": "242aa7ddec36d69d8a74dd1bc157e1d8d7e105c7cef6345d4487b00871299d0c",
+            "text": "0 ≤ F"
+          },
+          {
+            "id": "strict-input-upper-bound",
+            "sha256": "541b3687c7be7930adb9ec44c30db2466356cd49590f301e0b7b377d4ab9c68c",
+            "text": "F < 1"
+          }
+        ],
+        "quantifier_atoms": [
+          {
+            "id": "real-parameters",
+            "sha256": "3b41d32fab1825beb62a2c6f2edd61bdc230dd9299742756809557b9b88bad52",
+            "text": "{γ F : ℝ}"
+          }
+        ],
+        "quantities": [
+          {
+            "exact_literal": "1 / 4",
+            "id": "limiting-fidelity",
+            "symbol": "F∞",
+            "unit": "dimensionless"
+          }
+        ],
+        "reported_evidence_state": "source_only",
+        "scope": "Fixed real γ and F in the displayed Lean signature; asymptotic Tendsto, not finite-step equality."
+      },
+      "id": "transported-orbit-limit",
+      "proof_reference": null,
+      "revision": 1,
+      "source": {
+        "document": {
+          "id": "signature",
+          "path": "statement.txt",
+          "sha256": "9af31bfa4296114f55f03e326c10e8030facb52b2627df86b995db98cc374ba9"
+        },
+        "evidence": [
+          {
+            "binding": {
+              "citation": {
+                "end": 10419,
+                "material": "lean-source",
+                "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+                "start": 10249
+              },
+              "declaration": "QuantumNoisyBBPSSWCritical.subcriticalOrbit_tendsto_quarter"
+            },
+            "material": {
+              "id": "lean-source",
+              "kind": "lean_source",
+              "origin": {
+                "commit": "82124834f7aba30adcb460769d84f03eebfa5ce8",
+                "repository": "Leanbook local Git snapshot (not a publication assertion)"
+              },
+              "path": "QuantumNoisyBBPSSWCritical.lean",
+              "sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3"
+            }
+          }
+        ],
+        "statement": {
+          "document": "signature",
+          "end": 170,
+          "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F ≤ 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+          "start": 0
+        }
+      },
+      "statement": {
+        "end": 170,
+        "quote": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F < 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))",
+        "sha256": "e9e597ff3b469832f116a7a70ff15777de57e2dca308558a2f53b93fc9c5c761",
+        "start": 0,
+        "text": "theorem subcriticalOrbit_tendsto_quarter {γ F : ℝ}\n    (hg : 0 ≤ γ) (hc : γ < criticalGamma) (h0 : 0 ≤ F) (h1 : F < 1) :\n    Tendsto (noisyOrbit γ F) atTop (nhds (1 / 4))"
+      }
+    }
+  ],
+  "plan_sha256": "ede1850f2cc6adc8f35aad4d67056450dadbe13f485b56163439502c704a89ea",
+  "schema": "geek-work-claim-transport-candidate-1",
+  "source_bundle_sha256": "022bbbc4659daa6cb249aed9bdb8dc8a90c85f7fb9bd828ab53964458398281b"
+}

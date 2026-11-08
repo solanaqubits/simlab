@@ -1,0 +1,9 @@
+A, R, S, C and T are integers greater than or equal to 0.
+All five counters use the same unit compute_credit.
+All counters refer to one budget_id and one epoch.
+Available, reserved, spent and cancelled categories are disjoint.
+The initial state satisfies A + R + S + C = T.
+Only the five transfers specified below are permitted; each is applied atomically exactly once.
+T is fixed throughout the trace; no new allocation or external debit is permitted.
+For every finite valid trace and every state reached along it:
+A + R + S + C = T.

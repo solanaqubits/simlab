@@ -1,0 +1,9 @@
+{
+  "schema": "claim-review-api-request-1",
+  "operation": "drafts",
+  "request_id": "00000000-0000-4000-8000-000000000001",
+  "context_id": "00000000-0000-4000-8000-000000000002",
+  "parent_draft_id": null,
+  "record_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "record_base64": "e30="
+}

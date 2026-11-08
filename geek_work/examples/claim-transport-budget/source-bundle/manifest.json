@@ -1,0 +1,10 @@
+{
+  "files": {
+    "document-selected-contract.txt": "a503401a32ee1c57f02ebf45ad0c85a1ae40f908ca145cfc4fd259c040770f20",
+    "map.json": "e2afe07b87cb7d44a56dc7813f7a47e9fd0a9806072e7ff5d42cd0020306d75e",
+    "material-budget-draft.txt": "5985d0a9e93abf49624d84b97cf322d8f41599affe5e54887baf8e7d8eee7072",
+    "report.json": "3ca56c155bd42a92d9f73253237561c87e3a1d4b9f42ec5598c79aa7671567e7",
+    "review.html": "bc05b20f793ac626ab13a733e68b5d45cb9772fc4b0a35c03540d782e3265edd"
+  },
+  "schema": "geek-work-manuscript-claim-bundle-1"
+}

@@ -1,0 +1,237 @@
+{
+  "claim_type": "hypothesis",
+  "contract": {
+    "conclusion_atoms": [
+      {
+        "atom_id": "available-credits",
+        "quote_span": {
+          "end_char": 78,
+          "quote": "available = 100 credits",
+          "start_char": 55
+        },
+        "text_raw": "available = 100 credits",
+        "text_sha256": "9cbc23723087a3e3e2bdd9d999ee2f2be4c02c0d0f65763072c33390bf84212e"
+      }
+    ],
+    "domain_atoms": [
+      {
+        "atom_id": "nonnegative-index",
+        "quote_span": {
+          "end_char": 53,
+          "quote": "0 ≤ n",
+          "start_char": 48
+        },
+        "text_raw": "0 ≤ n",
+        "text_sha256": "ba9b6461a4f22b7a0c23a77997bcfcc0cb79c9a006350302bc68f417d0398571"
+      }
+    ],
+    "evidence_ids": [],
+    "negation_atoms": [
+      {
+        "atom_id": "no-seconds",
+        "quote_span": {
+          "end_char": 103,
+          "quote": "no seconds are asserted",
+          "start_char": 80
+        },
+        "text_raw": "no seconds are asserted",
+        "text_sha256": "8c4cb3ddb84cd55797296adf0ad2b2a57d480e4f19058d99dc2e9f3f98eacd84"
+      }
+    ],
+    "non_claims": [
+      "No proved runtime budget accounting result."
+    ],
+    "open_obligations": [
+      "Prove preservation on allowed traces."
+    ],
+    "premise_atoms": [
+      {
+        "atom_id": "nonnegative-index",
+        "quote_span": {
+          "end_char": 53,
+          "quote": "0 ≤ n",
+          "start_char": 48
+        },
+        "text_raw": "0 ≤ n",
+        "text_sha256": "ba9b6461a4f22b7a0c23a77997bcfcc0cb79c9a006350302bc68f417d0398571"
+      }
+    ],
+    "quantifier_atoms": [
+      {
+        "atom_id": "all-indices",
+        "quote_span": {
+          "end_char": 42,
+          "quote": "For every n",
+          "start_char": 31
+        },
+        "text_raw": "For every n",
+        "text_sha256": "385e49ed81eb706cb015760826ac3fcb749877848eb059fc7a15201d9bf67cac"
+      }
+    ],
+    "quantities": [
+      {
+        "exact_literal": "100",
+        "literal_span": {
+          "end_char": 70,
+          "quote": "100",
+          "start_char": 67
+        },
+        "quantity_id": "available-count",
+        "symbol": "available",
+        "unit_canonical": null,
+        "unit_interpretation": "literal",
+        "unit_mapping_basis": null,
+        "unit_raw": "credits",
+        "unit_span": {
+          "end_char": 78,
+          "quote": "credits",
+          "start_char": 71
+        }
+      }
+    ],
+    "scope": "Synthetic hypothesis about a declared balance; no runtime trace assertion."
+  },
+  "coverage_checks": [
+    {
+      "check_id": "premise-atoms-nonnegative-index",
+      "evidence_spans": [
+        {
+          "end_char": 53,
+          "quote": "0 ≤ n",
+          "start_char": 48
+        }
+      ],
+      "expected_condition_editorial_text": "0 ≤ n",
+      "expected_role": "premise_atoms",
+      "extracted_atom_ids": [
+        "nonnegative-index"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 104,
+          "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+          "start_char": 31
+        }
+      ],
+      "review_notes": "Explicit synthetic fixture selection; not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "domain-atoms-nonnegative-index",
+      "evidence_spans": [
+        {
+          "end_char": 53,
+          "quote": "0 ≤ n",
+          "start_char": 48
+        }
+      ],
+      "expected_condition_editorial_text": "0 ≤ n",
+      "expected_role": "domain_atoms",
+      "extracted_atom_ids": [
+        "nonnegative-index"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 104,
+          "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+          "start_char": 31
+        }
+      ],
+      "review_notes": "Explicit synthetic fixture selection; not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "conclusion-atoms-available-credits",
+      "evidence_spans": [
+        {
+          "end_char": 78,
+          "quote": "available = 100 credits",
+          "start_char": 55
+        }
+      ],
+      "expected_condition_editorial_text": "available = 100 credits",
+      "expected_role": "conclusion_atoms",
+      "extracted_atom_ids": [
+        "available-credits"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 104,
+          "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+          "start_char": 31
+        }
+      ],
+      "review_notes": "Explicit synthetic fixture selection; not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "quantifier-atoms-all-indices",
+      "evidence_spans": [
+        {
+          "end_char": 42,
+          "quote": "For every n",
+          "start_char": 31
+        }
+      ],
+      "expected_condition_editorial_text": "For every n",
+      "expected_role": "quantifier_atoms",
+      "extracted_atom_ids": [
+        "all-indices"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 104,
+          "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+          "start_char": 31
+        }
+      ],
+      "review_notes": "Explicit synthetic fixture selection; not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    },
+    {
+      "check_id": "negation-atoms-no-seconds",
+      "evidence_spans": [
+        {
+          "end_char": 103,
+          "quote": "no seconds are asserted",
+          "start_char": 80
+        }
+      ],
+      "expected_condition_editorial_text": "no seconds are asserted",
+      "expected_role": "negation_atoms",
+      "extracted_atom_ids": [
+        "no-seconds"
+      ],
+      "finding": null,
+      "inspected_spans": [
+        {
+          "end_char": 104,
+          "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+          "start_char": 31
+        }
+      ],
+      "review_notes": "Explicit synthetic fixture selection; not a semantic completeness proof.",
+      "source_observation": "condition_present"
+    }
+  ],
+  "extraction_id": "synthetic-balance-extraction",
+  "reported_evidence_state": "hypothesis",
+  "schema": "geek-work-claim-extraction-expectations-1",
+  "selected_span": {
+    "end_char": 104,
+    "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+    "start_char": 31
+  },
+  "source_snapshot": {
+    "commit": "0000000000000000000000000000000000000000",
+    "encoding": "UTF-8",
+    "file_path": "source.txt",
+    "repository": "Synthetic regression fixture; not a Git provenance claim",
+    "sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2"
+  },
+  "unresolved_questions": []
+}

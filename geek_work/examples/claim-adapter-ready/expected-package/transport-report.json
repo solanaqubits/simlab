@@ -1,0 +1,44 @@
+{
+  "candidate_sha256": "2689129f91f657bd21a2b24613c419a24928da3db5936625096ecf381e0f9865",
+  "kernel_replayed": false,
+  "mode": "exact_contract",
+  "pairs": [
+    {
+      "candidate_claim_id": "synthetic-balance-extraction",
+      "candidate_revision": 1,
+      "candidate_statement": {
+        "end": 73,
+        "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+        "sha256": "693ba7c458f1b5ee248a37356f72443030569ac4fd94ae985fa9bcd39ec7f65a",
+        "start": 0,
+        "text": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted."
+      },
+      "changes": [],
+      "pair_id": "extraction-pair",
+      "source": {
+        "document": {
+          "id": "source",
+          "path": "source.txt",
+          "sha256": "d26f1ffb801b4c2531a7afa1d61d5ceb073426db50ec018e5eaed146ae4483a2"
+        },
+        "evidence": [],
+        "statement": {
+          "document": "source",
+          "end": 104,
+          "quote": "For every n with 0 ≤ n, available = 100 credits; no seconds are asserted.",
+          "start": 31
+        }
+      },
+      "source_claim_id": "synthetic-balance",
+      "source_revision": 1
+    }
+  ],
+  "plan_sha256": "2103762ecd6477611038e6c5aef2c2e7ce790c9f7a96c2fdf2bbfb6168d78d02",
+  "publication_authorized": false,
+  "schema": "geek-work-claim-transport-report-1",
+  "selected_pairs": 1,
+  "semantic_equivalence_verified": false,
+  "source_bundle_sha256": "fd6ef4be66849d2c071b680a4cdd060999ec2b2c24b183e6bc41fdd0ce225057",
+  "source_extraction_complete": false,
+  "status": "contract_preserved"
+}

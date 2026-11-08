@@ -70,3 +70,10 @@ This release does not certify physical claims, independent annotation, model
 quality, compiler correctness, production admission or a general ALCC speedup.
 The third SimLab-to-Lean obligation remains OPEN. Hashes bind bytes, not authority.
 The code is under the repository's Apache-2.0 license, also included here.
+
+## Claim Review 0.1 extension
+
+The local Extraction → Adapter → Transport pipeline now includes a loopback HTTP server
+and a manual browser editor. See [Coordinator guide](contracts/claim-review-api/COORDINATOR.ru.md).
+This main-branch addition does not replace the archived 1.0.0 release or its tags.
+No semantic-equivalence, source-completeness or Lean-kernel replay guarantee is added.
