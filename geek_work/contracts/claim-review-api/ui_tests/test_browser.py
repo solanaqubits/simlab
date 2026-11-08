@@ -9,6 +9,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -25,7 +26,7 @@ import geek_work_claim_api_server as s
 
 class Browser:
     def __init__(self, root):
-        self.process = subprocess.Popen(['google-chrome','--headless=new','--no-sandbox','--disable-dev-shm-usage','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1','--user-data-dir='+str(root),'about:blank'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+        self.process = subprocess.Popen(['google-chrome','--headless=new','--no-sandbox','--disable-dev-shm-usage','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1','--user-data-dir='+str(root),'about:blank'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,start_new_session=True)
         deadline=time.monotonic()+15
         while not (root/'DevToolsActivePort').exists():
             if time.monotonic()>deadline:raise RuntimeError('chrome_start_failed')
@@ -74,9 +75,16 @@ class Browser:
         self.call('DOM.setFileInputFiles',dict(nodeId=nid,files=[str(path)]))
 
     def close(self):
-        self.ws.close();self.process.terminate()
+        self.ws.close()
+        # Chrome children may outlive its launcher and still write the profile.
+        # This isolated process group belongs only to this test's browser.
+        try:os.killpg(self.process.pid, signal.SIGTERM)
+        except ProcessLookupError:pass
         try:self.process.wait(5)
-        except subprocess.TimeoutExpired:self.process.kill();self.process.wait()
+        except subprocess.TimeoutExpired:pass
+        try:os.killpg(self.process.pid, signal.SIGKILL)
+        except ProcessLookupError:pass
+        self.process.wait(5)
 
 
 class BlockingRunner(s.Runner):

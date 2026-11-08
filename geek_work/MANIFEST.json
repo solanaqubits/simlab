@@ -1,5 +1,5 @@
 {
-  "export_plan_sha256": "5191fd95cc378c4ec1ef6e1e9f5dd73394ac5401f4d50686d0f34da83e1b6626",
+  "export_plan_sha256": "53303d75f063a1477a367f90a1749d94a7fb698bf809624f5131e28d62de8c74",
   "files": {
     "CHANGELOG.md": "74c604d80d349303a0125e3946b2660c1a47e28e2278d13e9971ba86af7107a3",
     "CONTEXT-PROFILE.ru.md": "813e1e845ae8b89005529652487f3774e8fd5f0545a0f0b913ca341407c8c49a",
@@ -50,7 +50,7 @@
     "contracts/claim-review-api/response.schema.json": "ae4cf2e13a4019fdabcf111fe5f63ccd0bf01861ac0e861b4ef24e3931937bf9",
     "contracts/claim-review-api/server_tests/replay.py": "3d54913c00ec03817a82adf9a16926ab9e3185fe339dfc9a911d18337a80b1b5",
     "contracts/claim-review-api/server_tests/test_server.py": "16275ee64d62c3cd6b674f41038113470b9a729e831212afd030df95a26405e3",
-    "contracts/claim-review-api/ui_tests/test_browser.py": "4148aadc0275bf5980ba0c75c2b1941435b84bd13c0137e0494214431b2a4c48",
+    "contracts/claim-review-api/ui_tests/test_browser.py": "8078cf2e8e0822a6a2e48c58572dbaec6265ba22c3a3c50565804fe8f5b68662",
     "contracts/claim-review-api/ui_tests/test_static.py": "423aa32550525deb0848e0e38741da025cddf646986b246bc50b104e345523e0",
     "contracts/claim-transport/README.md": "10a74df01c956b3d3971a6e7836242d5abc4c73a5120de8b4665cd7054cf9dc0",
     "contracts/claim-transport/wire.schema.json": "685947c0a54c97646ccd29fbb1de5c6fd233b0ca9f24bf743c67adf99f3019e6",

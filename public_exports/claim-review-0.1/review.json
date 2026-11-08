@@ -1,7 +1,7 @@
 {
   "source_commit": "a5df4ad33db018eade6b710be8f82ac3d2439eeb",
   "public_base": "30739c655e4dd82c52410c7d097af086d12ae89e",
-  "export_plan_sha256": "5191fd95cc378c4ec1ef6e1e9f5dd73394ac5401f4d50686d0f34da83e1b6626",
+  "export_plan_sha256": "53303d75f063a1477a367f90a1749d94a7fb698bf809624f5131e28d62de8c74",
   "selected_new_files": [
     {
       "source": "digital-brain/contracts/claim-adapter/README.md",
@@ -245,8 +245,8 @@
       "source": "digital-brain/contracts/claim-review-api/ui_tests/test_browser.py",
       "destination": "geek_work/contracts/claim-review-api/ui_tests/test_browser.py",
       "source_sha256": "4148aadc0275bf5980ba0c75c2b1941435b84bd13c0137e0494214431b2a4c48",
-      "public_sha256": "4148aadc0275bf5980ba0c75c2b1941435b84bd13c0137e0494214431b2a4c48",
-      "adapted": false
+      "public_sha256": "8078cf2e8e0822a6a2e48c58572dbaec6265ba22c3a3c50565804fe8f5b68662",
+      "adapted": true
     },
     {
       "source": "digital-brain/contracts/claim-review-api/ui_tests/test_static.py",
@@ -880,6 +880,7 @@
   "assurance_flags_unchanged": true,
   "public_adaptations": [
     "Relocated public paths; frozen JSON source pins remain unchanged.",
-    "Orbit harness generates its blocked adapter receipt from public inputs, replacing the private historical-log dependency."
+    "Orbit harness generates its blocked adapter receipt from public inputs, replacing the private historical-log dependency.",
+    "Browser acceptance runner stops its isolated Chrome process group before deleting the profile; hosted teardown race fixed without skipping assertions."
   ]
 }

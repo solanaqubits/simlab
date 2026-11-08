@@ -23,10 +23,10 @@
       "log_sha256": "83d929fe3daf80e47ac089ee7d5f111f6ac61a904bdd5f00e9cacae563995c11"
     },
     {
-      "name": "public-browser.log",
+      "name": "public-browser-final.log",
       "tests": 19,
       "passed": true,
-      "log_sha256": "83de85a1f1a0bf94fa5a312d4e2423ffe3b49e5b07742b54f36450abb442c15d"
+      "log_sha256": "84735b44c1385aaf1279abb8e9799661f7d64fa45a00de9b7a2a5a4eb12717f1"
     },
     {
       "name": "stage15-tests.log",
@@ -49,6 +49,12 @@
       "test": "harness orbit in-memory fixture",
       "reason": "Private historical receipt path excluded from allowlist",
       "resolution": "Generate receipt with current adapter and public inputs; rerun all 28 tests passed"
+    },
+    {
+      "test": "Hosted browser profile cleanup",
+      "run_id": 42515408561,
+      "reason": "Chrome child still writing during temporary profile removal",
+      "resolution": "Terminate the isolated browser process group; all 19 browser/static checks pass locally; hosted rerun required"
     }
   ],
   "assurance_flags": {
@@ -58,5 +64,5 @@
     "publication_authorized": false
   },
   "publication_authorization_note": "Publication of reviewed source code authorized separately by user; validator publication_authorized remains false.",
-  "geek_work_manifest_sha256": "c32d5261bb49d7c00798eee90305f7a45bcbb77a83a394b4059f60a493e80548"
+  "geek_work_manifest_sha256": "56f82629f38f4aed723cfce689c385ea4794ce05b8b641c9b22818ae47fc6cfe"
 }

@@ -255,7 +255,7 @@
     {
       "source": "contracts/claim-review-api/ui_tests/test_browser.py",
       "destination": "contracts/claim-review-api/ui_tests/test_browser.py",
-      "sha256": "4148aadc0275bf5980ba0c75c2b1941435b84bd13c0137e0494214431b2a4c48"
+      "sha256": "8078cf2e8e0822a6a2e48c58572dbaec6265ba22c3a3c50565804fe8f5b68662"
     },
     {
       "source": "contracts/claim-review-api/ui_tests/test_static.py",
