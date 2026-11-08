@@ -1,0 +1,45 @@
+{
+  "kind": "historical-finite-corpus-observations",
+  "stage": 11,
+  "measured_utc_date": "2026-11-08",
+  "toolchain": {
+    "scarb": "2.18.0",
+    "cairo": "2.18.0",
+    "snforge": "0.59.0"
+  },
+  "reference_stage": 10,
+  "candidate": {
+    "raw_gas": 168552897,
+    "baseline_gas": 41040,
+    "paired_gas": 168511857,
+    "casm_felts": 81782,
+    "casm_limit": 81920,
+    "casm_headroom": 138,
+    "sierra_json_bytes": 4062967,
+    "tests_passed": 593
+  },
+  "reference": {
+    "paired_gas": 168511857,
+    "casm_felts": 81805,
+    "sierra_json_bytes": 4063744,
+    "tests_passed": 593
+  },
+  "delta_vs_stage10": {
+    "paired_gas": 0,
+    "casm_felts": -23,
+    "sierra_json_bytes": -777
+  },
+  "paired_test_gas_equal": 593,
+  "strict_account_builds": 3,
+  "production_replay_artifacts_identical": true,
+  "gas_delta_vs_original_leader": -520,
+  "gas_improvement_origin": "Stage 6; not Stage 11 or this export",
+  "predecessor": {
+    "author": "rukafe0x",
+    "job": "mj_2c1f51cffb854f4d90254e8d6b7b6500"
+  },
+  "source_report_sha256": "3522037fba648b7e2e646a45e8cf9fb32a8410bf470c88b72338bba1b0391907",
+  "source_manifest_sha256": "3044181b666eb05bbdfab7fd94d8c838f92ef311faf17579fea16b7db1781866",
+  "fresh_benchmark_in_public_export": false,
+  "all_input_security_claim": false
+}

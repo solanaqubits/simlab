@@ -93,3 +93,10 @@ manifest and complete bundled synthetic suite. Optional renderers and model
 providers are provisioned separately; nothing is installed or connected by default.
 See [release scope and open obligations](geek_work/RELEASE.md). This component
 release does not re-certify the complete Leanbook or SimLab formal libraries.
+
+## ML-DSA-44 arithmetic and Cairo candidate
+
+[Selected Stage 11 sources, exact patch replay and public Leanbook companions](studies/mldsa44_arithmetic/README.md)
+publish the frozen Cairo candidate with licensing, attribution and historical
+finite-corpus results. The offline checker validates source correspondence; it
+does not run a new benchmark or prove the complete signature implementation.

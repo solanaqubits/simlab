@@ -1,0 +1,31 @@
+{
+  "repository": "solanaqubits/leanbook",
+  "integration_branch": "mldsa-arithmetic-integration-20261108",
+  "base_commit": "6faf7658d580ec3ab405e33b0f96e511bc78d759",
+  "modules": [
+    {
+      "module": "MlDsaPackedPredicate",
+      "original_sha256": "2c44c5980888c74df464dad81ba3b077b8588d7d343bcb5f51bb9b93c651e31e",
+      "integrated_sha256": "a3e7176ddc8eebbf2fc23cdefbe78173a0ec1fbfb890981d57ee8b4074513944",
+      "original_named_theorems": 15,
+      "integrated_named_theorems": 16,
+      "original_body_preserved": true
+    },
+    {
+      "module": "MlDsaWtBranch",
+      "original_sha256": "fe509b12b3a5a63f767f1ddfab9b8b174e73c8adf4bacc32b7e81d7674e24ba7",
+      "integrated_sha256": "365fafc2f3b0df4a2b1fd15f887abae1211a424636ac9499a9d4e0214ae05df4",
+      "original_named_theorems": 55,
+      "integrated_named_theorems": 56,
+      "original_body_preserved": true
+    }
+  ],
+  "limitations": [
+    "Arithmetic model only",
+    "No Cairo compiler refinement",
+    "No Lean proof of Stage 11 rotations",
+    "No whole-signature security proof"
+  ],
+  "commit": "f891396e8e98f00d03beef1b1263ee32258a3cc0",
+  "main_ci": "https://github.com/solanaqubits/leanbook/actions/runs/42454944423"
+}
